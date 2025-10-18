@@ -1,4 +1,4 @@
-:80 {
+:5000 {
 	encode gzip
   root * /srv
   try_files {path} /index.html

@@ -77,6 +77,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -109,3 +111,8 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            VITE_API_URL=${{ env.VITE_API_URL }}
+            VITE_WS_URL=${{ env.VITE_WS_URL }}
+            VITE_MEDIA_URL=${{ env.VITE_MEDIA_URL }}
+            VITE_PROXY_URL=${{ env.VITE_PROXY_URL }}

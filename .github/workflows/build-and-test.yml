@@ -13,6 +13,7 @@ on:
   pull_request:
 
 env:
+  REGISTRY: ghcr.io
   VITE_API_URL: https://chalk.red/api
   VITE_WS_URL: wss://chalk.red/ws
   VITE_MEDIA_URL: https://chalk.red/autumn

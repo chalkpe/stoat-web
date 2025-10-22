@@ -14,10 +14,10 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  VITE_API_URL: https://chalk.red/api
-  VITE_WS_URL: wss://chalk.red/ws
-  VITE_MEDIA_URL: https://chalk.red/autumn
-  VITE_PROXY_URL: https://chalk.red/january
+  VITE_API_URL: https://${{ vars.STOAT_API }}/api
+  VITE_WS_URL: wss://${{ vars.STOAT_API }}/ws
+  VITE_MEDIA_URL: https://${{ vars.STOAT_API }}/autumn
+  VITE_PROXY_URL: https://${{ vars.STOAT_API }}/january
 
 jobs:
   typecheck:

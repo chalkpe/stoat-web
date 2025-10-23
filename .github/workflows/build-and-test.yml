@@ -18,6 +18,7 @@ env:
   VITE_WS_URL: wss://${{ vars.STOAT_API }}/ws
   VITE_MEDIA_URL: https://${{ vars.STOAT_API }}/autumn
   VITE_PROXY_URL: https://${{ vars.STOAT_API }}/january
+  VITE_CFG_MAX_FILE_SIZE: "500000000" # 500MB
 
 jobs:
   typecheck:
@@ -117,3 +118,4 @@ jobs:
             VITE_WS_URL=${{ env.VITE_WS_URL }}
             VITE_MEDIA_URL=${{ env.VITE_MEDIA_URL }}
             VITE_PROXY_URL=${{ env.VITE_PROXY_URL }}
+            VITE_CFG_MAX_FILE_SIZE=${{ env.VITE_CFG_MAX_FILE_SIZE }}

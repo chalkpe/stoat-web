@@ -64,7 +64,7 @@ type Item =
       text: string;
     };
 
-const COLUMNS = 10;
+const COLUMNS = 5;
 
 export function EmojiPicker() {
   const client = useClient();
@@ -176,7 +176,7 @@ export function EmojiPicker() {
           <VirtualContainer
             items={items()}
             scrollTarget={emojiScrollTargetElement}
-            itemSize={{ height: 40, width: 40 }}
+            itemSize={{ height: 80, width: 80 }}
             crossAxisCount={(measurements) =>
               Math.floor(
                 measurements.container.cross / measurements.itemSize.cross,
@@ -333,6 +333,9 @@ const EmojiOption = styled("div", {
           height: "100%",
           objectFit: "contain",
         },
+
+        fontSize: "40px",
+        textAlign: "center",
       },
     },
   ],

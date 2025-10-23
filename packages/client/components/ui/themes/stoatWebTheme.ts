@@ -18,7 +18,7 @@ export function createStoatWebVariables(theme: SelectedTheme) {
     // emoji size
     "--emoji-size": "1.4em",
     "--emoji-size-medium": "48px",
-    "--emoji-size-large": "96px",
+    "--emoji-size-large": "150px",
 
     // effects
     "--effects-blur-md": theme.blur ? "blur(20px)" : "unset",

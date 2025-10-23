@@ -72,13 +72,14 @@ export function UnicodeEmoji(
   const [local, remote] = splitProps(props, ["emoji"]);
 
   return (
-    <EmojiBase
-      {...remote}
-      loading="lazy"
-      class="emoji"
-      alt={local.emoji}
-      draggable={false}
-      src={unicodeEmojiUrl(props.pack, props.emoji)}
-    />
+    local.emoji
+    // <EmojiBase
+    //   {...remote}
+    //   loading="lazy"
+    //   class="emoji"
+    //   alt={local.emoji}
+    //   draggable={false}
+    //   src={unicodeEmojiUrl(props.pack, props.emoji)}
+    // />
   );
 }

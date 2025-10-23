@@ -32,6 +32,7 @@ import MdDelete from "@material-design-icons/svg/outlined/delete.svg?component-s
 import MdEditNote from "@material-design-icons/svg/outlined/edit_note.svg?component-solid";
 import MdInfo from "@material-design-icons/svg/outlined/info.svg?component-solid";
 import MdNotificationsOff from "@material-design-icons/svg/outlined/notifications_off.svg?component-solid";
+import MdSettings from "@material-design-icons/svg/filled/settings.svg?component-solid";
 
 interface Props {
   anchor: Accessor<HTMLDivElement | undefined>;
@@ -211,19 +212,10 @@ export function UserMenu(props: Props) {
                       openModal({ type: "custom_status", client: client() })
                     }
                   >
-                    <Trans>Add status text</Trans>
+                    <Trans>상태 메시지</Trans>
                   </ContextMenuButton>
                 }
               >
-                <ContextMenuButton
-                  icon={MdEditNote}
-                  onClick={() =>
-                    openModal({ type: "custom_status", client: client() })
-                  }
-                  _titleCase={false}
-                >
-                  {user()!.status!.text}
-                </ContextMenuButton>
                 <ContextMenuButton
                   icon={MdDelete}
                   onClick={() => user()?.edit({ remove: ["StatusText"] })}
@@ -237,6 +229,17 @@ export function UserMenu(props: Props) {
                   <Trans>Copy user ID</Trans>
                 </ContextMenuButton>
               </Show>
+
+              <ContextMenuDivider />
+
+              <ContextMenuButton
+                icon={MdSettings}
+                onClick={() =>
+                  openModal({ type: "settings", config: "user" })
+                }
+              >
+                <Trans>설정</Trans>
+              </ContextMenuButton>
             </ContextMenu>
           </Motion>
         </Show>

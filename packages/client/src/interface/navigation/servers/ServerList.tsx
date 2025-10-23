@@ -18,7 +18,6 @@ import { Avatar, Column, Text, Time, Unreads, UserStatus } from "@revolt/ui";
 import MdAdd from "@material-design-icons/svg/filled/add.svg?component-solid";
 import MdExplore from "@material-design-icons/svg/filled/explore.svg?component-solid";
 import MdHome from "@material-design-icons/svg/filled/home.svg?component-solid";
-import MdSettings from "@material-design-icons/svg/filled/settings.svg?component-solid";
 
 import { Tooltip } from "../../../../components/ui/components/floating";
 import { Draggable } from "../../../../components/ui/components/utils/Draggable";
@@ -146,29 +145,6 @@ export const ServerList = (props: Props) => {
             }
           />
         </a>
-        <Tooltip
-          placement="right"
-          content={() => (
-            <Column>
-              <span>{props.user.username}</span>
-              <Text class="label" size="small">
-                {props.user.presence}
-              </Text>
-            </Column>
-          )}
-          aria={props.user.username}
-        >
-          <a ref={setMenuButton} class={entryContainer()}>
-            <Avatar
-              size={42}
-              src={props.user.avatarURL}
-              holepunch={"bottom-right"}
-              overlay={<UserStatus.Graphic status={props.user.presence} />}
-              interactive
-            />
-          </a>
-          <UserMenu anchor={menuButton} />
-        </Tooltip>
         {/* <Tooltip placement="right" content="Switch back to legacy app">
           <a href="https://app.revolt.chat" class={entryContainer()}>
           <Symbol>history</Symbol>
@@ -321,13 +297,28 @@ export const ServerList = (props: Props) => {
       <Shadow>
         <div />
       </Shadow>
-      <Tooltip placement="right" content="Settings">
-        <a
-          class={entryContainer()}
-          onClick={() => openModal({ type: "settings", config: "user" })}
-        >
-          <Avatar size={42} fallback={<MdSettings />} interactive />
+      <Tooltip
+        placement="right"
+        content={() => (
+          <Column>
+            <span>{props.user.username}</span>
+            <Text class="label" size="small">
+              {props.user.presence}
+            </Text>
+          </Column>
+        )}
+        aria={props.user.username}
+      >
+        <a ref={setMenuButton} class={entryContainer()}>
+          <Avatar
+            size={42}
+            src={props.user.avatarURL}
+            holepunch={"bottom-right"}
+            overlay={<UserStatus.Graphic status={props.user.presence} />}
+            interactive
+          />
         </a>
+        <UserMenu anchor={menuButton} />
       </Tooltip>
     </ServerListBase>
   );

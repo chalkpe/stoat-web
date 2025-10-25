@@ -18,7 +18,7 @@ RUN corepack enable && corepack use pnpm
 
 WORKDIR /app
 COPY . .
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm install
 RUN pnpm build:deps
 RUN pnpm build:web
 

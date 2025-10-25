@@ -57,8 +57,7 @@ export const remarkSpoiler: Plugin = () => (tree) => {
       parent,
     ) => {
       // Visitor state
-      let searchingForEnd = -1;
-      let spoilerContent: object[] = [];
+      let lastIndexOffset = 0;
 
       // Visit all children of paragraphs
       for (let i = 0; i < node.children.length; i++) {
@@ -66,77 +65,44 @@ export const remarkSpoiler: Plugin = () => (tree) => {
 
         // Find the next text element to start a spoiler from
         if (child.type === "text") {
-          const components = child.value.split("||");
-          if (components.length === 1) continue; // no spoilers
+          const matches = [...child.value.matchAll(/\[\[([\s\S]+?)\]\]/gm)];
+          if (!matches.length) continue;
 
-          // Handle terminating spoiler tag
-          if (searchingForEnd !== -1) {
-            // Get all preceding elements
-            const elements = node.children.splice(
-              searchingForEnd,
-              i - searchingForEnd,
-            );
+          const contents: typeof node.children = [];
 
-            // Create a spoiler
-            node.children.splice(i, 0, {
+          for (const match of matches) {
+            const content = match[1];
+            const before = child.value.slice(lastIndexOffset, match.index);
+
+            if (before) {
+              contents.push({
+                type: "text",
+                value: before,
+              });
+            }
+
+            contents.push({
               type: "spoiler",
               children: [
-                ...spoilerContent,
-                ...elements,
                 {
                   type: "text",
-                  value: components.shift(),
+                  value: content,
                 },
               ],
             });
 
-            // Adjust our current index
-            i += elements.length + 1;
-
-            searchingForEnd = -1;
-            spoilerContent = [];
+            lastIndexOffset = match.index + match[0].length;
           }
 
-          // Replace current child with next component
-          child.value = components.shift()!;
-
-          // Check how many spoilers we have to process
-          const spillOver = components.length % 2 === 1;
-          const innerElements = (components.length - (spillOver ? 1 : 0)) / 2;
-
-          // Convert inner elements into spoilers
-          if (innerElements) {
-            for (let j = 0; j < innerElements; j++) {
-              node.children.splice(
-                i + 1,
-                0,
-                {
-                  type: "spoiler",
-                  children: [
-                    {
-                      type: "text",
-                      value: components.shift(),
-                    },
-                  ],
-                },
-                {
-                  type: "text",
-                  value: components.shift()!,
-                },
-              );
-
-              i += 2;
-            }
-          }
-
-          // Update state if we are looking for the end of a spoiler
-          if (spillOver) {
-            searchingForEnd = i + 1;
-            spoilerContent.push({
+          const after = child.value.slice(lastIndexOffset);
+          if (after) {
+            contents.push({
               type: "text",
-              value: components.pop(),
+              value: after,
             });
           }
+
+          node.children.splice(i, 1, ...contents);
         }
       }
     },

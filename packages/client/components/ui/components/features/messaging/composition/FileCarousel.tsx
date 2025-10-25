@@ -5,7 +5,7 @@ import { styled } from "styled-system/jsx";
 
 import { CONFIGURATION } from "@revolt/common";
 import { ALLOWED_IMAGE_TYPES } from "@revolt/state/stores/Draft";
-import { Ripple, typography } from "@revolt/ui/components/design";
+import { Checkbox, Ripple, typography } from "@revolt/ui/components/design";
 import { OverflowingText, iconSize } from "@revolt/ui/components/utils";
 
 import MdAdd from "@material-design-icons/svg/outlined/add.svg?component-solid";
@@ -37,6 +37,8 @@ interface Props {
    * @param fileId ID
    */
   removeFile(fileId: string): void;
+
+  updateFileName(fileId: string, name: string): void;
 }
 
 /**
@@ -106,6 +108,19 @@ export function FileCarousel(props: Props) {
                         <MdCancel {...iconSize(36)} />
                       </Overlay>
                     </PreviewBox>
+                    <Checkbox
+                      checked={file().file.name.startsWith("SPOILER_")}
+                      onChange={(e) =>
+                        props.updateFileName(
+                          id,
+                          e.currentTarget.checked
+                            ? `SPOILER_${file().file.name.replace(/^SPOILER_/, "")}`
+                            : file().file.name.replace(/^SPOILER_/, "")
+                        )
+                      }
+                    >
+                      스포일러로 표시
+                    </Checkbox>
                     <FileName>
                       <OverflowingText>{file().file.name}</OverflowingText>
                     </FileName>

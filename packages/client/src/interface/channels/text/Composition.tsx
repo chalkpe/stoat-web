@@ -273,6 +273,10 @@ export function MessageComposition(props: Props) {
     state.draft.removeFile(props.channel.id, fileId);
   }
 
+  function updateFileName(fileId: string, name: string) {
+    state.draft.updateFileName(props.channel.id, fileId, name);
+  }
+
   return (
     <>
       <Show when={state.draft.hasAdditionalElements(props.channel.id)}>
@@ -286,6 +290,7 @@ export function MessageComposition(props: Props) {
         getFile={state.draft.getFile}
         addFile={addFile}
         removeFile={removeFile}
+        updateFileName={updateFileName}
       />
       <For each={draft().replies ?? []}>
         {(reply) => {

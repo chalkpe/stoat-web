@@ -402,9 +402,9 @@ export class Draft extends AbstractStore<"draft", TypeDraft> {
         this.getPendingMessages(channel.id).map((entry) =>
           entry.idempotencyKey === idempotencyKey
             ? {
-                ...entry,
-                status: "failed",
-              }
+              ...entry,
+              status: "failed",
+            }
             : entry,
         ),
       );
@@ -618,7 +618,7 @@ export class Draft extends AbstractStore<"draft", TypeDraft> {
         image.src = this.fileCache[id].dataUri!;
       })
         // ignore errors
-        .catch(() => {});
+        .catch(() => { });
     }
 
     this.setDraft(channelId, (data) => ({
@@ -649,6 +649,19 @@ export class Draft extends AbstractStore<"draft", TypeDraft> {
     this.setDraft(channelId, (data) => ({
       files: data.files?.filter((entry) => entry !== fileId),
     }));
+  }
+
+  updateFileName(channelId: string, fileId: string, name: string) {
+    const file = this.fileCache[fileId];
+    if (file) {
+      this.fileCache[fileId] = {
+        ...file,
+        file: new File([file.file], name, { type: file.file.type }),
+      };
+      this.setDraft(channelId, (data) => ({
+        files: data.files,
+      }));
+    }
   }
 
   /**

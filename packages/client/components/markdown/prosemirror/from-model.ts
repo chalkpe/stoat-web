@@ -143,7 +143,7 @@ function map(node: Node): RootContent {
       console.info("Failing node:", node);
       return {
         type: "text",
-        value: `[missing ${node.type.name} serializer]`,
+        value: ``,
       };
   }
 }

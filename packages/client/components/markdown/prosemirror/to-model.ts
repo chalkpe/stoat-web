@@ -22,23 +22,23 @@ interface Context {
 
 type RfmComponents =
   | {
-      type: "mention";
-      mentions: string;
-    }
+    type: "mention";
+    mentions: string;
+  }
   | {
-      type: "customEmoji";
-      id: string;
-    }
+    type: "customEmoji";
+    id: string;
+  }
   | {
-      type: "unicodeEmoji";
-      str: string;
-      pack?: UnicodeEmojiPacks;
-    }
+    type: "unicodeEmoji";
+    str: string;
+    pack?: UnicodeEmojiPacks;
+  }
   | {
-      type: "timestamp";
-      format: string;
-      date: Dayjs;
-    };
+    type: "timestamp";
+    format: string;
+    date: Dayjs;
+  };
 
 function map(
   node: RootContent | RfmComponents,
@@ -161,7 +161,7 @@ function map(
     default: {
       console.info("Failing node:", node);
 
-      const text = schema.text(`[missing ${node.type} serializer]`);
+      const text = schema.text(``);
       if (context.parent === "paragraph") return [text];
       return [schema.nodes.paragraph.createChecked(null, text)];
     }

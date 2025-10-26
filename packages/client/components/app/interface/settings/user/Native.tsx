@@ -29,6 +29,7 @@ declare global {
       minimise(): void;
       maximise(): void;
       close(): void;
+      show(): void;
     };
 
     desktopConfig: {

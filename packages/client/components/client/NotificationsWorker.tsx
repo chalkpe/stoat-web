@@ -178,6 +178,7 @@ export function NotificationsWorker() {
     notification.addEventListener("click", () => {
       window.focus();
       navigate(message.path);
+      if (window.native) window.native.show();
     });
   }
 

@@ -73,10 +73,9 @@ export function RenderAnchor(
       [
         location.origin,
         // legacy
-        "https://app.revolt.chat",
-        "https://revolt.chat",
+        "https://legacy.toast.best",
         // new
-        "https://stoat.chat",
+        "https://toast.best",
       ].includes(url.origin)
     ) {
       const client = useClient();

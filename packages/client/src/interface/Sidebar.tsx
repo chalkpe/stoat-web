@@ -2,6 +2,7 @@ import { Component, Match, Show, Switch, createMemo } from "solid-js";
 import { JSX } from "solid-js";
 
 import { Channel, Server as ServerI } from "stoat.js";
+import { styled } from "styled-system/jsx";
 
 import { ChannelContextMenu, ServerSidebarContextMenu, CategoryContextMenu } from "@revolt/app";
 import { useClient, useUser } from "@revolt/client";
@@ -11,6 +12,28 @@ import { useState } from "@revolt/state";
 import { LAYOUT_SECTIONS } from "@revolt/state/stores/Layout";
 
 import { HomeSidebar, ServerList, ServerSidebar } from "./navigation";
+
+/**
+ * Sidebar container with app-specific styling
+ */
+const SidebarContainer = styled("div", {
+  base: {
+    display: "flex",
+    flexShrink: 0,
+  },
+  variants: {
+    app: {
+      true: {
+        width: "100vw",
+        scrollSnapAlign: "start",
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: window.app,
+  },
+});
 
 /**
  * Left-most channel navigation sidebar
@@ -30,7 +53,7 @@ export const Sidebar = (props: {
   const location = useLocation();
 
   return (
-    <div style={{ display: "flex", "flex-shrink": 0 }}>
+    <SidebarContainer>
       <ServerList
         orderedServers={state.ordering.orderedServers(client())}
         setServerOrder={state.ordering.setServerOrder}
@@ -62,7 +85,7 @@ export const Sidebar = (props: {
           </Match>
         </Switch>
       </Show>
-    </div>
+    </SidebarContainer>
   );
 };
 

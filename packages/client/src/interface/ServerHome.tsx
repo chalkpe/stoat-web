@@ -17,9 +17,9 @@ export const ServerHome: Component = () => {
       <Match when={!server()}>
         <Navigate href={"/"} />
       </Match>
-      <Match when={server().defaultChannel}>
+      {/* <Match when={server().defaultChannel}>
         <Navigate href={`channel/${server().defaultChannel!.id}`} />
-      </Match>
+      </Match> */}
     </Switch>
   );
 };

@@ -278,7 +278,7 @@ export function ChannelHeader(props: Props) {
         </IconButton>
       </Show>
 
-      <Show when={searchValue() !== null}>
+      <Show when={!window.app && searchValue() !== null}>
         <input
           class={css({
             height: "40px",

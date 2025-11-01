@@ -217,7 +217,7 @@ export const ServerSidebar = (props: Props) => {
         <Draggable
           dragHandles
           type="category"
-          disabled={noOrdering()}
+          disabled={window.app || noOrdering()}
           items={props.server.orderedChannels}
           onChange={(ids) => handleOrdering({ type: "categories", ids })}
         >
@@ -355,7 +355,7 @@ function Category(
             moved: channelIds.length !== current.length,
           });
         }}
-        disabled={props.noOrdering() || !isOpen()}
+        disabled={window.app || props.noOrdering() || !isOpen()}
         minimumDropAreaHeight="32px"
       >
         {(entry) => (

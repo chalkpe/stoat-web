@@ -132,7 +132,7 @@ export const ServerList = (props: Props) => {
           }}
         >
           <Avatar
-            size={42}
+            size={window.app ? 60 : 42}
             fallback={<MdHome />}
             holepunch={homeNotifications() ? "top-right" : undefined}
             overlay={
@@ -159,7 +159,7 @@ export const ServerList = (props: Props) => {
                 href={`/channel/${conversation.id}`}
               >
                 <Avatar
-                  size={42}
+                  size={window.app ? 60 : 42}
                   // TODO: fix this
                   src={conversation.iconURL}
                   holepunch={conversation.unread ? "top-right" : "none"}
@@ -185,13 +185,14 @@ export const ServerList = (props: Props) => {
         <Show when={props.unreadConversations.length > 9}>
           <a class={entryContainer()} href={`/`}>
             <Avatar
-              size={42}
+              size={window.app ? 60 : 42}
               fallback={<>+{props.unreadConversations.length - 9}</>}
             />
           </a>
         </Show>
         <LineDivider />
         <Draggable
+          disabled={window.app}
           type="servers"
           items={props.orderedServers}
           onChange={props.setServerOrder}
@@ -245,9 +246,11 @@ export const ServerList = (props: Props) => {
                       <Swoosh />
                     </PositionSwoosh>
                   </Show> */}
-                <a href={state.layout.getLastActiveServerPath(entry.item.id)}>
+                <a href={
+                  window.app ? `/server/${entry.item.id}` :
+                    state.layout.getLastActiveServerPath(entry.item.id)}>
                   <Avatar
-                    size={42}
+                    size={window.app ? 60 : 42}
                     src={entry.item.iconURL}
                     holepunch={
                       entry.item.mentions.length ? "top-right" : "none"
@@ -280,7 +283,7 @@ export const ServerList = (props: Props) => {
             class={entryContainer()}
             onClick={() => props.onCreateOrJoinServer()}
           >
-            <Avatar size={42} fallback={<MdAdd />} />
+            <Avatar size={window.app ? 60 : 42} fallback={<MdAdd />} />
           </a>
         </Tooltip>
         <Show when={CONFIGURATION.IS_STOAT}>
@@ -289,7 +292,7 @@ export const ServerList = (props: Props) => {
               href={state.layout.getLastActiveDiscoverPath()}
               class={entryContainer()}
             >
-              <Avatar size={42} fallback={<MdExplore />} />
+              <Avatar size={window.app ? 60 : 42} fallback={<MdExplore />} />
             </a>
           </Tooltip>
         </Show>
@@ -311,7 +314,7 @@ export const ServerList = (props: Props) => {
       >
         <a ref={setMenuButton} class={entryContainer()}>
           <Avatar
-            size={42}
+            size={window.app ? 60 : 42}
             src={props.user.avatarURL}
             holepunch={"bottom-right"}
             overlay={<UserStatus.Graphic status={props.user.presence} />}
@@ -373,6 +376,13 @@ const entryContainer = cva({
     },
   },
   variants: {
+    app: {
+      true: {
+        width: "73px",
+        height: "73px",
+      },
+      false: {}
+    },
     indicator: {
       selected: {
         "&:before": {
@@ -386,6 +396,9 @@ const entryContainer = cva({
       },
     },
   },
+  defaultVariants: {
+    app: window.app
+  }
 });
 
 /**

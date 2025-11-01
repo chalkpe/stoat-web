@@ -23,4 +23,15 @@ export const SidebarBase = styled("div", {
       textDecoration: "none",
     },
   },
+  variants: {
+    app: {
+      true: {
+        width: "calc(100vw - 73px)"
+      },
+      false: {}
+    }
+  },
+  defaultVariants: {
+    app: window.app,
+  }
 });

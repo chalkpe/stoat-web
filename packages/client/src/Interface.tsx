@@ -58,13 +58,7 @@ const Interface = (props: { children: JSX.Element }) => {
 
   return (
     <MessageCache client={client()}>
-      <div
-        style={{
-          display: "flex",
-          "flex-direction": "column",
-          height: "100%",
-        }}
-      >
+      <Root>
         <Titlebar />
         <Switch fallback={<CircularProgress />}>
           <Match when={!isLoggedIn()}>
@@ -107,7 +101,7 @@ const Interface = (props: { children: JSX.Element }) => {
         </Switch>
 
         <NotificationsWorker />
-      </div>
+      </Root>
     </MessageCache>
   );
 };
@@ -133,6 +127,25 @@ const Notice = styled("div", {
   },
 });
 
+const Root = styled("div", {
+  base: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
+  },
+  variants: {
+    app: {
+      true: {
+        overflowX: "scroll",
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: window.app,
+  },
+});
+
 /**
  * Parent container
  */
@@ -153,7 +166,16 @@ const Layout = styled("div", {
         background: "var(--md-sys-color-surface-container-high)",
       },
     },
+    app: {
+      true: {
+        width: '200vw',
+      },
+      false: {},
+    }
   },
+  defaultVariants: {
+    app: window.app,
+  }
 });
 
 /**
@@ -175,6 +197,16 @@ const Content = styled("div", {
         overflow: "hidden",
       },
     },
+    app: {
+      true: {
+        width: "100vw",
+        flexShrink: 0,
+      },
+      false: {}
+    }
+  },
+  defaultVariants: {
+    app: window.app,
   },
 });
 

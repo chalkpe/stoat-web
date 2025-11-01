@@ -21,4 +21,18 @@ export const main = cva({
     borderRadius: "var(--borderRadius-xl)",
     background: "var(--md-sys-color-surface-container-lowest)",
   },
+  variants: {
+    app: {
+      true: {
+        marginInline: "0",
+        marginBlockEnd: "0",
+        borderBottomLeftRadius: "0",
+        borderBottomRightRadius: "0",
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: window.app,
+  },
 });

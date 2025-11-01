@@ -401,4 +401,15 @@ const List = styled("div", {
     paddingLeft: "var(--gap-md)",
     width: "var(--layout-width-channel-sidebar)",
   },
+  variants: {
+    app: {
+      true: {
+        width: "calc(100vw - 73px)"
+      },
+      false: {},
+    }
+  },
+  defaultVariants: {
+    app: window.app,
+  }
 });

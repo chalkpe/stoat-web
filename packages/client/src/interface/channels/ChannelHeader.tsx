@@ -253,13 +253,13 @@ export function ChannelHeader(props: Props) {
             if (props.sidebarState!().state === "default") {
               state.layout.toggleSectionState(
                 LAYOUT_SECTIONS.MEMBER_SIDEBAR,
-                true,
+                window.app ? false : true,
               );
             } else {
               state.layout.setSectionState(
                 LAYOUT_SECTIONS.MEMBER_SIDEBAR,
                 true,
-                true,
+                window.app ? false : true,
               );
 
               props.setSidebarState!({

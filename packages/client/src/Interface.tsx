@@ -1,4 +1,4 @@
-import { JSX, Match, Show, Switch, createEffect } from "solid-js";
+import { JSX, Match, Show, Switch, createEffect, onMount } from "solid-js";
 
 import { Server } from "stoat.js";
 import { styled } from "styled-system/jsx";
@@ -15,6 +15,7 @@ import { useState } from "@revolt/state";
 import { LAYOUT_SECTIONS } from "@revolt/state/stores/Layout";
 import { Button, CircularProgress } from "@revolt/ui";
 
+import { initializeScrollSnap } from "./app";
 import { Sidebar } from "./interface/Sidebar";
 import { pendingUpdate } from "./serviceWorkerInterface";
 
@@ -47,6 +48,12 @@ const Interface = (props: { children: JSX.Element }) => {
     }
   });
 
+  createEffect(() => {
+    if (lifecycle.loadedOnce() && isLoggedIn()) {
+      setTimeout(() => initializeScrollSnap(), 100);
+    }
+  });
+
   function isDisconnected() {
     return [
       State.Connecting,
@@ -58,7 +65,7 @@ const Interface = (props: { children: JSX.Element }) => {
 
   return (
     <MessageCache client={client()}>
-      <Root>
+      <Root id="layout">
         <Titlebar />
         <Switch fallback={<CircularProgress />}>
           <Match when={!isLoggedIn()}>
@@ -138,6 +145,12 @@ const Root = styled("div", {
     app: {
       true: {
         overflowX: "scroll",
+        willChange: "transform",
+        scrollbarWidth: "none",
+
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
       },
       false: {},
     },

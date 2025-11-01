@@ -1,4 +1,19 @@
-// window.app = true;
+// @ts-ignore
+import createScrollSnap from 'scroll-snap'
+
+window.app = true;
+
+export function initializeScrollSnap() {
+  if (!window.app) return;
+
+  const layoutElement = document.querySelector('#layout');
+  if (layoutElement) {
+    createScrollSnap(layoutElement, {
+      snapDestinationX: '100vw',
+      threshold: 0.6,
+    }).bind();
+  }
+}
 
 export function goToContent() {
   if (!window.app) return;

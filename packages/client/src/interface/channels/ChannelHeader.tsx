@@ -145,9 +145,7 @@ export function ChannelHeader(props: Props) {
           </Show>
         </Match>
         <Match when={props.channel.type === "DirectMessage"}>
-          <HeaderIcon>
-            <Symbol>alternate_email</Symbol>
-          </HeaderIcon>
+          <HeaderIcon>{''}</HeaderIcon>
           <TextWithEmoji content={props.channel.recipient?.username} />
           <UserStatus status={props.channel.recipient?.presence} size="8px" />
         </Match>
@@ -161,7 +159,7 @@ export function ChannelHeader(props: Props) {
 
       <Spacer />
 
-      <Show
+      {/* <Show
         when={props.channel.type !== "SavedMessages" && props.channel.isVoice}
       >
         <IconButton
@@ -176,7 +174,7 @@ export function ChannelHeader(props: Props) {
         >
           <MdCall />
         </IconButton>
-      </Show>
+      </Show> */}
 
       <Show
         when={
@@ -253,13 +251,13 @@ export function ChannelHeader(props: Props) {
             if (props.sidebarState!().state === "default") {
               state.layout.toggleSectionState(
                 LAYOUT_SECTIONS.MEMBER_SIDEBAR,
-                window.app ? false : true,
+                !window.app,
               );
             } else {
               state.layout.setSectionState(
                 LAYOUT_SECTIONS.MEMBER_SIDEBAR,
                 true,
-                window.app ? false : true,
+                !window.app,
               );
 
               props.setSidebarState!({

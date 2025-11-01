@@ -1,6 +1,7 @@
 /**
  * Configure contexts and render App
  */
+import "./app";
 import "./sentry";
 
 import { JSX, Show, createSignal, onMount } from "solid-js";

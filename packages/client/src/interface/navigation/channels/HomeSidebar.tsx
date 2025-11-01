@@ -28,6 +28,8 @@ import MdClose from "@material-design-icons/svg/outlined/close.svg?component-sol
 import { SidebarBase } from "./common";
 import { Symbol } from "@revolt/ui/components/utils/Symbol"
 
+import { goToContent } from "../../../app";
+
 interface Props {
   /**
    * Ordered list of conversations
@@ -74,7 +76,7 @@ export const HomeSidebar = (props: Props) => {
             <Trans>Conversations</Trans>
           </SidebarTitle>
 
-          <a href="/app">
+          <a href="/app" onClick={goToContent}>
             <MenuButton
               size="normal"
               icon={<Symbol css={{alignSelf: "center", paddingBottom: "2px"}}>home</Symbol>}
@@ -88,7 +90,7 @@ export const HomeSidebar = (props: Props) => {
 
           <div style={{ height: "5px" }} />
 
-          <a href="/friends">
+          <a href="/friends" onClick={goToContent}>
             <MenuButton
               size="normal"
               icon={<Symbol css={{alignSelf: "center", paddingBottom: "1px"}}>group</Symbol>}
@@ -123,7 +125,7 @@ export const HomeSidebar = (props: Props) => {
             }
           >
             <Match when={savedNotesChannelId()}>
-              <a href={`/channel/${savedNotesChannelId()}`}>
+              <a href={`/channel/${savedNotesChannelId()}`} onClick={goToContent}>
                 <MenuButton
                   size="normal"
                   icon={<Symbol css={{alignSelf: "center", paddingBottom: "2px"}}>note_stack</Symbol>}
@@ -287,7 +289,7 @@ function Entry(
     );
 
   return (
-    <a {...remote} href={`/channel/${local.channel.id}`}>
+    <a {...remote} href={`/channel/${local.channel.id}`} onClick={goToContent}>
       <MenuButton
         size="normal"
         alert={
@@ -410,6 +412,6 @@ const List = styled("div", {
     }
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   }
 });

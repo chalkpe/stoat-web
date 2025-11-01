@@ -89,6 +89,7 @@ const Interface = (props: { children: JSX.Element }) => {
                 })}
               />
               <Content
+                id="content"
                 sidebar={state.layout.getSectionState(
                   LAYOUT_SECTIONS.PRIMARY_SIDEBAR,
                   true,
@@ -142,7 +143,7 @@ const Root = styled("div", {
     },
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   },
 });
 
@@ -174,7 +175,7 @@ const Layout = styled("div", {
     }
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   }
 });
 
@@ -206,7 +207,7 @@ const Content = styled("div", {
     }
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   },
 });
 

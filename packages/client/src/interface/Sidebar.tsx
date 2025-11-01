@@ -31,7 +31,7 @@ const SidebarContainer = styled("div", {
     },
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   },
 });
 
@@ -53,7 +53,7 @@ export const Sidebar = (props: {
   const location = useLocation();
 
   return (
-    <SidebarContainer>
+    <SidebarContainer id="sidebar">
       <ServerList
         orderedServers={state.ordering.orderedServers(client())}
         setServerOrder={state.ordering.setServerOrder}

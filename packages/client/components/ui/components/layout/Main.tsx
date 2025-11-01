@@ -33,6 +33,6 @@ export const main = cva({
     },
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   },
 });

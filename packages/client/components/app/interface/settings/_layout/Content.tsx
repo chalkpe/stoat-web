@@ -41,7 +41,9 @@ export function SettingsContent(props: {
               />
             </Text>
             {props.children}
-            <div class={css({ minHeight: "80px" })} />
+            <Show when={!window.app}>
+              <div class={css({ minHeight: "80px" })} />
+            </Show>
           </InnerColumn>
         </InnerContent>
       </Show>
@@ -73,6 +75,17 @@ const base = cva({
       textDecoration: "none",
     },
   },
+  variants: {
+    app: {
+      true: {
+        flexDirection: "column-reverse",
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: !!window.app,
+  },
 });
 
 /**
@@ -89,6 +102,17 @@ const InnerContent = styled("div", {
     justifyContent: "stretch",
     zIndex: 1,
   },
+  variants: {
+    app: {
+      true: {
+        padding: "16px",
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: !!window.app,
+  },
 });
 
 /**
@@ -101,6 +125,17 @@ const InnerColumn = styled("div", {
     display: "flex",
     flexDirection: "column",
     marginBlockEnd: "80px",
+  },
+  variants: {
+    app: {
+      true: {
+        marginBlockEnd: "0",
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: !!window.app,
   },
 });
 
@@ -126,5 +161,23 @@ const CloseAction = styled("div", {
       color: "var(--md-sys-color-on-surface)",
       fontSize: "0.75rem",
     },
+  },
+  variants: {
+    app: {
+      true: {
+        position: "relative",
+        padding: "16px 16px 0 16px",
+        display: "flex",
+        justifyContent: "flex-end",
+        
+        "&:after": {
+          display: "none",
+        },
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    app: !!window.app,
   },
 });

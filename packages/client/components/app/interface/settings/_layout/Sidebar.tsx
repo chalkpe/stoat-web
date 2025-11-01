@@ -105,6 +105,17 @@ const Base = styled("div", {
     paddingLeft: "8px",
     justifyContent: "flex-end",
   },
+  variants: {
+    app: {
+      true: {
+        flex: "1 0 130px",
+      },
+      false: {},
+    }
+  },
+  defaultVariants: {
+    app: !!window.app,
+  },
 });
 
 /**
@@ -124,6 +135,18 @@ const Content = styled("div", {
       margin: 0,
     },
   },
+  variants: {
+    app: {
+      true: {
+        minWidth: "130px",
+        maxWidth: "130px",
+      },
+      false: {},
+    }
+  },
+  defaultVariants: {
+    app: !!window.app,
+  }
 });
 
 /**

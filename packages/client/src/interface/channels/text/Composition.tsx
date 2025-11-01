@@ -363,13 +363,14 @@ export function MessageComposition(props: Props) {
             )}
           </CompositionMediaPicker>
         }
-        placeholder={
-          props.channel.type === "SavedMessages"
-            ? t`Save to your notes`
-            : props.channel.type === "DirectMessage"
-              ? t`Message ${props.channel.recipient?.username}`
-              : t`Message ${props.channel.name}`
-        }
+        // placeholder={
+          // props.channel.type === "SavedMessages"
+          //   ? t`Save to your notes`
+          //   : props.channel.type === "DirectMessage"
+          //     ? t`Message ${props.channel.recipient?.username}`
+          //     : t`Message ${props.channel.name}`
+        // }
+        placeholder=""
         sendingAllowed={props.channel.havePermission("SendMessage")}
         autoCompleteSearchSpace={generateSearchSpaceFrom(
           props.channel,

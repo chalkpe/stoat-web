@@ -40,6 +40,8 @@ import { CategoryContextMenu } from "@revolt/app";
 import { SidebarBase } from "./common";
 import { Symbol } from "@revolt/ui/components/utils/Symbol"
 
+import { goToContent } from "../../../app";
+
 interface Props {
   /**
    * Server to display sidebar for
@@ -74,15 +76,15 @@ type CategoryData = Omit<API.Category, "channels"> & { channels: Channel[] };
 
 type OrderingEvent =
   | {
-      type: "categories";
-      ids: string[];
-    }
+    type: "categories";
+    ids: string[];
+  }
   | {
-      type: "category";
-      id: string;
-      channelIds: string[];
-      moved: boolean;
-    };
+    type: "category";
+    id: string;
+    channelIds: string[];
+    moved: boolean;
+  };
 
 /**
  * Display server information and channels
@@ -217,7 +219,7 @@ export const ServerSidebar = (props: Props) => {
         <Draggable
           dragHandles
           type="category"
-          disabled={window.app || noOrdering()}
+          disabled={!!window.app || noOrdering()}
           items={props.server.orderedChannels}
           onChange={(ids) => handleOrdering({ type: "categories", ids })}
         >
@@ -310,9 +312,9 @@ function Category(
     noOrdering: Accessor<boolean>;
     handleOrdering: (event: OrderingEvent) => void;
   } & Pick<Props, "menuGenerator"> & {
-      dragDisabled: Accessor<boolean>;
-      setDragDisabled: Setter<boolean>;
-    },
+    dragDisabled: Accessor<boolean>;
+    setDragDisabled: Setter<boolean>;
+  },
 ) {
   const state = useState();
   const isOpen = () => state.layout.getSectionState(props.category.id, true);
@@ -331,16 +333,16 @@ function Category(
     <CategorySection>
       <Show when={props.category.id !== "default"}>
         <div use:floating={props.menuGenerator(props.category as any)}>
-        <CategoryBase
-          open={isOpen()}
-          onClick={(e) => {
-            state.layout.toggleSectionState(props.category.id, true)
-          }}
-          {...createDragHandle(props.dragDisabled, props.setDragDisabled)}
-        >
-          {props.category.title}
-          <MdChevronRight {...iconSize(12)} />
-        </CategoryBase>
+          <CategoryBase
+            open={isOpen()}
+            onClick={(e) => {
+              state.layout.toggleSectionState(props.category.id, true)
+            }}
+            {...createDragHandle(props.dragDisabled, props.setDragDisabled)}
+          >
+            {props.category.title}
+            <MdChevronRight {...iconSize(12)} />
+          </CategoryBase>
         </div>
       </Show>
       <Draggable
@@ -355,7 +357,7 @@ function Category(
             moved: channelIds.length !== current.length,
           });
         }}
-        disabled={window.app || props.noOrdering() || !isOpen()}
+        disabled={!!window.app || props.noOrdering() || !isOpen()}
         minimumDropAreaHeight="32px"
       >
         {(entry) => (
@@ -461,7 +463,7 @@ function Entry(
   );
 
   return (
-    <a href={`/server/${props.channel.serverId}/channel/${props.channel.id}`}>
+    <a href={`/server/${props.channel.serverId}/channel/${props.channel.id}`} onClick={goToContent}>
       <MenuButton
         use:floating={props.menuGenerator(props.channel)}
         size="normal"
@@ -475,7 +477,7 @@ function Entry(
               </Match>
             </Switch>
             <Show when={props.channel.icon}>
-              <ChannelIcon src={props.channel.iconURL} css={{marginEnd: "0.2em"}} />
+              <ChannelIcon src={props.channel.iconURL} css={{ marginEnd: "0.2em" }} />
             </Show>
           </>
         }
@@ -491,7 +493,7 @@ function Entry(
                   openModal({ type: "create_invite", channel: props.channel });
                 }}
               >
-                <Symbol css={{fontSize: "1.2em !important", alignSelf: "center", marginTop: "7px"}} fill>person_add</Symbol>
+                <Symbol css={{ fontSize: "1.2em !important", alignSelf: "center", marginTop: "7px" }} fill>person_add</Symbol>
               </a>
             </Show>
 
@@ -509,7 +511,7 @@ function Entry(
                   });
                 }}
               >
-                <Symbol css={{fontSize: "1.1em !important", alignSelf: "center", marginTop: "7px"}} fill>settings</Symbol>
+                <Symbol css={{ fontSize: "1.1em !important", alignSelf: "center", marginTop: "7px" }} fill>settings</Symbol>
               </a>
             </Show>
           </>

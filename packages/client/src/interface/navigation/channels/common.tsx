@@ -32,6 +32,6 @@ export const SidebarBase = styled("div", {
     }
   },
   defaultVariants: {
-    app: window.app,
+    app: !!window.app,
   }
 });

@@ -209,7 +209,7 @@ export function TextChannel(props: ChannelPageProps) {
           when={
             (state.layout.getSectionState(
               LAYOUT_SECTIONS.MEMBER_SIDEBAR,
-              window.app ? false : true,
+              !window.app,
             ) &&
               props.channel.type !== "SavedMessages") ||
             sidebarState().state !== "default"

@@ -7,6 +7,8 @@ import { css } from "styled-system/css";
 import { useState } from "@revolt/state";
 import { LAYOUT_SECTIONS } from "@revolt/state/stores/Layout";
 
+import { goToSidebar } from "../../app";
+
 /**
  * Wrapper for header icons which adds the chevron on the
  * correct side for toggling sidebar (if on desktop) and
@@ -19,8 +21,10 @@ export function HeaderIcon(props: { children: JSX.Element }) {
   return (
     <div
       class={container}
-      onClick={() =>
+      onClick={() => {
+        if (window.app) return goToSidebar()
         state.layout.toggleSectionState(LAYOUT_SECTIONS.PRIMARY_SIDEBAR, true)
+      }
       }
       use:floating={{
         tooltip: {

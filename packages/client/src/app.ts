@@ -1,5 +1,6 @@
 // @ts-ignore
 import createScrollSnap from 'scroll-snap'
+import type { Client } from "stoat.js";
 
 window.app = true;
 
@@ -23,4 +24,21 @@ export function goToContent() {
 export function goToSidebar() {
   if (!window.app) return;
   document.querySelector('#sidebar')!.scrollIntoView({ behavior: 'smooth' });
+}
+
+declare global {
+  interface Window {
+    app: boolean;
+
+    ToastApp: {
+      subscribePush: (...args: Parameters<Client['account']['webPushSubscribe']>) => void;
+    };
+  }
+}
+
+export function initToastApp(client: Client) {
+  if (!window.app) return;
+  window.ToastApp = {
+    subscribePush: (...args) => client.account.webPushSubscribe(...args),
+  };
 }

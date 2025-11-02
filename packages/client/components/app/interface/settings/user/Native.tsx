@@ -38,8 +38,6 @@ declare global {
       getAutostart(): boolean;
       setAutostart(value: boolean): void;
     };
-
-    app: boolean;
   }
 }
 

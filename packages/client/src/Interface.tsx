@@ -15,7 +15,7 @@ import { useState } from "@revolt/state";
 import { LAYOUT_SECTIONS } from "@revolt/state/stores/Layout";
 import { Button, CircularProgress } from "@revolt/ui";
 
-import { initializeScrollSnap } from "./app";
+import { initializeScrollSnap, initToastApp } from "./app";
 import { Sidebar } from "./interface/Sidebar";
 import { pendingUpdate } from "./serviceWorkerInterface";
 
@@ -50,6 +50,7 @@ const Interface = (props: { children: JSX.Element }) => {
 
   createEffect(() => {
     if (lifecycle.loadedOnce() && isLoggedIn()) {
+      initToastApp(client());
       setTimeout(() => initializeScrollSnap(), 100);
     }
   });

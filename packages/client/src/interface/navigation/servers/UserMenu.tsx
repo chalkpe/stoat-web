@@ -212,7 +212,7 @@ export function UserMenu(props: Props) {
                       openModal({ type: "custom_status", client: client() })
                     }
                   >
-                    <Trans>상태 메시지</Trans>
+                    상태 메시지
                   </ContextMenuButton>
                 }
               >
@@ -238,7 +238,7 @@ export function UserMenu(props: Props) {
                   openModal({ type: "settings", config: "user" })
                 }
               >
-                <Trans>설정</Trans>
+                설정
               </ContextMenuButton>
             </ContextMenu>
           </Motion>

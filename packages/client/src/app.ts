@@ -2,7 +2,7 @@
 import createScrollSnap from 'scroll-snap'
 import type { Client } from "stoat.js";
 
-window.app = true;
+// window.app = true;
 
 export function initializeScrollSnap() {
   if (!window.app) return;

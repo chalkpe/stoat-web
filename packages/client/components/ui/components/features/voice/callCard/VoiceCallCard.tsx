@@ -196,7 +196,7 @@ export function VoiceCallCardContext(props: { children: JSX.Element }) {
           // dragging logic for touch input
           // todo
         >
-          <Switch>
+          {/* <Switch>
             <Match when={state().type === "fixed"}>
               <VoiceCallCard
                 channel={(state() as { channel: Channel }).channel}
@@ -207,7 +207,7 @@ export function VoiceCallCardContext(props: { children: JSX.Element }) {
                 <VoiceCallCardPiP />
               </InRoom>
             </Match>
-          </Switch>
+          </Switch> */}
         </div>
       </Portal>
     </callCardContext.Provider>

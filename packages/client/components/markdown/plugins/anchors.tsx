@@ -170,25 +170,25 @@ export function RenderAnchor(
     }
 
     return (
-      <Show
-        when={state.linkSafety.isTrusted(url)}
-        fallback={
-          <a
-            {...remoteProps}
-            class={link()}
-            onClick={onHandleWarning}
-            onAuxClick={onHandleWarning}
-          />
-        }
-      >
-        <a
-          {...remoteProps}
-          class={link()}
-          href={localProps.href}
-          target={"_blank"}
-          rel="noreferrer"
-        />
-      </Show>
+      // <Show
+      //   when={state.linkSafety.isTrusted(url)}
+      //   fallback={
+      //     <a
+      //       {...remoteProps}
+      //       class={link()}
+      //       onClick={onHandleWarning}
+      //       onAuxClick={onHandleWarning}
+      //     />
+      //   }
+      // >
+      <a
+        {...remoteProps}
+        class={link()}
+        href={localProps.href}
+        target={"_blank"}
+        rel="noreferrer"
+      />
+      // </Show>
     );
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

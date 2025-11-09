@@ -2046,7 +2046,7 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Գաղտնիության քաղաքականություն"
 
-#: components/markdown/plugins/anchors.tsx:104
+#: components/markdown/plugins/anchors.tsx:106
 msgid "Private Channel"
 msgstr ""
 
@@ -2702,7 +2702,7 @@ msgstr ""
 msgid "Unblock user"
 msgstr "Արգելահանել օգտատիրոջը"
 
-#: components/markdown/plugins/anchors.tsx:136
+#: components/markdown/plugins/anchors.tsx:138
 msgid "Unknown Server"
 msgstr ""
 

@@ -43,29 +43,29 @@ export enum TransitionType {
 
 export type Transition =
   | {
-    type: TransitionType.LoginUncached | TransitionType.LoginCached;
-    session: Session;
-  }
+      type: TransitionType.LoginUncached | TransitionType.LoginCached;
+      session: Session;
+    }
   | {
-    type: TransitionType.PermanentFailure;
-    error: string;
-  }
+      type: TransitionType.PermanentFailure;
+      error: string;
+    }
   | {
-    type:
-    | TransitionType.NoUser
-    | TransitionType.UserCreated
-    | TransitionType.TemporaryFailure
-    | TransitionType.SocketConnected
-    | TransitionType.DeviceOffline
-    | TransitionType.DeviceOnline
-    | TransitionType.Cancel
-    | TransitionType.Dismiss
-    | TransitionType.Ready
-    | TransitionType.Retry
-    | TransitionType.Dispose
-    | TransitionType.DisposeOnly
-    | TransitionType.Logout;
-  };
+      type:
+        | TransitionType.NoUser
+        | TransitionType.UserCreated
+        | TransitionType.TemporaryFailure
+        | TransitionType.SocketConnected
+        | TransitionType.DeviceOffline
+        | TransitionType.DeviceOnline
+        | TransitionType.Cancel
+        | TransitionType.Dismiss
+        | TransitionType.Ready
+        | TransitionType.Retry
+        | TransitionType.Dispose
+        | TransitionType.DisposeOnly
+        | TransitionType.Logout;
+    };
 
 type PolicyAttentionRequired = [
   ProtocolV1["types"]["policyChange"][],
@@ -152,6 +152,10 @@ class Lifecycle {
         captcha: {} as never,
         email: true,
         invite_only: false,
+        livekit: {
+          enabled: false,
+          nodes: [],
+        },
       },
       vapid: String(),
       ws: CONFIGURATION.DEFAULT_WS_URL,

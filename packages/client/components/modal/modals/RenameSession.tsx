@@ -1,7 +1,6 @@
 import { createFormControl, createFormGroup } from "solid-forms";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 
 import { Column, Dialog, DialogProps, Form2 } from "@revolt/ui";
 
@@ -14,9 +13,11 @@ import { Modals } from "../types";
 export function RenameSessionModal(
   props: DialogProps & Modals & { type: "rename_session" },
 ) {
+  const { t } = useLingui();
   const { showError } = useModals();
 
   const group = createFormGroup({
+    // eslint-disable-next-line solid/reactivity
     name: createFormControl(props.session.name, { required: true }),
   });
 
@@ -28,6 +29,8 @@ export function RenameSessionModal(
       showError(error);
     }
   }
+
+  const submit = Form2.useSubmitHandler(group, onSubmit);
 
   return (
     <Dialog
@@ -47,7 +50,7 @@ export function RenameSessionModal(
       ]}
       isDisabled={group.isPending}
     >
-      <form onSubmit={Form2.submitHandler(group, onSubmit)}>
+      <form onSubmit={submit}>
         <Column>
           <Form2.TextField
             name="name"

@@ -1,11 +1,13 @@
+import { BiRegularCheckCircle, BiSolidCheckCircle } from "solid-icons/bi";
 import {
-  BiRegularCheckCircle,
-  BiRegularHash,
-  BiRegularPhoneCall,
-  BiSolidCheckCircle,
-} from "solid-icons/bi";
-import { Accessor, JSX, Match, Show, Switch, createMemo } from "solid-js";
-import { Setter } from "solid-js";
+  Accessor,
+  JSX,
+  Match,
+  Setter,
+  Show,
+  Switch,
+  createMemo,
+} from "solid-js";
 
 import { useLingui } from "@lingui-solid/solid/macro";
 import type { API, Channel, Server, ServerFlags } from "stoat.js";
@@ -15,6 +17,7 @@ import { KeybindAction, createKeybind } from "@revolt/keybinds";
 import { TextWithEmoji } from "@revolt/markdown";
 import { useModals } from "@revolt/modal";
 import { useNavigate } from "@revolt/routing";
+import { useVoice } from "@revolt/rtc";
 import { useState } from "@revolt/state";
 import {
   Column,
@@ -29,16 +32,15 @@ import {
   symbolSize,
   typography,
 } from "@revolt/ui";
+import { VoiceChannelPreview } from "@revolt/ui/components/features/voice/VoiceChannelPreview";
 import { createDragHandle } from "@revolt/ui/components/utils/Draggable";
+import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
 import MdChevronRight from "@material-design-icons/svg/filled/chevron_right.svg?component-solid";
-import MdPersonAdd from "@material-design-icons/svg/filled/person_add.svg?component-solid";
 
 import MdSettings from "@material-symbols/svg-400/outlined/settings-fill.svg?component-solid";
 
-import { CategoryContextMenu } from "@revolt/app";
 import { SidebarBase } from "./common";
-import { Symbol } from "@revolt/ui/components/utils/Symbol"
 
 interface Props {
   /**
@@ -100,7 +102,7 @@ export const ServerSidebar = (props: Props) => {
   // TODO: issue warning if nothing is found somehow? warnings can be nicer than flat out not working
   // TODO: we want it to feel smooth when navigating through channels, so we'll want to select channels immediately but not actually navigate until we're done moving through them
   /** Navigates to the channel offset from the current one, wrapping around if needed */
-  const navigateChannel = (byOffset: number) => {
+  const _navigateChannel = (byOffset: number) => {
     if (props.channelId == null) {
       return;
     }
@@ -330,17 +332,17 @@ function Category(
   return (
     <CategorySection>
       <Show when={props.category.id !== "default"}>
-        <div use:floating={props.menuGenerator(props.category as any)}>
-        <CategoryBase
-          open={isOpen()}
-          onClick={(e) => {
-            state.layout.toggleSectionState(props.category.id, true)
-          }}
-          {...createDragHandle(props.dragDisabled, props.setDragDisabled)}
-        >
-          {props.category.title}
-          <MdChevronRight {...iconSize(12)} />
-        </CategoryBase>
+        <div use:floating={props.menuGenerator(props.category as never)}>
+          <CategoryBase
+            open={isOpen()}
+            onClick={() => {
+              state.layout.toggleSectionState(props.category.id, true);
+            }}
+            {...createDragHandle(props.dragDisabled, props.setDragDisabled)}
+          >
+            {props.category.title}
+            <MdChevronRight {...iconSize(12)} />
+          </CategoryBase>
         </div>
       </Show>
       <Draggable
@@ -431,6 +433,7 @@ function Entry(
   props: { channel: Channel; active: boolean } & Pick<Props, "menuGenerator">,
 ) {
   const state = useState();
+  const voice = useVoice();
   const { openModal } = useModals();
 
   const canEditChannel = createMemo(() =>
@@ -450,75 +453,97 @@ function Entry(
       (props.channel.mentions?.size || true),
   );
 
+  const inCall = () => props.channel.id === voice.channel()?.id;
+
   const attentionState = createMemo(() =>
     props.active
       ? "selected"
-      : state.notifications.isChannelMuted(props.channel)
-        ? "muted"
-        : props.channel.unread
-          ? "active"
-          : "normal",
+      : inCall()
+        ? "active"
+        : state.notifications.isChannelMuted(props.channel)
+          ? "muted"
+          : props.channel.unread
+            ? "active"
+            : "normal",
   );
 
   return (
     <a href={`/server/${props.channel.serverId}/channel/${props.channel.id}`}>
-      <MenuButton
-        use:floating={props.menuGenerator(props.channel)}
-        size="normal"
-        alert={alertState()}
-        attention={attentionState()}
-        icon={
-          <>
-            <Switch fallback={<Symbol fontSize="1.5em !important">grid_3x3</Symbol>}>
-              <Match when={props.channel.isVoice}>
-                <Symbol fontSize="1.5em !important">headset_mic</Symbol>
-              </Match>
-            </Switch>
-            <Show when={props.channel.icon}>
-              <ChannelIcon src={props.channel.iconURL} css={{marginEnd: "0.2em"}} />
-            </Show>
-          </>
-        }
-        actions={
-          <>
-            <Show when={canInvite()}>
-              <a
-                use:floating={{
-                  tooltip: { placement: "top", content: "Create Invite" },
-                }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  openModal({ type: "create_invite", channel: props.channel });
-                }}
-              >
-                <Symbol css={{fontSize: "1.2em !important", alignSelf: "center", marginTop: "7px"}} fill>person_add</Symbol>
-              </a>
-            </Show>
+      <Column gap="sm">
+        <MenuButton
+          use:floating={props.menuGenerator(props.channel)}
+          size="normal"
+          alert={alertState()}
+          attention={attentionState()}
+          icon={
+            <>
+              <Switch fallback={<Symbol>grid_3x3</Symbol>}>
+                <Match when={props.channel.isVoice}>
+                  <Symbol
+                    color={inCall() ? "var(--md-sys-color-primary)" : undefined}
+                  >
+                    headset_mic
+                  </Symbol>
+                </Match>
+              </Switch>
+              <Show when={props.channel.icon}>
+                <ChannelIcon
+                  src={props.channel.iconURL}
+                  css={{ marginEnd: "0.2em" }}
+                />
+              </Show>
+            </>
+          }
+          actions={
+            <>
+              <Show when={canInvite()}>
+                <a
+                  use:floating={{
+                    tooltip: { placement: "top", content: "Create Invite" },
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal({
+                      type: "create_invite",
+                      channel: props.channel,
+                    });
+                  }}
+                >
+                  <Symbol size={16} fill>
+                    person_add
+                  </Symbol>
+                </a>
+              </Show>
 
-            <Show when={canEditChannel()}>
-              <a
-                use:floating={{
-                  tooltip: { placement: "top", content: "Edit Channel" },
-                }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  openModal({
-                    type: "settings",
-                    config: "channel",
-                    context: props.channel,
-                  });
-                }}
-              >
-                <Symbol css={{fontSize: "1.1em !important", alignSelf: "center", marginTop: "7px"}} fill>settings</Symbol>
-              </a>
-            </Show>
-          </>
-        }
-      >
-        <OverflowingText>
-          <TextWithEmoji content={props.channel.name!} />
-        </OverflowingText>
-      </MenuButton>
+              <Show when={canEditChannel()}>
+                <a
+                  use:floating={{
+                    tooltip: { placement: "top", content: "Edit Channel" },
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal({
+                      type: "settings",
+                      config: "channel",
+                      context: props.channel,
+                    });
+                  }}
+                >
+                  <Symbol size={16} fill>
+                    settings
+                  </Symbol>
+                </a>
+              </Show>
+            </>
+          }
+        >
+          <OverflowingText>
+            <TextWithEmoji content={props.channel.name!} />
+          </OverflowingText>
+        </MenuButton>
+
+        <VoiceChannelPreview channel={props.channel} />
+      </Column>
     </a>
   );
 }
@@ -531,15 +556,5 @@ const ChannelIcon = styled("img", {
     width: "16px",
     height: "16px",
     objectFit: "contain",
-  },
-});
-
-/**
- * Inner scrollable list
- * We fix the width in order to prevent scrollbar from moving stuff around
- */
-const List = styled(Column, {
-  base: {
-    width: "var(--layout-width-channel-sidebar)",
   },
 });

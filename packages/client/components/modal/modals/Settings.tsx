@@ -13,12 +13,14 @@ import { Modals } from "../types";
 export function SettingsModal(
   props: DialogProps & Modals & { type: "settings" },
 ) {
+  // eslint-disable-next-line solid/reactivity
   const config = SettingsConfigurations[props.config];
 
   return (
     <Portal mount={document.getElementById("floating")!}>
       <div
         style={{
+          "z-index": 100,
           position: "fixed",
           width: "100%",
           height: "100vh",

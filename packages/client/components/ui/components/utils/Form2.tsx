@@ -1,8 +1,8 @@
 import { type IFormControl, IFormGroup } from "solid-forms";
 import {
+  type JSX,
   ComponentProps,
   For,
-  type JSX,
   Match,
   Show,
   Switch,
@@ -14,14 +14,8 @@ import { VirtualContainer } from "@minht11/solid-virtual-container";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
 
-import {
-  Button,
-  Checkbox,
-  Radio2,
-  Text,
-  TextEditor,
-  TextField,
-} from "../design";
+import { Button, Checkbox, Radio2, Text, TextField } from "../design";
+import { TextEditor2 } from "../features/texteditor/TextEditor2";
 
 import { FileInput } from "./files";
 
@@ -42,8 +36,8 @@ const FormTextField = (
         value={local.control.value}
         oninput={(e) => {
           local.control.setValue(e.currentTarget.value);
+          local.control.markDirty(true);
         }}
-        onchange={() => local.control.markDirty(true)}
         required={local.control.isRequired}
         disabled={local.control.isDisabled}
       />
@@ -65,13 +59,13 @@ const FormTextField = (
 const FormTextEditor = (
   props: {
     control: IFormControl<string>;
-  } & Omit<ComponentProps<typeof TextEditor>, "onChange">,
+  } & Omit<ComponentProps<typeof TextEditor2>, "onChange">,
 ) => {
   const [local, remote] = splitProps(props, ["control"]);
 
   return (
     <EditorBox>
-      <TextEditor
+      <TextEditor2
         {...remote}
         onChange={(value) => {
           local.control.setValue(value);
@@ -92,8 +86,8 @@ const FormTextEditor = (
 
 const EditorBox = styled("div", {
   base: {
-    background: "var(--md-sys-color-primary-container)",
-    color: "var(--md-sys-color-on-primary-container)",
+    background: "var(--md-sys-color-surface-container-highest)",
+    color: "var(--md-sys-color-on-surface-container)",
     borderRadius: "var(--borderRadius-sm)",
     padding: "var(--gap-md)",
   },
@@ -341,7 +335,7 @@ const FormSubmitButton = (props: {
     <Button
       type="submit"
       isDisabled={
-        !canSubmit(props.group) || !props.requireDirty || !props.group.isDirty
+        !canSubmit(props.group) || (!props.group.isDirty && props.requireDirty)
       }
     >
       {props.children}
@@ -397,7 +391,7 @@ function resetGeneric(group: IFormGroup, includingFields: boolean) {
  * @param onReset Handler to reset form state
  * @returns Function for onSubmit handler of form
  */
-function submitHandler(
+function useSubmitHandler(
   group: IFormGroup,
   handler: () => Promise<void> | void,
   onReset?: () => void,
@@ -439,5 +433,5 @@ export const Form2 = {
   Reset: FormResetButton,
   Submit: FormSubmitButton,
   canSubmit,
-  submitHandler,
+  useSubmitHandler,
 };

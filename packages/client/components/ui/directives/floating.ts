@@ -1,4 +1,11 @@
-import { type Accessor, type JSX, createSignal, onCleanup } from "solid-js";
+import {
+  type Accessor,
+  type JSX,
+  createEffect,
+  createSignal,
+  on,
+  onCleanup,
+} from "solid-js";
 
 type Props = JSX.Directives["floating"] & object;
 
@@ -132,48 +139,65 @@ export function floating(element: HTMLElement, accessor: Accessor<Props>) {
     trigger("tooltip", false);
   }
 
-  if (config.userCard) {
-    element.style.cursor = "pointer";
-    element.style.userSelect = "none";
-    element.addEventListener("click", onClick);
-  }
+  createEffect(
+    on(
+      () => accessor().userCard,
+      (userCard) => {
+        if (userCard) {
+          element.style.cursor = "pointer";
+          element.style.userSelect = "none";
+          element.addEventListener("click", onClick);
 
-  if (config.tooltip) {
-    element.ariaLabel =
-      typeof config.tooltip.content === "string"
-        ? config.tooltip.content
-        : config.tooltip!.aria!;
+          onCleanup(() => element.removeEventListener("click", onClick));
+        }
+      },
+    ),
+  );
 
-    element.addEventListener("mouseenter", onMouseEnter);
-    element.addEventListener("mouseleave", onMouseLeave);
-  }
+  createEffect(
+    on(
+      () => accessor().tooltip,
+      (tooltip) => {
+        if (tooltip) {
+          element.ariaLabel =
+            typeof tooltip.content === "string"
+              ? tooltip.content
+              : tooltip!.aria!;
 
-  if (config.contextMenu) {
-    element.addEventListener(
-      config.contextMenuHandler ?? "contextmenu",
-      onContextMenu,
-    );
+          element.addEventListener("mouseenter", onMouseEnter);
+          element.addEventListener("mouseleave", onMouseLeave);
 
-    // TODO: iOS events for touch
-  }
+          onCleanup(() => {
+            element.removeEventListener("mouseenter", onMouseEnter);
+            element.removeEventListener("mouseleave", onMouseLeave);
+          });
+        }
+      },
+    ),
+  );
 
-  onCleanup(() => {
-    unregisterFloatingElement(element);
+  createEffect(
+    on(
+      () => accessor().contextMenu,
+      (contextMenu) => {
+        if (contextMenu) {
+          element.addEventListener(
+            accessor().contextMenuHandler ?? "contextmenu",
+            onContextMenu,
+          );
 
-    if (config.userCard) {
-      element.removeEventListener("click", onClick);
-    }
+          // TODO: iOS events for touch
 
-    if (config.tooltip) {
-      element.removeEventListener("mouseenter", onMouseEnter);
-      element.removeEventListener("mouseleave", onMouseLeave);
-    }
+          onCleanup(() => {
+            element.removeEventListener(
+              config.contextMenuHandler ?? "contextmenu",
+              onContextMenu,
+            );
+          });
+        }
+      },
+    ),
+  );
 
-    if (config.contextMenu) {
-      element.removeEventListener(
-        config.contextMenuHandler ?? "contextmenu",
-        onContextMenu,
-      );
-    }
-  });
+  onCleanup(() => unregisterFloatingElement(element));
 }

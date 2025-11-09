@@ -31,11 +31,17 @@ const Spoiler = styled("span", {
   },
 });
 
-export function RenderSpoiler(props: { children: Element }) {
+export function RenderSpoiler(props: {
+  children: Element;
+  disabled?: boolean;
+}) {
   const [shown, setShown] = createSignal(false);
 
   return (
-    <Spoiler shown={shown()} onClick={() => setShown(true)}>
+    <Spoiler
+      shown={shown()}
+      onClick={props.disabled ? undefined : () => setShown(true)}
+    >
       {props.children}
     </Spoiler>
   );
@@ -49,12 +55,12 @@ export const remarkSpoiler: Plugin = () => (tree) => {
       node: {
         children: (
           | { type: "text"; value: string }
-          | { type: "paragraph"; children: any[] }
-          | { type: "spoiler"; children: any[] }
+          | { type: "paragraph"; children: unknown[] }
+          | { type: "spoiler"; children: unknown[] }
         )[];
       },
-      idx,
-      parent,
+      _idx,
+      _parent,
     ) => {
       // Visitor state
       let lastIndexOffset = 0;

@@ -15,7 +15,7 @@ type Props = Omit<
       JSX.ButtonHTMLAttributes<HTMLButtonElement>,
       "role" | "tabIndex" | "aria-selected"
     >,
-  "onClick"
+  "onClick" | "disabled"
 >;
 
 /**
@@ -35,7 +35,7 @@ export function IconButton(props: Props) {
     "shape",
     "width",
     "variant",
-    "_fullHeight",
+    "_compositionSendMessage",
   ]);
   let ref: HTMLButtonElement | undefined;
 
@@ -45,7 +45,10 @@ export function IconButton(props: Props) {
       {...passthrough}
       {...buttonProps}
       ref={ref}
-      class={iconButton2(style)}
+      class={iconButton2({
+        ...style,
+        disabled: buttonProps.disabled,
+      })}
       // @codegen directives props=rest include=floating
     >
       <Show when={!buttonProps.disabled}>
@@ -77,27 +80,30 @@ const iconButton2 = cva({
     cursor: "pointer",
     border: "none",
     transition: "var(--transitions-fast) all",
+
+    color: "var(--colour)",
+    fill: "var(--colour)",
   },
   variants: {
     variant: {
       filled: {
         background: "var(--md-sys-color-primary)",
-        fill: "var(--md-sys-color-on-primary)",
+        "--colour": "var(--md-sys-color-on-primary)",
       },
       tonal: {
         background: "var(--md-sys-color-secondary-container)",
-        fill: "var(--md-sys-color-on-secondary-container)",
+        "--colour": "var(--md-sys-color-on-secondary-container)",
       },
       outlined: {
         border: "1px solid var(--md-sys-color-outline-variant)",
-        fill: "var(--md-sys-color-on-surface-variant)",
+        "--colour": "var(--md-sys-color-on-surface-variant)",
       },
       standard: {
-        fill: "var(--md-sys-color-on-surface-variant)",
+        "--colour": "var(--md-sys-color-on-surface-variant)",
       },
 
       _header: {
-        fill: "white",
+        "--colour": "white",
       },
     },
     size: {
@@ -128,9 +134,21 @@ const iconButton2 = cva({
       default: {},
       wide: {},
     },
-    _fullHeight: {
+    /**
+     * Whether the button is disabled
+     */
+    disabled: {
       true: {
+        cursor: "not-allowed",
+      },
+      false: {},
+    },
+    _compositionSendMessage: {
+      true: {
+        width: "48px",
+        aspectRatio: "unset",
         height: "100% !important",
+        borderEndRadius: "var(--borderRadius-xl)",
       },
     },
   },
@@ -139,9 +157,34 @@ const iconButton2 = cva({
     width: "default",
     shape: "round",
     size: "sm",
-    _fullHeight: false,
+    disabled: false,
+    _compositionSendMessage: false,
   },
   compoundVariants: [
+    // disabled styles
+    {
+      variant: ["filled", "tonal", "outlined"],
+      disabled: true,
+      css: {
+        // todo: check these are correct
+        "--color":
+          "color-mix(in srgb, 38% var(--md-sys-color-on-surface), transparent)",
+        background:
+          "color-mix(in srgb, 10% var(--md-sys-color-on-surface), transparent)",
+      },
+    },
+    {
+      variant: "standard",
+      disabled: true,
+      css: {
+        // todo: check these are correct
+        "--color":
+          "color-mix(in srgb, 38% var(--md-sys-color-on-surface), transparent)",
+        background:
+          "color-mix(in srgb, 10% var(--md-sys-color-on-surface), transparent)",
+      },
+    },
+
     {
       size: ["xs", "sm"],
       width: "narrow",

@@ -1,7 +1,6 @@
 import { createFormControl, createFormGroup } from "solid-forms";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 
 import { Column, Dialog, DialogProps, Form2, Text } from "@revolt/ui";
 
@@ -14,6 +13,7 @@ import { Modals } from "../types";
 export function CreateBotModal(
   props: DialogProps & Modals & { type: "create_bot" },
 ) {
+  const { t } = useLingui();
   const { showError } = useModals();
 
   const group = createFormGroup({
@@ -33,6 +33,8 @@ export function CreateBotModal(
     }
   }
 
+  const submit = Form2.useSubmitHandler(group, onSubmit);
+
   return (
     <Dialog
       show={props.show}
@@ -51,7 +53,7 @@ export function CreateBotModal(
       ]}
       isDisabled={group.isPending}
     >
-      <form onSubmit={Form2.submitHandler(group, onSubmit)}>
+      <form onSubmit={submit}>
         <Column>
           <Text>
             <Trans>

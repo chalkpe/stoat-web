@@ -15,11 +15,17 @@ import MdAt from "@material-design-icons/svg/filled/alternate_email.svg?componen
 
 import { useUser } from "../users";
 
-export function RenderMention(props: { mentions?: string }) {
+export function RenderMention(props: {
+  mentions?: string;
+  disabled?: boolean;
+}) {
   return (
     <Switch fallback={<span>Invalid Mention Element</span>}>
       <Match when={props.mentions?.startsWith("user:")}>
-        <UserMention userId={props.mentions!.substring(5)} />
+        <UserMention
+          userId={props.mentions!.substring(5)}
+          disabled={props.disabled}
+        />
       </Match>
       <Match when={props.mentions === "everyone"}>
         <span class={mention()}>
@@ -40,8 +46,8 @@ export function RenderMention(props: { mentions?: string }) {
   );
 }
 
-export function UserMention(props: { userId: string }) {
-  const user = useUser(props.userId);
+export function UserMention(props: { userId: string; disabled?: boolean }) {
+  const user = useUser(() => props.userId);
 
   return (
     <Switch
@@ -50,17 +56,24 @@ export function UserMention(props: { userId: string }) {
       <Match when={user().user}>
         <div
           class={mention({ isLink: true })}
-          use:floating={{
-            userCard: user().user
-              ? {
-                  user: user().user!,
-                  member: user().member,
+          use:floating={
+            props.disabled
+              ? undefined
+              : {
+                  userCard: user().user
+                    ? {
+                        user: user().user!,
+                        member: user().member,
+                      }
+                    : undefined,
+                  contextMenu: () => (
+                    <UserContextMenu
+                      user={user().user!}
+                      member={user().member}
+                    />
+                  ),
                 }
-              : undefined,
-            contextMenu: () => (
-              <UserContextMenu user={user().user!} member={user().member} />
-            ),
-          }}
+          }
         >
           <Avatar size={16} src={user().avatar} fallback={user().username} />
           <ColouredText colour={user().colour!}>{user().username}</ColouredText>
@@ -116,7 +129,7 @@ export const remarkMentions: Plugin = () => (tree) => {
     (
       node: { type: "text"; value: string },
       idx,
-      parent: { children: any[] },
+      parent: { children: unknown[] },
     ) => {
       const elements = node.value.split(RE_MENTION);
       if (elements.length === 1) return; // no matches

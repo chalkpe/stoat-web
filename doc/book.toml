@@ -1,19 +1,10 @@
 [book]
 authors = []
 language = "en"
-multilingual = false
 src = "src"
 title = "Stoat for Web & Friends"
 
 [preprocessor]
 
-[preprocessor.mermaid]
-command = "mdbook-mermaid"
-
 [preprocessor.katex]
 after = ["links"]
-
-[output]
-
-[output.html]
-additional-js = ["mermaid.min.js", "mermaid-init.js"]

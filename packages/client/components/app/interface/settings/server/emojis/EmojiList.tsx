@@ -1,8 +1,7 @@
 import { createFormControl, createFormGroup } from "solid-forms";
-import { For, Match, Show, Switch } from "solid-js";
+import { For, Match, Switch } from "solid-js";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 import { Server } from "stoat.js";
 import { css } from "styled-system/css";
 
@@ -25,8 +24,13 @@ import {
  */
 export function EmojiList(props: { server: Server }) {
   const err = useError();
+  const { t } = useLingui();
   const client = useClient();
   const { openModal } = useModals();
+
+  function isDisabled() {
+    return props.server.emojis.length >= CONFIGURATION.MAX_EMOJI;
+  }
 
   const editGroup = createFormGroup(
     {
@@ -36,7 +40,7 @@ export function EmojiList(props: { server: Server }) {
       }),
     },
     {
-      disabled: props.server.emojis.length >= CONFIGURATION.MAX_EMOJI,
+      disabled: isDisabled(),
     },
   );
 
@@ -66,9 +70,11 @@ export function EmojiList(props: { server: Server }) {
     editGroup.controls.file.setValue(null);
   }
 
+  const submit = Form2.useSubmitHandler(editGroup, onSubmit, onReset);
+
   return (
     <Column gap="lg">
-      <form onSubmit={Form2.submitHandler(editGroup, onSubmit, onReset)}>
+      <form onSubmit={submit}>
         <Column>
           <Row align>
             <Column>

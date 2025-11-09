@@ -21,6 +21,28 @@ export function RenderUnicodeEmoji(props: {
   return <UnicodeEmoji emoji={props.str} pack={props.pack} />;
 }
 
+export function parseUnicodeEmoji(str: string): {
+  str: string;
+  pack?: UnicodeEmojiPacks;
+} {
+  const selectorChar = str[0];
+  const selector = selectorChar.codePointAt(0);
+  if (
+    selector &&
+    selector >= UNICODE_EMOJI_MIN_PACK &&
+    selector <= UNICODE_EMOJI_MAX_PACK
+  ) {
+    return {
+      str: str.substring(1),
+      pack: UNICODE_EMOJI_PUA_PACK[selectorChar],
+    };
+  } else {
+    return {
+      str,
+    };
+  }
+}
+
 export const remarkUnicodeEmoji: Plugin = () => (tree) => {
   visit(
     tree,
@@ -28,7 +50,7 @@ export const remarkUnicodeEmoji: Plugin = () => (tree) => {
     (
       node: { type: "text"; value: string },
       idx,
-      parent: { children: any[] },
+      parent: { children: unknown[] },
     ) => {
       const elements = node.value.split(RE_UNICODE_EMOJI);
       if (elements.length === 1) return; // no matches
@@ -50,24 +72,10 @@ export const remarkUnicodeEmoji: Plugin = () => (tree) => {
 
       // Process all timestamps
       for (let i = 0; i < elements.length / 2; i++) {
-        const selectorChar = elements[i * 2][0];
-        const selector = selectorChar.codePointAt(0);
-        if (
-          selector &&
-          selector >= UNICODE_EMOJI_MIN_PACK &&
-          selector <= UNICODE_EMOJI_MAX_PACK
-        ) {
-          newNodes.push({
-            type: "unicodeEmoji",
-            str: elements[i * 2].substring(1),
-            pack: UNICODE_EMOJI_PUA_PACK[selectorChar],
-          });
-        } else {
-          newNodes.push({
-            type: "unicodeEmoji",
-            str: elements[i * 2],
-          });
-        }
+        newNodes.push({
+          type: "unicodeEmoji",
+          ...parseUnicodeEmoji(elements[i * 2]),
+        });
 
         newNodes.push({
           type: "text",

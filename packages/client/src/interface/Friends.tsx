@@ -1,4 +1,3 @@
-import { BiSolidUserDetail } from "solid-icons/bi";
 import {
   Accessor,
   JSX,
@@ -10,8 +9,7 @@ import {
   splitProps,
 } from "solid-js";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 import { VirtualContainer } from "@minht11/solid-virtual-container";
 import type { User } from "stoat.js";
 import { styled } from "styled-system/jsx";
@@ -22,7 +20,6 @@ import { useModals } from "@revolt/modal";
 import {
   Avatar,
   Badge,
-  Button,
   Deferred,
   Header,
   IconButton,
@@ -30,6 +27,7 @@ import {
   ListItem,
   ListSubheader,
   NavigationRail,
+  NavigationRailItem,
   OverflowingText,
   Spacer,
   UserStatus,
@@ -59,6 +57,7 @@ const Base = styled("div", {
  * Friends menu
  */
 export function Friends() {
+  const { t } = useLingui();
   const client = useClient();
   const { openModal } = useModals();
 
@@ -138,20 +137,38 @@ export function Friends() {
           }}
         >
           <NavigationRail contained value={page} onValue={setPage}>
-            <NavigationRail.Item
-              icon={<Symbol css={{ marginTop: "10px" }}>all_inbox</Symbol>}
-              value="all"
-            >
-              모두
-            </NavigationRail.Item>
-            <NavigationRail.Item
-              icon={<Symbol css={{ marginTop: "10px" }}>waving_hand</Symbol>}
+            <div style={{ "margin-top": "6px", "margin-bottom": "12px" }}>
+              <IconButton
+                variant="filled"
+                shape="square"
+                onPress={() =>
+                  openModal({
+                    type: "add_friend",
+                    client: client(),
+                  })
+                }
+                use:floating={{
+                  tooltip: {
+                    placement: "right",
+                    content: t`Add a new friend`,
+                  },
+                }}
+              >
+                <Symbol>add</Symbol>
+              </IconButton>
+            </div>
+
+            <NavigationRailItem
+              icon={<Symbol>waving_hand</Symbol>}
               value="online"
             >
               <Trans>Online</Trans>
-            </NavigationRail.Item>
-            <NavigationRail.Item
-              icon={<Symbol css={{ marginTop: "10px" }}>notifications</Symbol>}
+            </NavigationRailItem>
+            <NavigationRailItem icon={<Symbol>all_inbox</Symbol>} value="all">
+              <Trans>All</Trans>
+            </NavigationRailItem>
+            <NavigationRailItem
+              icon={<Symbol>notifications</Symbol>}
               value="pending"
             >
               요청
@@ -160,13 +177,10 @@ export function Friends() {
                   {pending()}
                 </Badge>
               </Show>
-            </NavigationRail.Item>
-            <NavigationRail.Item
-              icon={<Symbol css={{ marginTop: "10px" }}>block</Symbol>}
-              value="blocked"
-            >
+            </NavigationRailItem>
+            <NavigationRailItem icon={<Symbol>block</Symbol>} value="blocked">
               <Trans>Blocked</Trans>
-            </NavigationRail.Item>
+            </NavigationRailItem>
           </NavigationRail>
 
           <Deferred>
@@ -312,16 +326,3 @@ function Entry(
     </a>
   );
 }
-
-/**
- * Overlapping avatars
- */
-const Avatars = styled("div", {
-  base: {
-    flexShrink: 0,
-    "& svg:not(:first-child)": {
-      position: "relative",
-      marginInlineStart: "-32px",
-    },
-  },
-});

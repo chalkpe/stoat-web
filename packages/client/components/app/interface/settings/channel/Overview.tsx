@@ -81,9 +81,11 @@ export default function ChannelOverview(props: ChannelSettingsProps) {
     await props.channel.edit(changes);
   }
 
+  const submit = Form2.useSubmitHandler(editGroup, onSubmit, onReset);
+
   return (
     <Column gap="xl">
-      <form onSubmit={Form2.submitHandler(editGroup, onSubmit, onReset)}>
+      <form onSubmit={submit}>
         <Column>
           <Text class="label">
             <Trans>Channel Info</Trans>
@@ -104,7 +106,7 @@ export default function ChannelOverview(props: ChannelSettingsProps) {
           />
           <Row>
             <Form2.Reset group={editGroup} onReset={onReset} />
-            <Form2.Submit group={editGroup}>
+            <Form2.Submit group={editGroup} requireDirty>
               <Trans>Save</Trans>
             </Form2.Submit>
             <Show when={editGroup.isPending}>

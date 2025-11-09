@@ -1,6 +1,5 @@
 import { Accessor, Setter, batch, createSignal } from "solid-js";
 
-import { Node } from "prosemirror-model";
 import { API, Channel, Client, Message } from "stoat.js";
 import { ulid } from "ulid";
 
@@ -113,7 +112,7 @@ export class Draft extends AbstractStore<"draft", TypeDraft> {
    */
   private textSelection?: TextSelection;
 
-  _setNodeReplacement?: Setter<Node | readonly ["_focus"] | undefined>;
+  _setNodeReplacement?: Setter<readonly [string | "_focus"] | undefined>;
 
   /**
    * Construct store
@@ -395,7 +394,7 @@ export class Draft extends AbstractStore<"draft", TypeDraft> {
           (entry) => entry.idempotencyKey !== idempotencyKey,
         ),
       );
-    } catch (err) {
+    } catch {
       this.set(
         "outbox",
         channel.id,
@@ -532,8 +531,16 @@ export class Draft extends AbstractStore<"draft", TypeDraft> {
       this.getDraft(message.channelId).replies?.find(
         (reply) => reply.id === message.id,
       )
-    )
+    ) {
       return;
+    }
+
+    if (
+      (this.getDraft(message.channelId).replies?.length ?? 0) >=
+      CONFIGURATION.MAX_REPLIES
+    ) {
+      return;
+    }
 
     // We should not mention ourselves, otherwise use previous mention state
     const shouldMention =

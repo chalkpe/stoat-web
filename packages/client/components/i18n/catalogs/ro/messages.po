@@ -73,12 +73,12 @@ msgid "{0} changed the channel icon"
 msgstr ""
 
 #. placeholder {0}: CONFIGURATION.MAX_EMOJI - props.server.emojis.length
-#: components/app/interface/settings/server/emojis/EmojiList.tsx:95
+#: components/app/interface/settings/server/emojis/EmojiList.tsx:101
 msgid "{0} emoji slots remaining"
 msgstr ""
 
 #. placeholder {0}: rejectedFiles.length
-#: src/interface/channels/text/Composition.tsx:218
+#: src/interface/channels/text/Composition.tsx:226
 msgid "{0} files exceed the maximum size limit of {maxSizeFormatted} and were not uploaded."
 msgstr ""
 
@@ -152,94 +152,106 @@ msgstr ""
 msgid "{0}'s roles"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/Reactions.tsx:192
+#: components/ui/components/features/messaging/elements/Reactions.tsx:189
 msgid "{unknown} reacted"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/Reactions.tsx:188
+#: components/ui/components/features/messaging/elements/Reactions.tsx:185
 msgid "{usernames} and {unknown} others reacted"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/Reactions.tsx:195
+#: components/ui/components/features/messaging/elements/Reactions.tsx:192
 msgid "{usernames} reacted"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:49
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:53
 msgid "<0/> has been added by <1/>"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:93
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:97
 msgid "<0/> has been banned from the server"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:85
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:89
 msgid "<0/> has been kicked from the server"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:72
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:76
 msgid "<0/> has been removed by <1/>"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:101
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:105
 msgid "<0/> joined the server"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:64
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:68
 msgid "<0/> left the group"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:111
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:115
 msgid "<0/> left the server"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:165
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:169
 msgid "<0/> pinned <1/>"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:148
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:205
+msgid "<0/> started a call"
+msgstr ""
+
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:215
+msgid "<0/> started a call that lasted "
+msgstr ""
+
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:152
 msgid "<0/> transferred group ownership to <1/>"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:180
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:184
 msgid "<0/> unpinned <1/>"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:132
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:136
 msgid "<0/> updated the group description"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:140
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:144
 msgid "<0/> updated the group icon "
 msgstr ""
 
 #. placeholder {0}: (props.systemMessage as ChannelRenamedSystemMessage).name
-#: components/ui/components/features/messaging/elements/SystemMessage.tsx:119
+#: components/ui/components/features/messaging/elements/SystemMessage.tsx:123
 msgid "<0/> updated the group name to <1>{0}</1>"
 msgstr ""
 
-#: components/modal/modals/LinkWarning.tsx:77
+#: components/modal/modals/LinkWarning.tsx:81
 msgid "<0>Be careful!</0><1/>This is not the same as the link that was displayed:"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/Reactions.tsx:190
+#: components/ui/components/features/messaging/elements/Reactions.tsx:187
 msgid "1 person reacted"
 msgstr "O persoană a reacționat"
 
-#: components/app/interface/settings/user/Language.tsx:197
+#: components/app/interface/settings/user/Language.tsx:195
 msgid "12 hours"
 msgstr ""
 
-#: components/app/interface/settings/user/Language.tsx:189
+#: components/app/interface/settings/user/Language.tsx:187
 msgid "24 hours"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:242
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:245
 msgid "Able to access channels on this server"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:240
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:241
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:244
 msgid "Able to access this channel"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:344
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:345
+msgid "Able to speak in voice call"
 msgstr ""
 
 #: components/auth/src/AuthPage.tsx:167
@@ -250,7 +262,7 @@ msgstr "Despre"
 msgid "Accept"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:318
+#: components/app/menus/UserContextMenu.tsx:364
 msgid "Accept friend request"
 msgstr "Acceptă cererea de prietenie"
 
@@ -258,25 +270,26 @@ msgstr "Acceptă cererea de prietenie"
 msgid "Acknowledge"
 msgstr ""
 
-#: components/modal/modals/AddMembersToGroup.tsx:70
-#: components/modal/modals/AddBot.tsx:87
+#: components/modal/modals/AddMembersToGroup.tsx:72
+#: components/modal/modals/AddBot.tsx:89
 msgid "Add"
 msgstr ""
 
-#: components/modal/modals/AddFriend.tsx:39
+#: src/interface/Friends.tsx:135
+#: components/modal/modals/AddFriend.tsx:41
 msgid "Add a new friend"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:308
+#: components/app/menus/UserContextMenu.tsx:354
 msgid "Add friend"
 msgstr "Adaugă ca prieten"
 
-#: src/interface/channels/ChannelHeader.tsx:221
-#: components/modal/modals/AddMembersToGroup.tsx:66
+#: src/interface/channels/ChannelHeader.tsx:176
+#: components/modal/modals/AddMembersToGroup.tsx:68
 msgid "Add friends to group"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:289
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:292
 msgid "Add new members to the group"
 msgstr ""
 
@@ -284,18 +297,18 @@ msgstr ""
 msgid "Add status text"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:125
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:130
 msgid "Admin"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:354
+#: components/app/menus/UserContextMenu.tsx:400
 #: components/app/menus/ServerContextMenu.tsx:321
-#: components/app/menus/MessageContextMenu.tsx:214
+#: components/app/menus/MessageContextMenu.tsx:255
 #: components/app/menus/ChannelContextMenu.tsx:166
 msgid "Admin Panel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:280
+#: components/app/interface/settings/UserSettings.tsx:281
 msgid "Advanced"
 msgstr "Avansat"
 
@@ -304,7 +317,7 @@ msgstr "Avansat"
 msgid "Affects all roles and users"
 msgstr ""
 
-#: src/interface/Friends.tsx:149
+#: src/interface/Friends.tsx:150
 msgid "All"
 msgstr ""
 
@@ -314,7 +327,7 @@ msgstr ""
 msgid "All Messages"
 msgstr "Toate mesajele"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:315
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:318
 msgid "Allow members to change name and avatar per-message"
 msgstr ""
 
@@ -326,7 +339,7 @@ msgstr ""
 msgid "Already friends with this user."
 msgstr "Ești deja prieten cu acest utilizator."
 
-#: components/app/interface/settings/user/Language.tsx:156
+#: components/app/interface/settings/user/Language.tsx:154
 msgid "American (MM/DD/YYYY)"
 msgstr ""
 
@@ -339,7 +352,7 @@ msgstr ""
 msgid "An internal error occurred. ({0})"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:218
+#: components/app/interface/settings/UserSettings.tsx:219
 #: components/app/interface/settings/user/Sync.tsx:34
 msgid "Appearance"
 msgstr "Aspect"
@@ -352,32 +365,36 @@ msgstr ""
 msgid "Are you sure you want to delete this?"
 msgstr ""
 
-#. placeholder {0}: props.url.toString()
-#: components/modal/modals/LinkWarning.tsx:56
-msgid "Are you sure you want to go to <0>{0}</0>?"
+#: components/modal/modals/LinkWarning.tsx:62
+msgid "Are you sure you want to go to "
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:199
+#: components/modal/modals/LinkWarning.tsx:56
+#~ msgid "Are you sure you want to go to <0>{0}</0>?"
+#~ msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:203
 msgid "Assign lower-ranked roles to lower-ranking members"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:197
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:201
 msgid "Assign Roles"
 msgstr "Atribuire roluri"
 
-#: components/modal/modals/MFAFlow.tsx:259
+#: components/modal/modals/MFAFlow.tsx:217
+#: components/modal/modals/MFAFlow.tsx:261
 #: components/app/interface/settings/user/Account.tsx:226
 msgid "Authenticator App"
 msgstr "Aplicație de autentificare"
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:146
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:148
 msgid "Avatar"
 msgstr "Avatar"
 
 #: src/interface/channels/AgeGate.tsx:77
 #: src/interface/channels/AgeGate.tsx:109
 #: components/modal/modals/MFAFlow.tsx:136
-#: components/auth/src/flows/FlowLogin.tsx:85
+#: components/auth/src/flows/FlowLogin.tsx:77
 #: components/auth/src/flows/FlowCreate.tsx:56
 #: components/auth/src/flows/FlowCheck.tsx:47
 msgid "Back"
@@ -387,8 +404,8 @@ msgstr ""
 msgid "Badges"
 msgstr "Insigne"
 
-#: components/modal/modals/BanNonMember.tsx:43
-#: components/modal/modals/BanMember.tsx:43
+#: components/modal/modals/BanNonMember.tsx:45
+#: components/modal/modals/BanMember.tsx:45
 msgid "Ban"
 msgstr "Interzice accesul"
 
@@ -396,96 +413,105 @@ msgstr "Interzice accesul"
 msgid "Ban evasion"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:183
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:187
 msgid "Ban lower-ranking members from the server"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:279
+#: components/app/menus/UserContextMenu.tsx:325
 msgid "Ban member"
 msgstr "Interzice accesul membrului"
 
-#: components/modal/modals/BanMember.tsx:39
+#: components/modal/modals/BanMember.tsx:41
 msgid "Ban Member"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:181
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:185
 msgid "Ban Members"
 msgstr "Interzice membri"
 
-#: components/app/menus/UserContextMenu.tsx:297
+#: components/app/menus/UserContextMenu.tsx:343
 msgid "Ban user"
 msgstr ""
 
-#: components/modal/modals/BanNonMember.tsx:39
+#: components/modal/modals/BanNonMember.tsx:41
 msgid "Ban User"
 msgstr ""
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:152
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:154
 msgid "Banner"
 msgstr ""
 
-#: components/app/interface/settings/ServerSettings.tsx:150
+#: components/app/interface/settings/ServerSettings.tsx:151
 msgid "Bans"
 msgstr "Interdicții"
 
-#: components/app/menus/UserContextMenu.tsx:333
+#: components/app/menus/UserContextMenu.tsx:379
 msgid "Block user"
 msgstr "Blochează utilizatorul"
 
-#: src/interface/Friends.tsx:160
+#: src/interface/Friends.tsx:164
 msgid "Blocked"
 msgstr "Blocat"
 
-#: components/ui/components/features/messaging/elements/MessageReply.tsx:123
+#: components/ui/components/features/messaging/elements/MessageReply.tsx:121
 msgid "Blocked User"
 msgstr "Utilizator Blocat"
 
-#: components/app/interface/channels/text/Message.tsx:185
+#: components/app/interface/channels/text/Message.tsx:178
 msgid "Bot"
 msgstr "Bot"
+
+#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx:34
+msgid "Browser Echo Cancellation"
+msgstr ""
+
+#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx:25
+msgid "Browser Noise Supression"
+msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx:75
 msgid "Bug Tracker"
 msgstr "Bug tracker"
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:281
-#: src/interface/channels/text/MemberSidebar.tsx:391
+#: src/interface/navigation/channels/HomeSidebar.tsx:282
+#: src/interface/channels/text/MemberSidebar.tsx:383
 #: components/ui/components/features/profiles/ProfileStatus.tsx:25
 msgid "Busy"
 msgstr ""
 
-#: components/modal/modals/CreateBot.tsx:57
+#: components/modal/modals/CreateBot.tsx:59
 msgid "By creating this bot, you agree to the <0>Acceptable Use Policy</0>."
 msgstr ""
 
-#: components/modal/modals/CreateServer.tsx:59
+#: components/modal/modals/CreateServer.tsx:61
 msgid "By creating this server, you agree to the <0>Acceptable Use Policy</0>."
 msgstr ""
 
 #: components/modal/modals/SignOutSessions.tsx:28
-#: components/modal/modals/ServerIdentity.tsx:71
-#: components/modal/modals/ReportContent.tsx:146
-#: components/modal/modals/RenameSession.tsx:38
-#: components/modal/modals/Onboarding.tsx:40
+#: components/modal/modals/ServerIdentity.tsx:75
+#: components/modal/modals/ReportContent.tsx:149
+#: components/modal/modals/RenameSession.tsx:41
+#: components/modal/modals/Onboarding.tsx:42
 #: components/modal/modals/MFAFlow.tsx:138
 #: components/modal/modals/MFAFlow.tsx:160
-#: components/modal/modals/MFAEnableTOTP.tsx:74
-#: components/modal/modals/LeaveServer.tsx:39
+#: components/modal/modals/MFAEnableTOTP.tsx:76
+#: components/modal/modals/LeaveServer.tsx:41
 #: components/modal/modals/KickMember.tsx:28
 #: components/modal/modals/Invite.tsx:49
 #: components/modal/modals/DeleteServer.tsx:34
 #: components/modal/modals/DeleteRole.tsx:28
 #: components/modal/modals/DeleteMessage.tsx:28
 #: components/modal/modals/DeleteChannel.tsx:41
+#: components/modal/modals/DeleteCategory.tsx:32
 #: components/modal/modals/DeleteBot.tsx:34
-#: components/modal/modals/BanNonMember.tsx:41
-#: components/modal/modals/BanMember.tsx:41
-#: components/modal/modals/AddBot.tsx:85
-#: components/auth/src/flows/FlowLogin.tsx:127
+#: components/modal/modals/BanNonMember.tsx:43
+#: components/modal/modals/BanMember.tsx:43
+#: components/modal/modals/AddBot.tsx:87
+#: components/auth/src/flows/FlowLogin.tsx:126
 msgid "Cancel"
 msgstr "Anulare"
 
-#: components/app/menus/UserContextMenu.tsx:328
+#: components/app/menus/UserContextMenu.tsx:374
 msgid "Cancel friend request"
 msgstr "Anulează cererea de prietenie"
 
@@ -501,45 +527,45 @@ msgstr "Nu se poate șterge contul până când serverele nu sunt șterse sau tr
 msgid "Cannot edit this message."
 msgstr ""
 
-#: components/modal/modals/EditUsername.tsx:59
-#: components/modal/modals/EditPassword.tsx:45
+#: components/modal/modals/EditUsername.tsx:61
+#: components/modal/modals/EditPassword.tsx:47
 msgid "Change"
 msgstr "Schimbă"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:221
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:225
 msgid "Change Avatar"
 msgstr "Schimbă avatar"
 
 #. placeholder {0}: props.member.server!.name
-#: components/modal/modals/ServerIdentity.tsx:69
+#: components/modal/modals/ServerIdentity.tsx:73
 msgid "Change identity on {0}"
 msgstr ""
 
-#: components/modal/modals/EditEmail.tsx:41
+#: components/modal/modals/EditEmail.tsx:43
 msgid "Change login email"
 msgstr ""
 
-#: components/modal/modals/EditPassword.tsx:41
+#: components/modal/modals/EditPassword.tsx:43
 msgid "Change login password"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:205
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:209
 msgid "Change Nickname"
 msgstr "Schimbă porecla"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:215
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:219
 msgid "Change other members' nicknames"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:223
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:227
 msgid "Change own avatar"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:207
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:211
 msgid "Change own nickname"
 msgstr ""
 
-#: components/modal/modals/EditUsername.tsx:55
+#: components/modal/modals/EditUsername.tsx:57
 msgid "Change username"
 msgstr ""
 
@@ -547,27 +573,28 @@ msgstr ""
 msgid "Change your profile per-server"
 msgstr ""
 
-#: components/modal/modals/Changelog.tsx:66
+#: components/modal/modals/Changelog.tsx:129
 msgid "Changelog"
 msgstr ""
 
-#: components/app/interface/settings/channel/Overview.tsx:102
+#: components/app/interface/settings/channel/Overview.tsx:104
 msgid "Channel Description"
 msgstr "Descrierea Canalului"
 
-#: components/app/interface/settings/channel/Overview.tsx:89
+#: components/app/interface/settings/channel/Overview.tsx:91
 msgid "Channel Info"
 msgstr ""
 
-#: components/app/interface/settings/channel/Overview.tsx:95
+#: components/modal/modals/CreateChannel.tsx:70
+#: components/app/interface/settings/channel/Overview.tsx:97
 msgid "Channel Name"
 msgstr "Numele Canalului"
 
-#: src/interface/channels/ChannelHeader.tsx:199
+#: src/interface/channels/ChannelHeader.tsx:154
 msgid "Channel Settings"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:235
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:239
 msgid "Channels"
 msgstr "Canale"
 
@@ -579,7 +606,7 @@ msgstr ""
 msgid "Check your mail!"
 msgstr "Verifică-ți emailul!"
 
-#: components/modal/modals/Onboarding.tsx:38
+#: components/modal/modals/Onboarding.tsx:40
 msgid "Choose username"
 msgstr ""
 
@@ -591,7 +618,7 @@ msgstr "Șterge status"
 msgid "Click on the items below to learn more about different changes!"
 msgstr ""
 
-#: src/interface/channels/ChannelHeader.tsx:134
+#: src/interface/channels/ChannelHeader.tsx:106
 msgid "Click to show full description"
 msgstr ""
 
@@ -599,7 +626,7 @@ msgstr ""
 msgid "Click to show spoiler"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:206
+#: components/app/interface/settings/UserSettings.tsx:202
 msgid "Client Settings"
 msgstr "Setări Client"
 
@@ -608,35 +635,39 @@ msgstr "Setări Client"
 #: components/modal/modals/UserProfileMutualFriends.tsx:21
 #: components/modal/modals/ServerInfo.tsx:51
 #: components/modal/modals/PolicyChange.tsx:42
-#: components/modal/modals/LinkWarning.tsx:40
-#: components/modal/modals/JoinServer.tsx:56
+#: components/modal/modals/LinkWarning.tsx:46
+#: components/modal/modals/JoinServer.tsx:58
 #: components/modal/modals/EmojiPreview.tsx:22
-#: components/modal/modals/EditUsername.tsx:57
-#: components/modal/modals/EditPassword.tsx:43
-#: components/modal/modals/EditEmail.tsx:43
+#: components/modal/modals/EditUsername.tsx:59
+#: components/modal/modals/EditPassword.tsx:45
+#: components/modal/modals/EditEmail.tsx:45
 #: components/modal/modals/DeleteChannel.tsx:49
-#: components/modal/modals/CustomStatus.tsx:44
-#: components/modal/modals/CreateWebhook.tsx:43
-#: components/modal/modals/CreateServer.tsx:44
-#: components/modal/modals/CreateRole.tsx:39
-#: components/modal/modals/CreateGroup.tsx:70
-#: components/modal/modals/CreateChannel.tsx:51
-#: components/modal/modals/CreateCategory.tsx:49
-#: components/modal/modals/CreateBot.tsx:42
+#: components/modal/modals/CustomStatus.tsx:48
+#: components/modal/modals/CreateWebhook.tsx:45
+#: components/modal/modals/CreateServer.tsx:46
+#: components/modal/modals/CreateRole.tsx:41
+#: components/modal/modals/CreateGroup.tsx:72
+#: components/modal/modals/CreateChannel.tsx:53
+#: components/modal/modals/CreateCategory.tsx:51
+#: components/modal/modals/CreateBot.tsx:44
 #: components/modal/modals/ChannelInfo.tsx:16
-#: components/modal/modals/Changelog.tsx:46
-#: components/modal/modals/AddMembersToGroup.tsx:68
-#: components/modal/modals/AddFriend.tsx:41
+#: components/modal/modals/Changelog.tsx:108
+#: components/modal/modals/AddMembersToGroup.tsx:70
+#: components/modal/modals/AddFriend.tsx:43
 msgid "Close"
 msgstr "Închidere"
 
-#: components/app/menus/UserContextMenu.tsx:189
+#: components/app/menus/UserContextMenu.tsx:235
 msgid "Close chat"
 msgstr ""
 
 #. placeholder {0}: props.channel.recipient?.displayName
 #: components/modal/modals/DeleteChannel.tsx:34
 msgid "Close conversation with {0}?"
+msgstr ""
+
+#: components/modal/modals/JoinServer.tsx:78
+msgid "Code"
 msgstr ""
 
 #: components/app/interface/settings/user/Account.tsx:188
@@ -648,29 +679,37 @@ msgid "Configure one-time password authentication"
 msgstr ""
 
 #: components/modal/modals/MFAFlow.tsx:148
-#: components/auth/src/flows/FlowLogin.tsx:130
+#: components/auth/src/flows/FlowLogin.tsx:129
 msgid "Confirm"
 msgstr "Confirmă"
 
-#: components/modal/modals/MFAFlow.tsx:177
+#: components/modal/modals/MFAFlow.tsx:179
 msgid "Confirm action"
 msgstr "Confirmă acțiunea"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:330
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:333
 msgid "Connect"
 msgstr "Conectare"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:332
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:333
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:335
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:336
 msgid "Connect to voice channel"
+msgstr ""
+
+#: components/ui/components/features/voice/callCard/VoiceCallCardStatus.tsx:16
+msgid "Connected"
+msgstr ""
+
+#: components/ui/components/features/voice/callCard/VoiceCallCardStatus.tsx:19
+msgid "Connecting"
 msgstr ""
 
 #: components/modal/modals/ReportContent.tsx:62
 msgid "Content breaks one or more laws"
 msgstr "Conținutul încalcă una sau mai multe legi"
 
-#: components/modal/modals/MFAEnableTOTP.tsx:80
-#: components/modal/modals/LinkWarning.tsx:42
+#: components/modal/modals/MFAEnableTOTP.tsx:82
+#: components/modal/modals/LinkWarning.tsx:48
 msgid "Continue"
 msgstr "Continuare"
 
@@ -678,13 +717,17 @@ msgstr "Continuare"
 msgid "Continue to app"
 msgstr ""
 
-#: components/app/interface/settings/user/Language.tsx:253
+#: components/app/interface/settings/user/Language.tsx:251
 msgid "Contribute a language"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:74
+#: src/interface/navigation/channels/HomeSidebar.tsx:73
 msgid "Conversations"
 msgstr "Conversații"
+
+#: components/app/menus/CategoryContextMenu.tsx:105
+msgid "Copy category ID"
+msgstr ""
 
 #: components/app/menus/ChannelContextMenu.tsx:174
 msgid "Copy channel ID"
@@ -698,20 +741,21 @@ msgstr "Copiază ID"
 msgid "Copy Invite URL"
 msgstr ""
 
-#: components/app/menus/MessageContextMenu.tsx:218
+#: components/app/menus/MessageContextMenu.tsx:139
+#: components/app/menus/MessageContextMenu.tsx:259
 #: components/app/menus/ChannelContextMenu.tsx:170
 msgid "Copy link"
 msgstr "Copiază link-ul"
 
-#: components/modal/modals/CreateInvite.tsx:65
+#: components/modal/modals/CreateInvite.tsx:64
 msgid "Copy Link"
 msgstr ""
 
-#: components/app/menus/MessageContextMenu.tsx:222
+#: components/app/menus/MessageContextMenu.tsx:263
 msgid "Copy message ID"
 msgstr "Copiază ID-ul mesajului"
 
-#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:206
+#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:210
 msgid "Copy role ID"
 msgstr ""
 
@@ -719,16 +763,16 @@ msgstr ""
 msgid "Copy server ID"
 msgstr "Copiază ID-ul serverului"
 
-#: components/app/menus/MessageContextMenu.tsx:126
+#: components/app/menus/MessageContextMenu.tsx:163
 msgid "Copy text"
 msgstr "Copiază textul"
 
 #: src/interface/navigation/servers/UserMenu.tsx:237
-#: components/app/menus/UserContextMenu.tsx:359
+#: components/app/menus/UserContextMenu.tsx:405
 msgid "Copy user ID"
 msgstr "Copiază ID-ul de utilizator"
 
-#: components/app/interface/settings/channel/webhooks/ViewWebhook.tsx:123
+#: components/app/interface/settings/channel/webhooks/ViewWebhook.tsx:127
 msgid "Copy webhook URL"
 msgstr ""
 
@@ -736,31 +780,35 @@ msgstr ""
 msgid "Could not find what you requested."
 msgstr ""
 
-#: components/modal/modals/CreateWebhook.tsx:45
-#: components/modal/modals/CreateServer.tsx:46
-#: components/modal/modals/CreateRole.tsx:41
-#: components/modal/modals/CreateGroup.tsx:72
-#: components/modal/modals/CreateChannel.tsx:53
-#: components/modal/modals/CreateCategory.tsx:51
-#: components/modal/modals/CreateBot.tsx:44
-#: components/app/interface/settings/server/emojis/EmojiList.tsx:91
+#: components/modal/modals/CreateWebhook.tsx:47
+#: components/modal/modals/CreateServer.tsx:48
+#: components/modal/modals/CreateRole.tsx:43
+#: components/modal/modals/CreateGroup.tsx:74
+#: components/modal/modals/CreateChannel.tsx:55
+#: components/modal/modals/CreateCategory.tsx:53
+#: components/modal/modals/CreateBot.tsx:46
+#: components/app/interface/settings/server/emojis/EmojiList.tsx:97
 msgid "Create"
 msgstr "Creează"
 
 #: src/interface/Home.tsx:142
-msgid "Create a group"
-msgstr "Creează un grup"
+#~ msgid "Create a group"
+#~ msgstr "Creează un grup"
 
-#: components/modal/modals/CreateBot.tsx:40
+#: src/interface/Home.tsx:141
+msgid "Create a group or server"
+msgstr ""
+
+#: components/modal/modals/CreateBot.tsx:42
 msgid "Create a new bot"
 msgstr "Creează un bot nou"
 
-#: components/modal/modals/CreateCategory.tsx:47
+#: components/modal/modals/CreateCategory.tsx:49
 msgid "Create a new category"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:159
-#: components/modal/modals/CreateGroup.tsx:68
+#: src/interface/navigation/channels/HomeSidebar.tsx:158
+#: components/modal/modals/CreateGroup.tsx:70
 msgid "Create a new group"
 msgstr ""
 
@@ -768,7 +816,7 @@ msgstr ""
 msgid "Create a new role"
 msgstr "Creează un rol nou"
 
-#: components/modal/modals/CreateWebhook.tsx:41
+#: components/modal/modals/CreateWebhook.tsx:43
 msgid "Create a webhook"
 msgstr ""
 
@@ -776,13 +824,13 @@ msgstr ""
 msgid "Create an account"
 msgstr "Creează un cont"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:158
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:162
 msgid "Create and edit server roles"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:279
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:280
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:281
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:282
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:283
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:284
 msgid "Create and edit webhooks"
 msgstr ""
 
@@ -790,8 +838,13 @@ msgstr ""
 msgid "Create Bot"
 msgstr ""
 
-#: components/modal/modals/CreateChannel.tsx:49
-#: components/app/menus/ServerSidebarContextMenu.tsx:32
+#: components/app/menus/ServerSidebarContextMenu.tsx:45
+#: components/app/menus/CategoryContextMenu.tsx:90
+msgid "Create category"
+msgstr "Creează o categorie"
+
+#: components/modal/modals/CreateChannel.tsx:51
+#: components/app/menus/ServerSidebarContextMenu.tsx:42
 #: components/app/menus/ChannelContextMenu.tsx:135
 msgid "Create channel"
 msgstr "Creează canal"
@@ -801,24 +854,24 @@ msgstr "Creează canal"
 msgid "Create invite"
 msgstr "Creează invitație"
 
-#: components/modal/modals/CreateInvite.tsx:61
+#: components/modal/modals/CreateInvite.tsx:60
 msgid "Create Invite"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:290
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:293
 msgid "Create invites for others to use"
 msgstr ""
 
-#: components/modal/modals/CreateRole.tsx:37
+#: components/modal/modals/CreateRole.tsx:39
 #: components/app/interface/settings/server/roles/ServerRoleOverview.tsx:57
 msgid "Create Role"
 msgstr ""
 
-#: components/modal/modals/CreateServer.tsx:42
+#: components/modal/modals/CreateServer.tsx:44
 msgid "Create server"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:166
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:170
 msgid "Create server emoji"
 msgstr ""
 
@@ -826,25 +879,29 @@ msgstr ""
 msgid "Create Webhook"
 msgstr ""
 
-#: components/app/interface/settings/user/Sessions.tsx:147
+#: components/app/interface/settings/user/Sessions.tsx:146
 msgid "Created <0/>"
 msgstr ""
 
-#: components/modal/modals/EditUsername.tsx:82
-#: components/modal/modals/EditPassword.tsx:67
-#: components/modal/modals/EditEmail.tsx:67
+#: components/modal/modals/EditUsername.tsx:84
+#: components/modal/modals/EditPassword.tsx:69
+#: components/modal/modals/EditEmail.tsx:69
 msgid "Current Password"
 msgstr "Parola actuală"
 
-#: components/app/interface/settings/user/Sessions.tsx:80
+#: components/app/interface/settings/user/Sessions.tsx:79
 msgid "Current Session"
 msgstr ""
+
+#: components/modal/modals/CustomStatus.tsx:65
+msgid "Custom status"
+msgstr "Status personalizat"
 
 #: components/app/interface/settings/user/Native.tsx:99
 msgid "Custom window frame"
 msgstr ""
 
-#: components/app/interface/settings/ServerSettings.tsx:110
+#: components/app/interface/settings/ServerSettings.tsx:111
 msgid "Customisation"
 msgstr "Personalizare"
 
@@ -857,7 +914,12 @@ msgstr ""
 msgid "Database error, please contact support. ({0})"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:366
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:371
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:372
+msgid "Deafen lower-ranking members in voice call"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:369
 msgid "Deafen Members"
 msgstr "Dezactivează sunetul membrilor"
 
@@ -865,6 +927,8 @@ msgstr "Dezactivează sunetul membrilor"
 msgid "Default"
 msgstr "Implicit"
 
+#: components/app/interface/settings/ServerSettings.tsx:37
+#: components/app/interface/settings/ChannelSettings.tsx:37
 #: components/app/interface/settings/server/roles/ServerRoleOverview.tsx:49
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsOverview.tsx:58
 msgid "Default Permissions"
@@ -875,6 +939,7 @@ msgstr ""
 #: components/modal/modals/DeleteRole.tsx:30
 #: components/modal/modals/DeleteMessage.tsx:30
 #: components/modal/modals/DeleteChannel.tsx:44
+#: components/modal/modals/DeleteCategory.tsx:34
 #: components/modal/modals/DeleteBot.tsx:36
 msgid "Delete"
 msgstr "Șterge"
@@ -893,10 +958,15 @@ msgstr ""
 msgid "Delete Account"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:269
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:270
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:271
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:272
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:273
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:274
 msgid "Delete and pin messages sent by other members"
+msgstr ""
+
+#: components/modal/modals/DeleteCategory.tsx:30
+#: components/app/menus/CategoryContextMenu.tsx:95
+msgid "Delete category"
 msgstr ""
 
 #: components/app/menus/ChannelContextMenu.tsx:147
@@ -907,26 +977,30 @@ msgstr "Șterge canalul"
 msgid "Delete Channel"
 msgstr ""
 
+#: components/app/interface/settings/server/invites/ListServerInvites.tsx:86
+msgid "Delete Invite"
+msgstr ""
+
 #: components/modal/modals/DeleteMessage.tsx:26
-#: components/app/menus/MessageContextMenu.tsx:203
+#: components/app/menus/MessageContextMenu.tsx:244
 #: components/app/menus/DraftMessageContextMenu.tsx:63
 msgid "Delete message"
 msgstr "Șterge mesajul"
 
-#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:219
+#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:223
 msgid "Delete Role"
 msgstr "Șterge rolul"
 
-#: components/app/interface/settings/ServerSettings.tsx:163
+#: components/app/interface/settings/ServerSettings.tsx:164
 msgid "Delete Server"
 msgstr ""
 
 #. placeholder {0}: props.invite.username
-#: components/modal/modals/AddBot.tsx:120
+#: components/modal/modals/AddBot.tsx:122
 msgid "Description provided by {0}"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:255
+#: components/app/interface/settings/UserSettings.tsx:256
 msgid "Desktop"
 msgstr ""
 
@@ -942,11 +1016,15 @@ msgstr "Dezactivează contul"
 msgid "Disable one-time password authenticator"
 msgstr ""
 
+#: components/ui/components/features/voice/callCard/VoiceCallCardStatus.tsx:22
+msgid "Disconnected"
+msgstr ""
+
 #: components/app/interface/settings/user/Native.tsx:114
 msgid "Discord RPC"
 msgstr ""
 
-#: src/interface/Home.tsx:199
+#: src/interface/Home.tsx:206
 msgid "Discover Stoat"
 msgstr ""
 
@@ -954,7 +1032,7 @@ msgstr ""
 msgid "Display & Text"
 msgstr ""
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:160
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:162
 msgid "Display Name"
 msgstr ""
 
@@ -962,16 +1040,19 @@ msgstr ""
 msgid "Do Not Disturb"
 msgstr "Nu deranjați"
 
-#. placeholder {0}: props.url.origin
-#: components/modal/modals/LinkWarning.tsx:64
-msgid "Don't ask me again for <0>{0}</0>"
+#: components/modal/modals/LinkWarning.tsx:69
+msgid "Don't ask me again for "
 msgstr ""
 
-#: components/modal/modals/LeaveServer.tsx:58
+#: components/modal/modals/LinkWarning.tsx:64
+#~ msgid "Don't ask me again for <0>{0}</0>"
+#~ msgstr ""
+
+#: components/modal/modals/LeaveServer.tsx:60
 msgid "Don't notify others that you've left"
 msgstr ""
 
-#: src/interface/Home.tsx:185
+#: src/interface/Home.tsx:192
 msgid "Donate to Stoat"
 msgstr ""
 
@@ -992,16 +1073,15 @@ msgstr ""
 msgid "Edit {0}'s roles"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:131
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:136
 msgid "Edit and delete channel"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:150
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:154
 msgid "Edit any permissions on the server"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:148
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:149
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:153
 msgid "Edit channel-specific role and default permissions"
 msgstr ""
 
@@ -1009,11 +1089,11 @@ msgstr ""
 msgid "Edit Global Profile"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:130
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:135
 msgid "Edit group name and description"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:231
+#: components/app/menus/UserContextMenu.tsx:277
 msgid "Edit identity"
 msgstr "Editează identitatea"
 
@@ -1021,19 +1101,19 @@ msgstr "Editează identitatea"
 msgid "Edit Identity"
 msgstr ""
 
-#: components/app/menus/MessageContextMenu.tsx:139
+#: components/app/menus/MessageContextMenu.tsx:176
 msgid "Edit message"
 msgstr "Editează mesajul"
 
-#: components/app/menus/UserContextMenu.tsx:248
+#: components/app/menus/UserContextMenu.tsx:294
 msgid "Edit roles"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:139
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:144
 msgid "Edit the server's information and settings"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:233
+#: components/app/menus/UserContextMenu.tsx:279
 #: components/app/menus/ServerContextMenu.tsx:283
 msgid "Edit your identity"
 msgstr "Editează-ți identitatea"
@@ -1047,17 +1127,21 @@ msgstr ""
 msgid "Effective <0/> (<1/>)"
 msgstr ""
 
-#: components/modal/modals/EditEmail.tsx:60
+#: components/modal/modals/EditEmail.tsx:62
 #: components/auth/src/flows/Form.tsx:23
 #: components/app/interface/settings/user/Account.tsx:96
 msgid "Email"
 msgstr "Adresă de e-mail"
 
+#: components/app/interface/settings/server/emojis/EmojiList.tsx:92
+msgid "Emoji Name"
+msgstr ""
+
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:366
 msgid "Emoji Pack (affects your messages only)"
 msgstr ""
 
-#: components/app/interface/settings/ServerSettings.tsx:115
+#: components/app/interface/settings/ServerSettings.tsx:116
 msgid "Emojis"
 msgstr "Emoji-uri"
 
@@ -1065,11 +1149,11 @@ msgstr "Emoji-uri"
 msgid "Enable Authenticator"
 msgstr ""
 
-#: components/modal/modals/MFAEnableTOTP.tsx:71
+#: components/modal/modals/MFAEnableTOTP.tsx:73
 msgid "Enable authenticator app"
 msgstr "Activează aplicația de autentificare"
 
-#: components/app/interface/settings/user/Notifications.tsx:31
+#: components/app/interface/settings/user/Notifications.tsx:30
 msgid "Enable Desktop Notifications"
 msgstr "Activează notificările pe desktop"
 
@@ -1077,7 +1161,11 @@ msgstr "Activează notificările pe desktop"
 msgid "Enable transparency glass/blur effects (slow on older machines)"
 msgstr ""
 
-#: components/modal/modals/EditPassword.tsx:62
+#: components/modal/modals/RenameSession.tsx:59
+msgid "Enter a new name for this session"
+msgstr ""
+
+#: components/modal/modals/EditPassword.tsx:64
 #: components/auth/src/flows/Form.tsx:37
 msgid "Enter a new password."
 msgstr "Introdu o parolă nouă."
@@ -1086,13 +1174,17 @@ msgstr "Introdu o parolă nouă."
 msgid "Enter Channel"
 msgstr "Intră în canal"
 
+#: components/modal/modals/MFAEnableTOTP.tsx:119
+msgid "Enter Code"
+msgstr "Introdu codul"
+
 #: components/auth/src/flows/Form.tsx:30
 msgid "Enter your current password."
 msgstr "Introdu parola actuală."
 
-#: components/modal/modals/EditUsername.tsx:84
-#: components/modal/modals/EditPassword.tsx:69
-#: components/modal/modals/EditEmail.tsx:69
+#: components/modal/modals/EditUsername.tsx:86
+#: components/modal/modals/EditPassword.tsx:71
+#: components/modal/modals/EditEmail.tsx:71
 msgid "Enter your current password..."
 msgstr ""
 
@@ -1100,7 +1192,7 @@ msgstr ""
 msgid "Enter your preferred username."
 msgstr "Introdu numele de utilizator preferat."
 
-#: components/modal/modals/LinkWarning.tsx:38
+#: components/modal/modals/LinkWarning.tsx:44
 msgid "External links can be dangerous!"
 msgstr "Link-urile externe pot fi periculoase!"
 
@@ -1124,22 +1216,22 @@ msgstr ""
 msgid "Failed to verify!"
 msgstr "Verificarea a eșuat!"
 
-#: components/app/interface/settings/UserSettings.tsx:185
+#: components/app/interface/settings/UserSettings.tsx:181
 #: components/app/interface/settings/user/Feedback.tsx:62
 msgid "Feedback"
 msgstr "Părere"
 
-#: src/interface/Home.tsx:193
+#: src/interface/Home.tsx:200
 msgid "Find a community based on your hobbies or interests."
 msgstr "Găsește o comunitate bazată pe hobby-urile sau interesele tale."
 
-#: components/auth/src/flows/FlowHome.tsx:51
+#: components/auth/src/flows/FlowHome.tsx:47
 msgid "Find your com<0/>munity,<1/>connect with the world."
 msgstr ""
 
 #: src/interface/navigation/servers/UserMenu.tsx:157
-#: src/interface/navigation/channels/HomeSidebar.tsx:283
-#: src/interface/channels/text/MemberSidebar.tsx:393
+#: src/interface/navigation/channels/HomeSidebar.tsx:284
+#: src/interface/channels/text/MemberSidebar.tsx:385
 #: components/ui/components/features/profiles/ProfileStatus.tsx:27
 msgid "Focus"
 msgstr "Concentrat"
@@ -1169,8 +1261,8 @@ msgstr ""
 msgid "For 8 hours"
 msgstr ""
 
-#: src/interface/Friends.tsx:113
-#: src/interface/navigation/channels/HomeSidebar.tsx:100
+#: src/interface/Friends.tsx:111
+#: src/interface/navigation/channels/HomeSidebar.tsx:99
 msgid "Friends"
 msgstr "Prieteni"
 
@@ -1186,7 +1278,7 @@ msgstr ""
 msgid "Generate Recovery Codes"
 msgstr "Generează coduri de recuperare"
 
-#: components/modal/modals/CreateInvite.tsx:75
+#: components/modal/modals/CreateInvite.tsx:74
 msgid "Generating invite…"
 msgstr "Se generează invitația…"
 
@@ -1198,11 +1290,11 @@ msgstr ""
 msgid "Get active recovery codes"
 msgstr ""
 
-#: src/interface/Home.tsx:210
+#: src/interface/Home.tsx:224
 msgid "Give feedback on Stoat"
 msgstr ""
 
-#: components/modal/modals/ReportContent.tsx:193
+#: components/modal/modals/ReportContent.tsx:196
 msgid "Give us some detail"
 msgstr ""
 
@@ -1214,16 +1306,20 @@ msgstr ""
 msgid "Go back to login"
 msgstr "Întoarce-te la conectare"
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:168
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:170
 msgid "Go to account settings to edit your username"
+msgstr ""
+
+#: src/interface/Home.tsx:155
+msgid "Go to the Stoat Lounge"
 msgstr ""
 
 #: src/interface/Home.tsx:156
 #: src/interface/Home.tsx:169
-msgid "Go to the testers server"
-msgstr "Mergi la serverul testerilor"
+#~ msgid "Go to the testers server"
+#~ msgstr "Mergi la serverul testerilor"
 
-#: components/modal/modals/Onboarding.tsx:42
+#: components/modal/modals/Onboarding.tsx:44
 msgid "Good"
 msgstr ""
 
@@ -1233,6 +1329,10 @@ msgstr ""
 msgid "Grants {0} permissions and denies {1} permissions"
 msgstr ""
 
+#: components/modal/modals/CreateGroup.tsx:89
+msgid "Group Name"
+msgstr "Numele grupului"
+
 #: components/modal/modals/ReportContent.tsx:74
 msgid "Harassment or cyberbullying"
 msgstr ""
@@ -1241,11 +1341,16 @@ msgstr ""
 msgid "Hardware Acceleration"
 msgstr ""
 
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:389
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:390
+msgid "Hear other people and see their video"
+msgstr ""
+
 #: components/auth/src/flows/FlowCreate.tsx:49
 msgid "Hello!"
 msgstr "Salut!"
 
-#: components/app/interface/settings/user/Language.tsx:250
+#: components/app/interface/settings/user/Language.tsx:248
 msgid "Help contribute to an existing or new language"
 msgstr ""
 
@@ -1254,7 +1359,7 @@ msgid "Helped translate Stoat"
 msgstr ""
 
 #. placeholder {0}: link()
-#: components/modal/modals/CreateInvite.tsx:78
+#: components/modal/modals/CreateInvite.tsx:77
 msgid "Here is your new invite code: <0>{0}</0>"
 msgstr ""
 
@@ -1262,8 +1367,8 @@ msgstr ""
 msgid "High Contrast"
 msgstr ""
 
-#: src/interface/Home.tsx:116
-#: src/interface/navigation/channels/HomeSidebar.tsx:84
+#: src/interface/Home.tsx:110
+#: src/interface/navigation/channels/HomeSidebar.tsx:83
 msgid "Home"
 msgstr "Acasă"
 
@@ -1271,13 +1376,13 @@ msgstr "Acasă"
 msgid "I confirm that I am at least 18 years old."
 msgstr "Confirm că am cel puțin 18 ani împliniți."
 
-#: components/modal/modals/LinkWarning.tsx:85
+#: components/modal/modals/LinkWarning.tsx:89
 msgid "I understand the consequences"
 msgstr ""
 
 #: src/interface/navigation/servers/UserMenu.tsx:146
-#: src/interface/navigation/channels/HomeSidebar.tsx:285
-#: src/interface/channels/text/MemberSidebar.tsx:395
+#: src/interface/navigation/channels/HomeSidebar.tsx:286
+#: src/interface/channels/text/MemberSidebar.tsx:387
 #: components/ui/components/features/profiles/ProfileStatus.tsx:29
 msgid "Idle"
 msgstr "Inactiv"
@@ -1306,7 +1411,7 @@ msgstr ""
 msgid "Invisible"
 msgstr "Invizibil"
 
-#: src/interface/Home.tsx:135
+#: src/interface/Home.tsx:134
 msgid "Invite all of your friends, some cool bots, and throw a big party."
 msgstr "Invită-ți toți prietenii, câțiva boți simpatici și dă o petrecere mare."
 
@@ -1318,7 +1423,7 @@ msgstr ""
 msgid "Invite Code"
 msgstr "Cod de invitație"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:287
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:290
 msgid "Invite Others"
 msgstr "Invită pe alții"
 
@@ -1326,7 +1431,7 @@ msgstr "Invită pe alții"
 msgid "Inviter"
 msgstr "Invitator"
 
-#: components/app/interface/settings/ServerSettings.tsx:144
+#: components/app/interface/settings/ServerSettings.tsx:145
 msgid "Invites"
 msgstr "Invitații"
 
@@ -1338,25 +1443,30 @@ msgstr ""
 msgid "irrelevant joke badge 2"
 msgstr ""
 
-#: components/app/interface/settings/user/Language.tsx:164
+#: components/app/interface/settings/user/Language.tsx:162
 msgid "ISO Standard (YYYY-MM-DD)"
 msgstr ""
 
-#: components/modal/modals/JoinServer.tsx:58
+#: components/modal/modals/JoinServer.tsx:60
 #: components/modal/modals/Invite.tsx:60
 msgid "Join"
 msgstr ""
 
-#: components/modal/modals/JoinServer.tsx:54
+#: components/modal/modals/JoinServer.tsx:56
 msgid "Join a server"
 msgstr ""
 
-#: src/interface/channels/ChannelHeader.tsx:174
-msgid "Join call"
-msgstr ""
+#: src/interface/channels/ChannelHeader.tsx:157
+#~ msgid "Join call"
+#~ msgstr ""
 
+#: src/interface/Home.tsx:176
 #: components/app/interface/settings/user/Feedback.tsx:91
 msgid "Join the Stoat Lounge"
+msgstr ""
+
+#: components/ui/components/features/voice/callCard/VoiceCallCardPreview.tsx:46
+msgid "Join the voice channel"
 msgstr ""
 
 #: components/ui/components/features/profiles/ProfileJoined.tsx:19
@@ -1380,11 +1490,11 @@ msgstr ""
 msgid "Kick"
 msgstr "Dă afară"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:175
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:179
 msgid "Kick lower-ranking members from the server"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:264
+#: components/app/menus/UserContextMenu.tsx:310
 msgid "Kick member"
 msgstr "Dă afară membrul"
 
@@ -1392,11 +1502,11 @@ msgstr "Dă afară membrul"
 msgid "Kick Member"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:173
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:177
 msgid "Kick Members"
 msgstr "Exclude membri"
 
-#: components/app/interface/settings/UserSettings.tsx:244
+#: components/app/interface/settings/UserSettings.tsx:245
 #: components/app/interface/settings/user/Sync.tsx:52
 msgid "Language"
 msgstr "Limba"
@@ -1417,14 +1527,14 @@ msgstr ""
 msgid "Learn more about how to create bots on Stoat."
 msgstr ""
 
-#: components/modal/modals/LeaveServer.tsx:41
+#: components/modal/modals/LeaveServer.tsx:43
 #: components/modal/modals/DeleteChannel.tsx:46
 msgid "Leave"
 msgstr "Părăsește"
 
 #. placeholder {0}: props.server.name
 #. placeholder {0}: props.channel.name
-#: components/modal/modals/LeaveServer.tsx:37
+#: components/modal/modals/LeaveServer.tsx:39
 #: components/modal/modals/DeleteChannel.tsx:31
 msgid "Leave {0}?"
 msgstr ""
@@ -1441,7 +1551,7 @@ msgstr "Părăsește serverul"
 msgid "Let Stoat use its own custom titlebar."
 msgstr ""
 
-#: src/interface/Home.tsx:204
+#: src/interface/Home.tsx:218
 msgid "Let us know how we can improve our app by giving us feedback."
 msgstr "Spune-ne cum putem îmbunătăți aplicația noastră, oferindu-ne feedback."
 
@@ -1449,17 +1559,21 @@ msgstr "Spune-ne cum putem îmbunătăți aplicația noastră, oferindu-ne feedb
 msgid "Light"
 msgstr ""
 
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:387
+msgid "Listen"
+msgstr ""
+
 #. placeholder {0}: humanFileSize(props.file.size ?? 0)
 #: components/ui/components/features/messaging/elements/TextFile.tsx:72
 msgid "Load file ({0})"
 msgstr ""
 
-#: components/auth/src/flows/FlowHome.tsx:72
+#: components/auth/src/flows/FlowHome.tsx:68
 msgid "Log In"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:289
-#: components/app/interface/settings/user/Sessions.tsx:169
+#: components/app/interface/settings/UserSettings.tsx:290
+#: components/app/interface/settings/user/Sessions.tsx:168
 msgid "Log Out"
 msgstr "Deconectare"
 
@@ -1467,15 +1581,15 @@ msgstr "Deconectare"
 msgid "Log out of all other sessions"
 msgstr "Deconectează-te de la toate celelalte sesiuni"
 
-#: components/app/interface/settings/user/Sessions.tsx:124
+#: components/app/interface/settings/user/Sessions.tsx:123
 msgid "Log Out Other Sessions"
 msgstr ""
 
-#: components/auth/src/flows/FlowLogin.tsx:89
+#: components/auth/src/flows/FlowLogin.tsx:81
 msgid "Login"
 msgstr "Autentificare"
 
-#: components/app/interface/settings/user/Sessions.tsx:121
+#: components/app/interface/settings/user/Sessions.tsx:120
 msgid "Logs you out of all sessions except this device."
 msgstr ""
 
@@ -1483,35 +1597,35 @@ msgstr ""
 msgid "Malware or phishing"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:128
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:133
 msgid "Manage Channel"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:164
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:168
 msgid "Manage Customisation"
 msgstr "Gestionează personalizarea"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:267
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:270
 msgid "Manage Messages"
 msgstr "Gestionează mesaje"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:213
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:217
 msgid "Manage Nicknames"
 msgstr "Gestionează porecle"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:145
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:150
 msgid "Manage Permissions"
 msgstr "Gestionează permisiunile"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:156
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:160
 msgid "Manage Roles"
 msgstr "Gestionează roluri"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:137
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:142
 msgid "Manage Server"
 msgstr "Gestionează serverul"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:277
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:280
 msgid "Manage Webhooks"
 msgstr "Modifică webhook-uri"
 
@@ -1519,17 +1633,18 @@ msgstr "Modifică webhook-uri"
 msgid "Mark as mature"
 msgstr ""
 
-#: components/app/interface/settings/channel/Overview.tsx:118
-#: components/app/interface/settings/channel/Overview.tsx:135
+#: components/app/interface/settings/channel/Overview.tsx:120
+#: components/app/interface/settings/channel/Overview.tsx:137
 msgid "Mark as Mature"
 msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:165
 #: components/app/menus/ChannelContextMenu.tsx:118
+#: components/app/menus/CategoryContextMenu.tsx:83
 msgid "Mark as read"
 msgstr "Marchează ca citit"
 
-#: components/app/menus/MessageContextMenu.tsx:123
+#: components/app/menus/MessageContextMenu.tsx:160
 msgid "Mark as unread"
 msgstr "Marchează ca necitit"
 
@@ -1537,18 +1652,38 @@ msgstr "Marchează ca necitit"
 msgid "Mark this channel as mature?"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:313
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:316
 msgid "Masquerade"
 msgstr "Mascare"
 
-#: components/app/interface/settings/ServerSettings.tsx:129
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:170
+#: components/app/interface/settings/ServerSettings.tsx:130
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:174
 msgid "Members"
 msgstr "Membri"
 
-#: components/app/menus/UserContextMenu.tsx:194
+#: components/app/menus/UserContextMenu.tsx:240
 msgid "Mention"
 msgstr "Menționează"
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:397
+msgid "Mention Everyone"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:399
+msgid "Mention everyone and online members inside the server"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:405
+msgid "Mention Roles"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:407
+msgid "Mention specific roles"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:394
+msgid "Mentions"
+msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:260
 #: components/app/menus/shared/NotificationContextMenu.tsx:132
@@ -1556,14 +1691,14 @@ msgstr "Menționează"
 msgid "Mentions Only"
 msgstr "Numai mențiuni"
 
-#: components/app/menus/UserContextMenu.tsx:199
+#: components/app/menus/UserContextMenu.tsx:245
 msgid "Message"
 msgstr "Trimite un mesaj"
 
 #. placeholder {0}: props.channel.recipient?.username
 #. placeholder {0}: props.channel.name
-#: src/interface/channels/text/Composition.tsx:357
-#: src/interface/channels/text/Composition.tsx:358
+#: src/interface/channels/text/Composition.tsx:368
+#: src/interface/channels/text/Composition.tsx:369
 msgid "Message {0}"
 msgstr ""
 
@@ -1571,15 +1706,15 @@ msgstr ""
 msgid "Message Group Spacing"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/MessageReply.tsx:121
+#: components/ui/components/features/messaging/elements/MessageReply.tsx:119
 msgid "Message not loaded, click to jump"
 msgstr "Mesaj neîncărcat, click pentru a sări"
 
-#: components/app/interface/settings/user/Notifications.tsx:54
+#: components/app/interface/settings/user/Notifications.tsx:53
 msgid "Message Received"
 msgstr "Mesaj primit"
 
-#: components/app/interface/settings/user/Notifications.tsx:61
+#: components/app/interface/settings/user/Notifications.tsx:60
 msgid "Message Sent"
 msgstr "Mesaj trimis"
 
@@ -1587,16 +1722,21 @@ msgstr "Mesaj trimis"
 msgid "Message Size"
 msgstr ""
 
-#: components/app/interface/channels/text/Message.tsx:169
+#: components/app/interface/channels/text/Message.tsx:166
 msgid "Message was sent on another platform"
 msgstr "Mesajul a fost trimis de pe o altă platformă"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:294
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:297
 msgid "Messaging"
 msgstr "Mesaje"
 
 #: components/app/interface/settings/user/Native.tsx:87
 msgid "Minimise to Tray"
+msgstr ""
+
+#: components/ui/components/features/voice/callCard/VoiceCallCardActions.tsx:32
+#: components/ui/components/features/voice/callCard/VoiceCallCardActions.tsx:50
+msgid "Missing permission"
 msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:183
@@ -1611,15 +1751,29 @@ msgstr ""
 msgid "More Contrast"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:375
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:378
 msgid "Move Members"
 msgstr "Mută membrii"
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:380
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:381
+msgid "Move members between voice channels"
+msgstr ""
+
+#: components/app/menus/UserContextMenu.tsx:227
+msgid "Mute"
+msgstr ""
 
 #: components/app/menus/shared/NotificationContextMenu.tsx:60
 msgid "Mute Channel"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:357
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:362
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:363
+msgid "Mute lower-ranking members in voice call"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:360
 msgid "Mute Members"
 msgstr "Pune membri pe pauză"
 
@@ -1627,11 +1781,11 @@ msgstr "Pune membri pe pauză"
 msgid "Mute Server"
 msgstr ""
 
-#: src/interface/navigation/servers/ServerList.tsx:237
+#: src/interface/navigation/servers/ServerList.tsx:235
 msgid "Muted"
 msgstr "Amuțit"
 
-#: src/interface/navigation/servers/ServerList.tsx:239
+#: src/interface/navigation/servers/ServerList.tsx:237
 #: components/app/menus/ServerContextMenu.tsx:186
 #: components/app/menus/shared/NotificationContextMenu.tsx:43
 msgid "Muted until <0/>"
@@ -1649,9 +1803,14 @@ msgstr "Grupuri în comun"
 msgid "My Account"
 msgstr "Contul meu"
 
-#: components/app/interface/settings/UserSettings.tsx:180
+#: components/app/interface/settings/UserSettings.tsx:176
 msgid "My Bots"
 msgstr "Boții mei"
+
+#: components/modal/modals/RenameSession.tsx:58
+#: components/modal/modals/CreateCategory.tsx:67
+msgid "Name"
+msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:191
 msgid "Neutral"
@@ -1666,24 +1825,28 @@ msgstr ""
 msgid "New messages since {0}"
 msgstr ""
 
-#: components/modal/modals/EditPassword.tsx:60
+#: components/modal/modals/EditPassword.tsx:62
 #: components/auth/src/flows/Form.tsx:36
 msgid "New Password"
 msgstr "Parolă nouă"
 
-#: components/app/interface/channels/text/Message.tsx:221
+#: components/app/interface/channels/text/Message.tsx:205
 msgid "New to Stoat"
 msgstr ""
 
-#: components/app/interface/channels/text/Message.tsx:238
+#: components/app/interface/channels/text/Message.tsx:219
 msgid "New to the server"
 msgstr ""
+
+#: components/modal/modals/ServerIdentity.tsx:97
+msgid "Nickname"
+msgstr "Poreclă"
 
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsOverview.tsx:106
 msgid "No permissions set yet"
 msgstr ""
 
-#: src/interface/Friends.tsx:226
+#: src/interface/Friends.tsx:230
 msgid "Nobody here right now!"
 msgstr ""
 
@@ -1710,24 +1873,24 @@ msgstr "Notificări"
 msgid "Off"
 msgstr "Oprit"
 
-#: components/app/interface/channels/text/Message.tsx:178
+#: components/app/interface/channels/text/Message.tsx:173
 msgid "Official Communication"
 msgstr "Comunicare oficială"
 
-#: src/interface/navigation/channels/ServerSidebar.tsx:287
+#: src/interface/navigation/channels/ServerSidebar.tsx:291
 msgid "Official Server"
 msgstr "Server oficial"
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:286
-#: src/interface/channels/text/MemberSidebar.tsx:396
+#: src/interface/navigation/channels/HomeSidebar.tsx:287
+#: src/interface/channels/text/MemberSidebar.tsx:388
 #: components/ui/components/features/profiles/ProfileStatus.tsx:30
 msgid "Offline"
 msgstr "Deconectat"
 
 #: components/modal/modals/SignedOut.tsx:19
 #: components/modal/modals/Error2.tsx:19
-#: components/modal/modals/CreateInvite.tsx:63
-#: components/auth/src/flows/FlowHome.tsx:105
+#: components/modal/modals/CreateInvite.tsx:62
+#: components/auth/src/flows/FlowHome.tsx:101
 msgid "OK"
 msgstr "OK"
 
@@ -1742,6 +1905,7 @@ msgstr "Pornit"
 #: components/modal/modals/DeleteServer.tsx:42
 #: components/modal/modals/DeleteRole.tsx:36
 #: components/modal/modals/DeleteChannel.tsx:59
+#: components/modal/modals/DeleteCategory.tsx:40
 #: components/modal/modals/DeleteBot.tsx:42
 msgid "Once it's deleted, there's no going back."
 msgstr "Odată ce a fost șters, nu mai există cale de întoarcere."
@@ -1750,10 +1914,10 @@ msgstr "Odată ce a fost șters, nu mai există cale de întoarcere."
 msgid "One of the first 1000 users!"
 msgstr ""
 
-#: src/interface/Friends.tsx:146
+#: src/interface/Friends.tsx:147
 #: src/interface/navigation/servers/UserMenu.tsx:136
-#: src/interface/navigation/channels/HomeSidebar.tsx:279
-#: src/interface/channels/text/MemberSidebar.tsx:389
+#: src/interface/navigation/channels/HomeSidebar.tsx:280
+#: src/interface/channels/text/MemberSidebar.tsx:381
 #: components/ui/components/features/profiles/ProfileStatus.tsx:23
 msgid "Online"
 msgstr "Online"
@@ -1775,11 +1939,15 @@ msgstr ""
 msgid "Open channel settings"
 msgstr ""
 
+#: components/app/menus/MessageContextMenu.tsx:136
+msgid "Open file"
+msgstr ""
+
 #: components/app/menus/ServerContextMenu.tsx:288
 msgid "Open server settings"
 msgstr ""
 
-#: src/interface/Home.tsx:222
+#: src/interface/Home.tsx:235
 msgid "Open settings"
 msgstr "Deschide setările"
 
@@ -1787,7 +1955,11 @@ msgstr "Deschide setările"
 msgid "Other"
 msgstr ""
 
-#: components/app/interface/settings/ServerSettings.tsx:104
+#: components/app/interface/settings/user/voice/VoiceInputOptions.tsx:128
+msgid "Output Volume"
+msgstr ""
+
+#: components/app/interface/settings/ServerSettings.tsx:105
 #: components/app/interface/settings/ChannelSettings.tsx:113
 msgid "Overview"
 msgstr "Prezentare generală"
@@ -1796,13 +1968,14 @@ msgstr "Prezentare generală"
 msgid "Pardon User"
 msgstr ""
 
-#: components/modal/modals/MFAFlow.tsx:256
+#: components/modal/modals/MFAFlow.tsx:209
+#: components/modal/modals/MFAFlow.tsx:258
 #: components/auth/src/flows/Form.tsx:29
 #: components/app/interface/settings/user/Account.tsx:109
 msgid "Password"
 msgstr "Parolă"
 
-#: src/interface/Friends.tsx:152
+#: src/interface/Friends.tsx:156
 msgid "Pending"
 msgstr ""
 
@@ -1810,11 +1983,11 @@ msgstr ""
 msgid "Permissions"
 msgstr "Permisiuni"
 
-#: components/auth/src/flows/FlowLogin.tsx:105
+#: components/auth/src/flows/FlowLogin.tsx:97
 msgid "Pick a username that you want people to be able to find you by. This can be changed later in your user settings."
 msgstr "Alege un nume de utilizator cu care dorești ca oamenii să te poată găsi. Acesta poate fi modificat ulterior în setări."
 
-#: components/app/menus/MessageContextMenu.tsx:153
+#: components/app/menus/MessageContextMenu.tsx:190
 msgid "Pin message"
 msgstr ""
 
@@ -1822,7 +1995,7 @@ msgstr ""
 msgid "Platform Moderator"
 msgstr ""
 
-#: components/modal/modals/MFAFlow.tsx:192
+#: components/modal/modals/MFAFlow.tsx:194
 msgid "Please confirm this action using the selected method."
 msgstr "Te rugăm să confirmi această acțiune folosind metoda selectată."
 
@@ -1838,15 +2011,15 @@ msgstr ""
 msgid "Please save these to a safe location."
 msgstr "Te rugăm să le salvezi într-o locație sigură."
 
-#: components/modal/modals/MFAEnableTOTP.tsx:93
+#: components/modal/modals/MFAEnableTOTP.tsx:95
 msgid "Please scan or use the token below in your authenticator app."
 msgstr "Te rugăm să scanezi sau să folosești token-ul de mai jos în aplicația ta de autentificare."
 
-#: components/modal/modals/MFAFlow.tsx:186
+#: components/modal/modals/MFAFlow.tsx:188
 msgid "Please select a method to authenticate your request."
 msgstr "Te rugăm să selectezi o metodă pentru a autentifica cererea."
 
-#: components/modal/modals/ReportContent.tsx:182
+#: components/modal/modals/ReportContent.tsx:185
 msgid "Please select a reason"
 msgstr ""
 
@@ -1854,15 +2027,15 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Politica de confidențialitate"
 
-#: components/markdown/plugins/anchors.tsx:101
+#: components/markdown/plugins/anchors.tsx:105
 msgid "Private Channel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:165
+#: components/app/interface/settings/UserSettings.tsx:161
 msgid "Profile"
 msgstr "Profil"
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:177
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:179
 msgid "Profile Bio"
 msgstr ""
 
@@ -1878,35 +2051,46 @@ msgstr ""
 msgid "Raid or spam attack"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:321
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:324
 msgid "React"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:323
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:326
 msgid "React to messages with emoji"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:248
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:251
 msgid "Read Message History"
 msgstr "Citește istoricul mesajelor"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:250
+#: components/modal/modals/Changelog.tsx:103
+msgid "Read More"
+msgstr ""
+
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:253
 msgid "Read past messages sent in channel"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:251
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:254
 msgid "Read past messages sent in channels"
 msgstr ""
 
+#: components/modal/modals/BanNonMember.tsx:69
+#: components/modal/modals/BanMember.tsx:64
 #: components/app/interface/settings/server/bans/ListBans.tsx:73
 msgid "Reason"
 msgstr "Motiv"
 
-#: components/app/interface/settings/user/Notifications.tsx:26
+#: components/app/interface/settings/user/Notifications.tsx:25
 msgid "Receive notifications while the app is open and in the background."
 msgstr ""
 
-#: components/modal/modals/MFAFlow.tsx:262
+#: components/ui/components/features/voice/callCard/VoiceCallCardStatus.tsx:25
+msgid "Reconnecting"
+msgstr ""
+
+#: components/modal/modals/MFAFlow.tsx:225
+#: components/modal/modals/MFAFlow.tsx:264
 msgid "Recovery Code"
 msgstr "Cod de recuperare"
 
@@ -1922,11 +2106,11 @@ msgstr ""
 msgid "Register"
 msgstr "Înregistrare"
 
-#: components/modal/modals/AddBot.tsx:108
+#: components/modal/modals/AddBot.tsx:110
 msgid "Registered since <0/>"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:323
+#: components/app/menus/UserContextMenu.tsx:369
 msgid "Reject friend request"
 msgstr "Respinge cererea de prietenie"
 
@@ -1934,7 +2118,7 @@ msgstr "Respinge cererea de prietenie"
 msgid "Relevance"
 msgstr "Relevanță"
 
-#: components/app/menus/MessageContextMenu.tsx:193
+#: components/app/menus/MessageContextMenu.tsx:230
 msgid "Remove all reactions"
 msgstr ""
 
@@ -1942,29 +2126,29 @@ msgstr ""
 msgid "Remove Authenticator"
 msgstr "Dezactivează autentificatorul"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:229
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:233
 msgid "Remove Avatars"
 msgstr "Îndepărtează avatare"
 
-#: components/app/menus/UserContextMenu.tsx:313
+#: components/app/menus/UserContextMenu.tsx:359
 msgid "Remove friend"
 msgstr "Șterge prieten"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:231
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:235
 msgid "Remove other members' avatars"
 msgstr ""
 
-#: components/app/menus/MessageContextMenu.tsx:170
+#: components/app/menus/MessageContextMenu.tsx:207
 msgid "Remove reaction"
 msgstr ""
 
-#: components/modal/modals/RenameSession.tsx:40
-#: components/app/interface/settings/user/Sessions.tsx:95
-#: components/app/interface/settings/user/Sessions.tsx:162
+#: components/modal/modals/RenameSession.tsx:43
+#: components/app/interface/settings/user/Sessions.tsx:94
+#: components/app/interface/settings/user/Sessions.tsx:161
 msgid "Rename"
 msgstr ""
 
-#: components/modal/modals/RenameSession.tsx:36
+#: components/modal/modals/RenameSession.tsx:39
 msgid "Rename Session"
 msgstr ""
 
@@ -1972,7 +2156,7 @@ msgstr ""
 msgid "Rep Stoat using Discord rich presence."
 msgstr ""
 
-#: components/app/menus/MessageContextMenu.tsx:119
+#: components/app/menus/MessageContextMenu.tsx:156
 msgid "Reply"
 msgstr "Răspunde"
 
@@ -1981,11 +2165,11 @@ msgid "Replying to"
 msgstr "Se trimite răspuns către"
 
 #: components/modal/modals/ServerInfo.tsx:42
-#: components/modal/modals/ReportContent.tsx:148
+#: components/modal/modals/ReportContent.tsx:151
 msgid "Report"
 msgstr "Raportează"
 
-#: components/app/menus/MessageContextMenu.tsx:208
+#: components/app/menus/MessageContextMenu.tsx:249
 msgid "Report message"
 msgstr "Raportează mesajul"
 
@@ -1993,7 +2177,7 @@ msgstr "Raportează mesajul"
 msgid "Report server"
 msgstr "Raportează serverul"
 
-#: components/app/menus/UserContextMenu.tsx:303
+#: components/app/menus/UserContextMenu.tsx:349
 msgid "Report user"
 msgstr "Raportează utilizatorul"
 
@@ -2002,11 +2186,11 @@ msgid "Resend"
 msgstr ""
 
 #: components/auth/src/flows/FlowResend.tsx:39
-#: components/auth/src/flows/FlowLogin.tsx:78
+#: components/auth/src/flows/FlowLogin.tsx:70
 msgid "Resend verification"
 msgstr "Retrimite confirmarea"
 
-#: components/ui/components/utils/Form2.tsx:327
+#: components/ui/components/utils/Form2.tsx:321
 #: components/modal/modals/MFARecovery.tsx:64
 #: components/auth/src/flows/FlowReset.tsx:44
 #: components/auth/src/flows/FlowConfirmReset.tsx:43
@@ -2014,7 +2198,7 @@ msgid "Reset"
 msgstr "Resetează"
 
 #: components/auth/src/flows/FlowReset.tsx:39
-#: components/auth/src/flows/FlowLogin.tsx:73
+#: components/auth/src/flows/FlowLogin.tsx:65
 #: components/auth/src/flows/FlowConfirmReset.tsx:38
 msgid "Reset password"
 msgstr "Resetează parola"
@@ -2047,32 +2231,37 @@ msgstr ""
 msgid "Roadmap"
 msgstr ""
 
-#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:82
+#: components/modal/modals/CreateRole.tsx:58
+#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:86
 msgid "Role Name"
 msgstr "Numele rolului"
 
 #: components/ui/components/features/profiles/ProfileRoles.tsx:29
-#: components/app/interface/settings/ServerSettings.tsx:138
+#: components/app/interface/settings/ServerSettings.tsx:139
 msgid "Roles"
 msgstr "Roluri"
 
-#: components/modal/modals/ServerIdentity.tsx:73
-#: components/modal/modals/CustomStatus.tsx:46
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:188
-#: components/app/interface/settings/server/Overview.tsx:160
-#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:185
-#: components/app/interface/settings/channel/Overview.tsx:108
-#: components/app/interface/settings/channel/webhooks/ViewWebhook.tsx:104
+#: components/modal/modals/ServerIdentity.tsx:77
+#: components/modal/modals/CustomStatus.tsx:50
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:190
+#: components/app/interface/settings/server/Overview.tsx:162
+#: components/app/interface/settings/server/roles/ServerRoleEditor.tsx:189
+#: components/app/interface/settings/channel/Overview.tsx:110
+#: components/app/interface/settings/channel/webhooks/ViewWebhook.tsx:108
 msgid "Save"
 msgstr "Salvare"
 
-#: src/interface/channels/text/Composition.tsx:355
+#: components/app/menus/MessageContextMenu.tsx:147
+msgid "Save file"
+msgstr ""
+
+#: src/interface/channels/text/Composition.tsx:366
 msgid "Save to your notes"
 msgstr "Salvează în notițele tale"
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:120
-#: src/interface/navigation/channels/HomeSidebar.tsx:137
-#: src/interface/channels/ChannelHeader.tsx:159
+#: src/interface/navigation/channels/HomeSidebar.tsx:119
+#: src/interface/navigation/channels/HomeSidebar.tsx:136
+#: src/interface/channels/ChannelHeader.tsx:131
 msgid "Saved Notes"
 msgstr "Notițe salvate"
 
@@ -2080,52 +2269,65 @@ msgstr "Notițe salvate"
 msgid "Scams or fraud"
 msgstr ""
 
-#: components/modal/modals/AddBot.tsx:132
+#: components/modal/modals/AddBot.tsx:134
 msgid "Search for groups..."
+msgstr ""
+
+#: components/modal/modals/CreateGroup.tsx:99
+#: components/modal/modals/AddMembersToGroup.tsx:87
+msgid "Search for users..."
 msgstr ""
 
 #: components/app/interface/settings/user/Feedback.tsx:32
 msgid "See what we're currently working on."
 msgstr ""
 
-#: components/modal/modals/CreateGroup.tsx:91
+#: components/app/interface/settings/user/voice/VoiceInputOptions.tsx:52
+msgid "Select audio input"
+msgstr ""
+
+#: components/app/interface/settings/user/voice/VoiceInputOptions.tsx:97
+msgid "Select audio output"
+msgstr ""
+
+#: components/modal/modals/CreateGroup.tsx:93
 msgid "Select members to add"
 msgstr ""
 
-#: components/app/interface/settings/user/Language.tsx:93
+#: components/app/interface/settings/user/Language.tsx:91
 msgid "Select your language"
 msgstr "Selectează limba ta"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:307
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:310
 msgid "Send attachments to chat"
 msgstr ""
 
-#: components/modal/modals/EditEmail.tsx:45
+#: components/modal/modals/EditEmail.tsx:47
 msgid "Send email"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:299
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:302
 msgid "Send embedded content such as link embeds or custom embeds"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:297
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:300
 msgid "Send Embeds"
 msgstr "Trimite integrări"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:257
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:260
 msgid "Send Messages"
 msgstr "Trimite mesaje"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:259
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:260
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:262
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:263
 msgid "Send messages in channel"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:261
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:264
 msgid "Send messages in channels"
 msgstr ""
 
-#: components/modal/modals/AddFriend.tsx:43
+#: components/modal/modals/AddFriend.tsx:45
 msgid "Send Request"
 msgstr ""
 
@@ -2144,15 +2346,19 @@ msgstr ""
 msgid "Sent {0} attachments"
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/MessageReply.tsx:142
+#: components/ui/components/features/messaging/elements/MessageReply.tsx:140
 msgid "Sent an attachment"
 msgstr "A trimis un atașament"
 
-#: components/ui/components/features/messaging/elements/MessageReply.tsx:144
+#: components/ui/components/features/messaging/elements/MessageReply.tsx:142
 msgid "Sent multiple attachments"
 msgstr "A trimis mai multe atașamente"
 
-#: components/app/interface/settings/server/Overview.tsx:139
+#: components/modal/modals/ServerIdentity.tsx:92
+msgid "Server Avatar"
+msgstr ""
+
+#: components/app/interface/settings/server/Overview.tsx:141
 msgid "Server Banner"
 msgstr ""
 
@@ -2160,11 +2366,11 @@ msgstr ""
 msgid "Server Default"
 msgstr ""
 
-#: components/app/interface/settings/server/Overview.tsx:154
+#: components/app/interface/settings/server/Overview.tsx:156
 msgid "Server Description"
 msgstr "Descrierea serverului"
 
-#: components/app/interface/settings/server/Overview.tsx:133
+#: components/app/interface/settings/server/Overview.tsx:135
 msgid "Server Icon"
 msgstr ""
 
@@ -2172,7 +2378,8 @@ msgstr ""
 msgid "Server Identities"
 msgstr ""
 
-#: components/app/interface/settings/server/Overview.tsx:147
+#: components/modal/modals/CreateServer.tsx:72
+#: components/app/interface/settings/server/Overview.tsx:149
 msgid "Server Name"
 msgstr "Numele Serverului"
 
@@ -2180,11 +2387,11 @@ msgstr "Numele Serverului"
 msgid "Server Roles"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:170
+#: components/app/interface/settings/UserSettings.tsx:166
 msgid "Sessions"
 msgstr "Sesiuni"
 
-#: components/modal/modals/CustomStatus.tsx:42
+#: components/modal/modals/CustomStatus.tsx:46
 msgid "Set your status"
 msgstr ""
 
@@ -2204,6 +2411,11 @@ msgstr ""
 msgid "Several people are typing…"
 msgstr "Mai multe persoane tastează…"
 
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:353
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:354
+msgid "Share camera or screen in voice call"
+msgstr ""
+
 #: components/app/interface/settings/user/Native.tsx:125
 msgid "Show corrections and suggestions as you type."
 msgstr ""
@@ -2212,23 +2424,23 @@ msgstr ""
 msgid "Show send message button"
 msgstr ""
 
-#: components/auth/src/flows/FlowLogin.tsx:65
+#: components/auth/src/flows/FlowLogin.tsx:57
 msgid "Sign into Stoat"
 msgstr ""
 
-#: components/auth/src/flows/FlowHome.tsx:79
+#: components/auth/src/flows/FlowHome.tsx:75
 msgid "Sign Up"
 msgstr ""
 
-#: components/app/interface/channels/text/Message.tsx:205
+#: components/app/interface/channels/text/Message.tsx:192
 msgid "Silent"
 msgstr ""
 
-#: components/modal/modals/EditEmail.tsx:62
+#: components/modal/modals/EditEmail.tsx:64
 msgid "someone@example.com"
 msgstr ""
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:182
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:184
 msgid "Something cool about me..."
 msgstr ""
 
@@ -2241,11 +2453,11 @@ msgstr ""
 msgid "Something went wrong! Try again later."
 msgstr ""
 
-#: components/app/interface/settings/user/Notifications.tsx:46
+#: components/app/interface/settings/user/Notifications.tsx:45
 msgid "Sounds"
 msgstr "Sunete"
 
-#: components/app/interface/settings/UserSettings.tsx:275
+#: components/app/interface/settings/UserSettings.tsx:276
 msgid "Source Code"
 msgstr "Codul sursă"
 
@@ -2253,12 +2465,16 @@ msgstr "Codul sursă"
 msgid "Spam or similar platform abuse"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:339
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:342
 msgid "Speak"
 msgstr "Vorbește"
 
 #: components/app/interface/settings/user/Native.tsx:128
 msgid "Spellchecker"
+msgstr ""
+
+#: components/ui/components/features/voice/callCard/VoiceCallCardPreview.tsx:28
+msgid "Start the call"
 msgstr ""
 
 #: components/app/interface/settings/user/Native.tsx:73
@@ -2285,7 +2501,7 @@ msgstr ""
 msgid "Stoat Founder"
 msgstr ""
 
-#: components/auth/src/flows/FlowHome.tsx:61
+#: components/auth/src/flows/FlowHome.tsx:57
 msgid "Stoat is one of the best ways to stay connected with your friends and community, anywhere, anytime."
 msgstr ""
 
@@ -2301,7 +2517,7 @@ msgstr "Trimite o părere"
 msgid "Submit to Discover"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:195
+#: components/app/interface/settings/UserSettings.tsx:191
 msgid "Subscriptions"
 msgstr ""
 
@@ -2309,9 +2525,13 @@ msgstr ""
 msgid "Suggest new Stoat features on GitHub discussions."
 msgstr ""
 
-#: src/interface/Home.tsx:181
+#: src/interface/Home.tsx:188
 msgid "Support the project by donating - thank you!"
 msgstr "Sprijină proiectul prin donații - vă mulțumim!"
+
+#: components/ui/components/features/voice/callCard/VoiceCallCardPreview.tsx:44
+msgid "Switch to this voice channel"
+msgstr ""
 
 #: components/app/interface/settings/user/Sync.tsx:28
 msgid "Sync appearance options, such as chosen emoji pack and message density."
@@ -2329,19 +2549,19 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: components/modal/modals/ReportContent.tsx:141
+#: components/modal/modals/ReportContent.tsx:144
 msgid "Tell us what's wrong with this message"
 msgstr ""
 
-#: components/modal/modals/ReportContent.tsx:138
+#: components/modal/modals/ReportContent.tsx:141
 msgid "Tell us what's wrong with this server"
 msgstr ""
 
-#: components/modal/modals/ReportContent.tsx:135
+#: components/modal/modals/ReportContent.tsx:138
 msgid "Tell us what's wrong with this user"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:191
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:195
 msgid "Temporarily prevent lower-ranking members from interacting"
 msgstr ""
 
@@ -2349,7 +2569,7 @@ msgstr ""
 msgid "Terms of Service"
 msgstr "Termeni și condiții"
 
-#: components/modal/modals/CreateChannel.tsx:73
+#: components/modal/modals/CreateChannel.tsx:75
 msgid "Text Channel"
 msgstr "Canal de Text"
 
@@ -2358,7 +2578,7 @@ msgid "That action had no effect."
 msgstr ""
 
 #. placeholder {0}: file.name
-#: src/interface/channels/text/Composition.tsx:211
+#: src/interface/channels/text/Composition.tsx:217
 msgid "The file \"{0}\" ({fileSize}) exceeds the maximum size limit of {maxSizeFormatted}."
 msgstr ""
 
@@ -2370,7 +2590,7 @@ msgstr "Temă"
 msgid "This bot is private and can only be added by the creator."
 msgstr ""
 
-#: components/app/interface/settings/channel/Overview.tsx:103
+#: components/app/interface/settings/channel/Overview.tsx:105
 msgid "This channel is about..."
 msgstr ""
 
@@ -2419,7 +2639,7 @@ msgstr ""
 msgid "This message is empty and has not been sent."
 msgstr ""
 
-#: components/app/interface/settings/server/Overview.tsx:155
+#: components/app/interface/settings/server/Overview.tsx:157
 msgid "This server is about..."
 msgstr ""
 
@@ -2427,7 +2647,7 @@ msgstr ""
 msgid "This user has blocked you."
 msgstr "Acest utilizator te-a blocat."
 
-#: components/modal/modals/BanNonMember.tsx:60
+#: components/modal/modals/BanNonMember.tsx:62
 msgid "This user is not part of the server and may already be banned"
 msgstr ""
 
@@ -2439,7 +2659,7 @@ msgstr ""
 msgid "This username is not allowed."
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:189
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:193
 msgid "Timeout Members"
 msgstr "Pune membrii în pauză"
 
@@ -2451,7 +2671,7 @@ msgstr ""
 msgid "Tonal Spot"
 msgstr ""
 
-#: components/app/interface/settings/user/Language.tsx:148
+#: components/app/interface/settings/user/Language.tsx:146
 msgid "Traditional (DD/MM/YYYY)"
 msgstr ""
 
@@ -2459,11 +2679,11 @@ msgstr ""
 msgid "Trending GIFs"
 msgstr ""
 
-#: components/app/menus/UserContextMenu.tsx:338
+#: components/app/menus/UserContextMenu.tsx:384
 msgid "Unblock user"
 msgstr "Deblochează utilizatorul"
 
-#: components/markdown/plugins/anchors.tsx:129
+#: components/markdown/plugins/anchors.tsx:137
 msgid "Unknown Server"
 msgstr ""
 
@@ -2471,7 +2691,7 @@ msgstr ""
 msgid "Unmark as mature"
 msgstr ""
 
-#: components/app/interface/settings/channel/Overview.tsx:137
+#: components/app/interface/settings/channel/Overview.tsx:139
 msgid "Unmark as Mature"
 msgstr ""
 
@@ -2487,7 +2707,7 @@ msgstr ""
 msgid "Unmute Server"
 msgstr ""
 
-#: components/app/menus/MessageContextMenu.tsx:155
+#: components/app/menus/MessageContextMenu.tsx:192
 msgid "Unpin message"
 msgstr ""
 
@@ -2504,11 +2724,11 @@ msgstr ""
 msgid "Until I turn it back on"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:305
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:308
 msgid "Upload Files"
 msgstr "Încarcă fișiere"
 
-#: components/modal/modals/JoinServer.tsx:71
+#: components/modal/modals/JoinServer.tsx:73
 msgid "Use a code or invite link"
 msgstr ""
 
@@ -2520,19 +2740,24 @@ msgstr ""
 msgid "User"
 msgstr "Utilizator"
 
-#: components/app/interface/settings/user/Notifications.tsx:68
+#: components/modal/modals/BanNonMember.tsx:70
+#: components/modal/modals/BanMember.tsx:65
+msgid "User broke a certain rule…"
+msgstr ""
+
+#: components/app/interface/settings/user/Notifications.tsx:67
 msgid "User Joined Call"
 msgstr "Utilizatorul a intrat în apel"
 
-#: components/app/interface/settings/user/Notifications.tsx:75
+#: components/app/interface/settings/user/Notifications.tsx:74
 msgid "User Left Call"
 msgstr "Utilizatorul a părăsit apelul"
 
-#: components/app/interface/settings/ServerSettings.tsx:123
+#: components/app/interface/settings/ServerSettings.tsx:124
 msgid "User Management"
 msgstr "Gestionare utilizatori"
 
-#: components/app/interface/settings/UserSettings.tsx:154
+#: components/app/interface/settings/UserSettings.tsx:150
 msgid "User Settings"
 msgstr "Setări utilizator"
 
@@ -2540,17 +2765,24 @@ msgstr "Setări utilizator"
 msgid "User's profile has inappropriate content"
 msgstr ""
 
-#: components/modal/modals/EditUsername.tsx:75
+#: components/modal/modals/Onboarding.tsx:59
+#: components/modal/modals/EditUsername.tsx:77
+#: components/modal/modals/CreateBot.tsx:70
+#: components/modal/modals/AddFriend.tsx:59
 #: components/auth/src/flows/Form.tsx:46
 #: components/app/interface/settings/user/Account.tsx:69
 msgid "Username"
 msgstr "Nume de utilizator"
 
+#: components/modal/modals/AddFriend.tsx:60
+msgid "username#1234"
+msgstr ""
+
 #: components/modal/modals/ChannelToggleMature.tsx:49
 msgid "Users will be asked to confirm their age before joining this channel."
 msgstr ""
 
-#: components/app/interface/settings/channel/Overview.tsx:121
+#: components/app/interface/settings/channel/Overview.tsx:123
 msgid "Users will be asked to confirm their age before opening this channel."
 msgstr ""
 
@@ -2558,7 +2790,15 @@ msgstr ""
 msgid "Users will no longer be asked to confirm their age before joining this channel.<0/> Please ensure the content is appropriate for all ages."
 msgstr ""
 
-#: src/interface/navigation/channels/ServerSidebar.tsx:287
+#: components/app/interface/settings/user/voice/VoiceInputOptions.tsx:47
+msgid "Using default microphone"
+msgstr ""
+
+#: components/app/interface/settings/user/voice/VoiceInputOptions.tsx:92
+msgid "Using default speaker"
+msgstr ""
+
+#: src/interface/navigation/channels/ServerSidebar.tsx:291
 msgid "Verified"
 msgstr ""
 
@@ -2566,16 +2806,16 @@ msgstr ""
 msgid "Verifying your account…"
 msgstr "Se verifică contul…"
 
-#: components/app/interface/settings/UserSettings.tsx:126
+#: components/app/interface/settings/UserSettings.tsx:122
 #: components/app/interface/settings/user/Native.tsx:151
 msgid "Version:"
 msgstr ""
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:348
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:351
 msgid "Video"
 msgstr "Video"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:238
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:242
 msgid "View Channel"
 msgstr "Vezi canalul"
 
@@ -2583,15 +2823,15 @@ msgstr "Vezi canalul"
 msgid "View currently active bug reports here."
 msgstr "Afișează rapoartele de erori active în prezent."
 
-#: src/interface/channels/ChannelHeader.tsx:274
+#: src/interface/channels/ChannelHeader.tsx:229
 msgid "View members"
 msgstr ""
 
 #: components/modal/modals/Changelog.tsx:50
-msgid "View older updates"
-msgstr "Vezi actualizări mai vechi"
+#~ msgid "View older updates"
+#~ msgstr "Vezi actualizări mai vechi"
 
-#: src/interface/channels/ChannelHeader.tsx:234
+#: src/interface/channels/ChannelHeader.tsx:189
 msgid "View pinned messages"
 msgstr ""
 
@@ -2603,15 +2843,24 @@ msgstr "Vizualizează codurile de recuperare"
 msgid "Viewing older messages"
 msgstr "Acum vezi mesajele vechi"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:327
+#: components/app/interface/settings/UserSettings.tsx:214
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:330
 msgid "Voice"
 msgstr ""
 
-#: components/modal/modals/CreateChannel.tsx:76
+#: components/modal/modals/CreateChannel.tsx:78
 msgid "Voice Channel"
 msgstr "Canal de Voce"
 
-#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:172
+#: components/app/interface/settings/user/voice/VoiceProcessingOptions.tsx:15
+msgid "Voice Processing"
+msgstr ""
+
+#: components/app/menus/UserContextMenu.tsx:199
+msgid "Volume"
+msgstr ""
+
+#: components/app/interface/settings/user/profile/UserProfileEditor.tsx:174
 msgid "Want to change username?"
 msgstr ""
 
@@ -2619,28 +2868,46 @@ msgstr ""
 msgid "We've sent you a verification email. Please allow up to 10 minutes for it to arrive."
 msgstr "Ți-am trimis un e-mail de verificare. Te rugăm să acorzi până la 10 minute pentru sosirea acestuia."
 
-#: components/app/interface/channels/text/Message.tsx:195
+#: components/app/interface/channels/text/Message.tsx:185
 msgid "Webhook"
+msgstr ""
+
+#: components/app/interface/settings/channel/webhooks/ViewWebhook.tsx:97
+msgid "Webhook Icon"
+msgstr ""
+
+#: components/modal/modals/CreateWebhook.tsx:61
+#: components/app/interface/settings/channel/webhooks/ViewWebhook.tsx:103
+msgid "Webhook Name"
 msgstr ""
 
 #: components/app/interface/settings/ChannelSettings.tsx:129
 msgid "Webhooks"
 msgstr "Webhook-uri"
 
-#: src/interface/Home.tsx:121
-#: components/auth/src/flows/FlowLogin.tsx:112
+#: src/interface/Home.tsx:115
+#: components/auth/src/flows/FlowLogin.tsx:104
 msgid "Welcome to"
 msgstr "Bun venit la"
 
-#: components/auth/src/flows/FlowLogin.tsx:66
+#: components/auth/src/flows/FlowLogin.tsx:58
 msgid "Welcome!"
 msgstr "Bun venit!"
 
-#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:147
+#: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:152
 msgid "Whether other users can edit these settings"
 msgstr ""
 
-#: components/modal/modals/CreateOrJoinServer.tsx:43
+#. placeholder {0}: names.join(", ")
+#: components/ui/components/features/voice/callCard/VoiceCallCardPreview.tsx:28
+msgid "With {0}"
+msgstr ""
+
+#: components/modal/modals/CreateGroupOrServer.tsx:42
+msgid "Would you like to create a new group or server?"
+msgstr ""
+
+#: components/modal/modals/CreateOrJoinServer.tsx:39
 msgid "Would you like to create a new server or join an existing one?"
 msgstr ""
 
@@ -2650,8 +2917,8 @@ msgstr ""
 
 #. placeholder {0}: props.user?.username
 #. placeholder {0}: props.member.user?.username
-#: components/modal/modals/BanNonMember.tsx:57
-#: components/modal/modals/BanMember.tsx:57
+#: components/modal/modals/BanNonMember.tsx:59
+#: components/modal/modals/BanMember.tsx:59
 msgid "You are about to ban {0}"
 msgstr ""
 
@@ -2664,16 +2931,20 @@ msgstr ""
 msgid "You are banned from this server."
 msgstr ""
 
+#: src/interface/Home.tsx:229
+msgid "You can also click the gear icon in the bottom left."
+msgstr ""
+
 #: src/interface/Home.tsx:215
-msgid "You can also right-click the user icon in the top left, or left click it if you're already home."
-msgstr "De asemenea, poți face clic dreapta pe pictograma utilizatorului din stânga sus sau clic stânga pe ea dacă ești deja acasă."
+#~ msgid "You can also right-click the user icon in the top left, or left click it if you're already home."
+#~ msgstr "De asemenea, poți face clic dreapta pe pictograma utilizatorului din stânga sus sau clic stânga pe ea dacă ești deja acasă."
 
 #: components/modal/modals/DeleteChannel.tsx:65
 msgid "You can re-open it later, but it will disappear on both sides."
 msgstr "O poți redeschide ulterior dar va dispărea pe ambele părți."
 
-#: src/interface/Home.tsx:149
-#: src/interface/Home.tsx:162
+#: src/interface/Home.tsx:148
+#: src/interface/Home.tsx:169
 #: components/app/interface/settings/user/Feedback.tsx:85
 msgid "You can report issues and discuss improvements with us directly here."
 msgstr "Poți să ne raportezi probleme și să discuți cu noi despre îmbunătățiri direct aici."
@@ -2703,7 +2974,7 @@ msgid "You cannot undo this action."
 msgstr "Această acțiune nu poate fi anulată."
 
 #. placeholder {0}: props.display
-#: components/modal/modals/LinkWarning.tsx:72
+#: components/modal/modals/LinkWarning.tsx:76
 msgid "You clicked on \"{0}\""
 msgstr ""
 
@@ -2711,7 +2982,7 @@ msgstr ""
 msgid "You do not have permission to do this."
 msgstr ""
 
-#: components/ui/components/features/messaging/composition/MessageBox.tsx:201
+#: components/ui/components/features/messaging/composition/MessageBox.tsx:217
 msgid "You don't have permission to send messages in this channel."
 msgstr "Nu ai permisiunea de a trimite mesaje pe acest canal."
 
@@ -2719,7 +2990,11 @@ msgstr "Nu ai permisiunea de a trimite mesaje pe acest canal."
 msgid "You have this user blocked."
 msgstr ""
 
-#: components/auth/src/flows/FlowHome.tsx:92
+#: components/ui/components/features/voice/VoiceStatefulUserIcons.tsx:38
+msgid "You muted this user."
+msgstr ""
+
+#: components/auth/src/flows/FlowHome.tsx:88
 msgid "You were logged out!"
 msgstr ""
 
@@ -2731,7 +3006,7 @@ msgstr ""
 msgid "You won't be able to access your account unless you contact support - however, your data will not be deleted."
 msgstr "Nu îți vei putea accesa contul decât dacă contactezi asistența - însă, datele tale nu vor fi șterse."
 
-#: components/modal/modals/LeaveServer.tsx:53
+#: components/modal/modals/LeaveServer.tsx:55
 #: components/modal/modals/DeleteChannel.tsx:62
 msgid "You won't be able to rejoin unless you are re-invited."
 msgstr "Nu vei putea să reintri decât dacă ești reinvitat."

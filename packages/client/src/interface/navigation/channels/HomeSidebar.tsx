@@ -1,6 +1,6 @@
 import { Match, Show, Switch, createMemo, splitProps } from "solid-js";
 
-import { Plural, Trans, useLingui } from "@lingui-solid/solid/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 import { VirtualContainer } from "@minht11/solid-virtual-container";
 import { Channel } from "stoat.js";
 import { css } from "styled-system/css";
@@ -11,7 +11,6 @@ import { useClient } from "@revolt/client";
 import { TextWithEmoji } from "@revolt/markdown";
 import { useModals } from "@revolt/modal";
 import { useLocation, useNavigate } from "@revolt/routing";
-import { iconSize } from "@revolt/ui";
 import {
   Avatar,
   Deferred,
@@ -19,14 +18,14 @@ import {
   OverflowingText,
   Tooltip,
   UserStatus,
+  iconSize,
   typography,
 } from "@revolt/ui";
+import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
-import MdPlus from "@material-design-icons/svg/outlined/add.svg?component-solid";
 import MdClose from "@material-design-icons/svg/outlined/close.svg?component-solid";
 
 import { SidebarBase } from "./common";
-import { Symbol } from "@revolt/ui/components/utils/Symbol"
 
 interface Props {
   /**
@@ -77,7 +76,7 @@ export const HomeSidebar = (props: Props) => {
           <a href="/app">
             <MenuButton
               size="normal"
-              icon={<Symbol css={{alignSelf: "center", paddingBottom: "2px"}}>home</Symbol>}
+              icon={<Symbol>home</Symbol>}
               attention={location.pathname === "/app" ? "selected" : "normal"}
             >
               <ButtonTitle>
@@ -91,7 +90,7 @@ export const HomeSidebar = (props: Props) => {
           <a href="/friends">
             <MenuButton
               size="normal"
-              icon={<Symbol css={{alignSelf: "center", paddingBottom: "1px"}}>group</Symbol>}
+              icon={<Symbol>group</Symbol>}
               attention={
                 location.pathname === "/friends" ? "selected" : "normal"
               }
@@ -105,7 +104,7 @@ export const HomeSidebar = (props: Props) => {
               </ButtonTitle>
             </MenuButton>
           </a>
-            
+
           <div style={{ height: "5px" }} />
 
           <Switch
@@ -113,7 +112,7 @@ export const HomeSidebar = (props: Props) => {
               <MenuButton
                 size="normal"
                 attention={"normal"}
-                icon={<Symbol css={{alignSelf: "center", paddingBottom: "2px"}}>note_stack</Symbol>}
+                icon={<Symbol>note_stack</Symbol>}
                 onClick={() => props.openSavedNotes(navigate)}
               >
                 <ButtonTitle>
@@ -126,7 +125,7 @@ export const HomeSidebar = (props: Props) => {
               <a href={`/channel/${savedNotesChannelId()}`}>
                 <MenuButton
                   size="normal"
-                  icon={<Symbol css={{alignSelf: "center", paddingBottom: "2px"}}>note_stack</Symbol>}
+                  icon={<Symbol>note_stack</Symbol>}
                   attention={
                     props.channelId && savedNotesChannelId() === props.channelId
                       ? "selected"
@@ -160,7 +159,9 @@ export const HomeSidebar = (props: Props) => {
                 },
               }}
             >
-              <Symbol fontSize="1.4em !important" marginTop="2px">add</Symbol>
+              <Symbol size={20} marginTop="2px">
+                add
+              </Symbol>
             </a>
           </Category>
 
@@ -366,7 +367,8 @@ function Entry(
                   one="# Member"
                   other="# Members"
                 /> */}
-                {local.channel.recipientIds.size} {local.channel.recipientIds.size > 1 ? `Members` : 'Member'}
+                {local.channel.recipientIds.size}{" "}
+                {local.channel.recipientIds.size > 1 ? `Members` : "Member"}
               </span>
             </Match>
             <Match when={local.channel.type === "DirectMessage"}>

@@ -1,7 +1,6 @@
 import { createFormControl, createFormGroup } from "solid-forms";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 
 import { Avatar, Column, Dialog, DialogProps, Form2, Text } from "@revolt/ui";
 
@@ -14,6 +13,7 @@ import { Modals } from "../types";
 export function BanNonMemberModal(
   props: DialogProps & Modals & { type: "ban_non_member" },
 ) {
+  const { t } = useLingui();
   const { showError } = useModals();
 
   const group = createFormGroup({
@@ -31,6 +31,8 @@ export function BanNonMemberModal(
       showError(error);
     }
   }
+
+  const submit = Form2.useSubmitHandler(group, onSubmit);
 
   return (
     <Dialog
@@ -50,7 +52,7 @@ export function BanNonMemberModal(
       ]}
       isDisabled={group.isPending}
     >
-      <form onSubmit={Form2.submitHandler(group, onSubmit)}>
+      <form onSubmit={submit}>
         <Column align>
           <Avatar src={props.user?.animatedAvatarURL} size={64} />
           <Text>

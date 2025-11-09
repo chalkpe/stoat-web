@@ -1,7 +1,6 @@
 import { createFormControl, createFormGroup } from "solid-forms";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 import { API } from "stoat.js";
 
 import { useClient } from "@revolt/client";
@@ -17,15 +16,18 @@ import { Modals } from "../types";
 export function ServerIdentityModal(
   props: DialogProps & Modals & { type: "server_identity" },
 ) {
+  const { t } = useLingui();
   const client = useClient();
   const { showError } = useModals();
 
+  /* eslint-disable solid/reactivity */
   const group = createFormGroup({
     avatar: createFormControl<string | File[] | null>(
       props.member.animatedAvatarURL,
     ),
     nickname: createFormControl(props.member.nickname ?? ""),
   });
+  /* eslint-enable solid/reactivity */
 
   async function onSubmit() {
     try {
@@ -62,6 +64,8 @@ export function ServerIdentityModal(
     }
   }
 
+  const submit = Form2.useSubmitHandler(group, onSubmit);
+
   return (
     <Dialog
       show={props.show}
@@ -80,7 +84,7 @@ export function ServerIdentityModal(
       ]}
       isDisabled={group.isPending}
     >
-      <form onSubmit={Form2.submitHandler(group, onSubmit)}>
+      <form onSubmit={submit}>
         <Column>
           <Form2.FileInput
             control={group.controls.avatar}

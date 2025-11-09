@@ -21,11 +21,8 @@ import {
   SystemMessageIcon,
   Tooltip,
   Username,
-  iconSize,
 } from "@revolt/ui";
 import { Symbol } from "@revolt/ui/components/utils/Symbol";
-
-import MdLink from "@material-design-icons/svg/filled/link.svg?component-solid";
 
 import { MessageContextMenu } from "../../../menus/MessageContextMenu";
 import {
@@ -169,44 +166,31 @@ export function Message(props: Props) {
               content={t`Message was sent on another platform`}
               placement="top"
             >
-              <Symbol css={{ fontSize: "1rem !important", paddingTop: "5px" }}>
-                link
-              </Symbol>
+              <Symbol size={16}>link</Symbol>
             </Tooltip>
           </Match>
           <Match when={props.message.author?.privileged}>
             <Tooltip content={t`Official Communication`} placement="top">
-              <Symbol css={{ fontSize: "1rem !important", paddingTop: "5px" }}>
-                brightness_alert
-              </Symbol>
+              <Symbol size={16}>brightness_alert</Symbol>
             </Tooltip>
           </Match>
           <Match when={props.message.author?.bot}>
             <Tooltip content={t`Bot`} placement="top">
-              <Symbol
-                css={{ fontSize: "1rem !important", paddingTop: "5px" }}
-                fill
-              >
+              <Symbol size={16} fill>
                 smart_toy
               </Symbol>
             </Tooltip>
           </Match>
           <Match when={props.message.webhook}>
             <Tooltip content={t`Webhook`} placement="top">
-              <Symbol
-                css={{ fontSize: "1rem !important", paddingTop: "5px" }}
-                fill
-              >
+              <Symbol size={16} fill>
                 cloud
               </Symbol>
             </Tooltip>
           </Match>
           <Match when={props.message.isSuppressed}>
             <Tooltip content={t`Silent`} placement="top">
-              <Symbol
-                css={{ fontSize: "1rem !important", paddingTop: "5px" }}
-                fill
-              >
+              <Symbol size={16} fill>
                 notifications_off
               </Symbol>
             </Tooltip>
@@ -219,10 +203,7 @@ export function Message(props: Props) {
           >
             <NewUser>
               <Tooltip content={t`New to Stoat`} placement="top">
-                <Symbol
-                  css={{ fontSize: "1rem !important", paddingTop: "5px" }}
-                  fill
-                >
+                <Symbol size={16} fill>
                   spa
                 </Symbol>
               </Tooltip>
@@ -236,11 +217,7 @@ export function Message(props: Props) {
           >
             <NewUser>
               <Tooltip content={t`New to the server`} placement="top">
-                <Symbol
-                  css={{ fontSize: "1rem !important", paddingTop: "5px" }}
-                >
-                  spa
-                </Symbol>
+                <Symbol size={16}>spa</Symbol>
               </Tooltip>
             </NewUser>
           </Match>
@@ -291,7 +268,9 @@ export function Message(props: Props) {
       </Switch>
       <Show when={props.message.attachments}>
         <For each={props.message.attachments}>
-          {(attachment) => <Attachment file={attachment} />}
+          {(attachment) => (
+            <Attachment message={props.message} file={attachment} />
+          )}
         </For>
       </Show>
       <Show when={props.message.embeds}>

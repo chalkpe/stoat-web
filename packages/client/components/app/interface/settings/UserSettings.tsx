@@ -8,23 +8,17 @@ import { useClient, useClientLifecycle } from "@revolt/client";
 import { useUser } from "@revolt/markdown/users";
 import { useModals } from "@revolt/modal";
 import { ColouredText, Column, Text, iconSize } from "@revolt/ui";
+import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
 import MdAccountCircle from "@material-design-icons/svg/outlined/account_circle.svg?component-solid";
-import _MdDesktopWindows from "@material-design-icons/svg/outlined/desktop_windows.svg?component-solid";
-import _MdExtension from "@material-design-icons/svg/outlined/extension.svg?component-solid";
-import _MdFormatListBulleted from "@material-design-icons/svg/outlined/format_list_bulleted.svg?component-solid";
-import _MdKeybinds from "@material-design-icons/svg/outlined/keyboard.svg?component-solid";
 import MdLanguage from "@material-design-icons/svg/outlined/language.svg?component-solid";
-import MdLocalCafe from "@material-design-icons/svg/outlined/local_cafe.svg?component-solid";
 import MdLogout from "@material-design-icons/svg/outlined/logout.svg?component-solid";
 import MdMemory from "@material-design-icons/svg/outlined/memory.svg?component-solid";
-import _MdNotifications from "@material-design-icons/svg/outlined/notifications.svg?component-solid";
+import MdMic from "@material-design-icons/svg/outlined/mic.svg?component-solid";
 import MdPalette from "@material-design-icons/svg/outlined/palette.svg?component-solid";
 import MdRateReview from "@material-design-icons/svg/outlined/rate_review.svg?component-solid";
 import MdScience from "@material-design-icons/svg/outlined/science.svg?component-solid";
 import MdSmartToy from "@material-design-icons/svg/outlined/smart_toy.svg?component-solid";
-import _MdSpeaker from "@material-design-icons/svg/outlined/speaker.svg?component-solid";
-import _MdSync from "@material-design-icons/svg/outlined/sync.svg?component-solid";
 import MdVerifiedUser from "@material-design-icons/svg/outlined/verified_user.svg?component-solid";
 import MdWorkspacePremium from "@material-design-icons/svg/outlined/workspace_premium.svg?component-solid";
 
@@ -35,14 +29,14 @@ import { MyAccount } from "./user/Account";
 import AdvancedSettings from "./user/Advanced";
 import { Feedback } from "./user/Feedback";
 import { LanguageSettings } from "./user/Language";
+import Native from "./user/Native";
 import { Sessions } from "./user/Sessions";
 import { AccountCard } from "./user/_AccountCard";
 import { AppearanceMenu } from "./user/appearance";
 import { MyBots, ViewBot } from "./user/bots";
 import { EditProfile } from "./user/profile";
 import { EditSubscription } from "./user/subscriptions";
-import { Symbol } from "@revolt/ui/components/utils/Symbol";
-import Native from "./user/Native";
+import { VoiceSettings } from "./user/voice/VoiceSettings";
 
 const Config: SettingsConfiguration<{ server: Server }> = {
   /**
@@ -94,8 +88,10 @@ const Config: SettingsConfiguration<{ server: Server }> = {
         return <Feedback />;
       case "subscribe":
         return <EditSubscription />;
-      case 'native':
+      case "native":
         return <Native />;
+      case "voice":
+        return <VoiceSettings />;
       default:
         return null;
     }
@@ -213,6 +209,11 @@ const Config: SettingsConfiguration<{ server: Server }> = {
             //     !getController("state").experiments.isEnabled("voice_chat"),
             // },
             {
+              id: "voice",
+              icon: <MdMic {...iconSize(20)} />,
+              title: <Trans>Voice</Trans>,
+            },
+            {
               id: "appearance",
               icon: <MdPalette {...iconSize(20)} />,
               title: <Trans>Appearance</Trans>,
@@ -251,7 +252,7 @@ const Config: SettingsConfiguration<{ server: Server }> = {
             {
               id: "native",
               hidden: !window.native,
-              icon: <Symbol fontSize="20px">desktop_windows</Symbol>,
+              icon: <Symbol size={20}>desktop_windows</Symbol>,
               title: <Trans>Desktop</Trans>,
             },
             // {

@@ -1,8 +1,7 @@
 import { createFormControl, createFormGroup } from "solid-forms";
 import { createMemo, createSignal } from "solid-js";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { t } from "@lingui/core/macro";
+import { Trans, useLingui } from "@lingui-solid/solid/macro";
 
 import { useClient } from "@revolt/client";
 import {
@@ -25,6 +24,7 @@ import { Modals } from "../types";
 export function CreateGroupModal(
   props: DialogProps & Modals & { type: "create_group" },
 ) {
+  const { t } = useLingui();
   const client = useClient();
   const { showError } = useModals();
 
@@ -60,6 +60,8 @@ export function CreateGroupModal(
       .map((user) => ({ item: user, value: user.id })),
   );
 
+  const submit = Form2.useSubmitHandler(group, onSubmit);
+
   return (
     <Dialog
       minWidth={420}
@@ -79,7 +81,7 @@ export function CreateGroupModal(
       ]}
       isDisabled={group.isPending}
     >
-      <form onSubmit={Form2.submitHandler(group, onSubmit)}>
+      <form onSubmit={submit}>
         <Column>
           <Form2.TextField
             name="name"

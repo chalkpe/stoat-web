@@ -1,4 +1,3 @@
-import { BiRegularAt } from "solid-icons/bi";
 import { Accessor, Match, Setter, Show, Switch } from "solid-js";
 
 import { Trans, useLingui } from "@lingui-solid/solid/macro";
@@ -9,7 +8,6 @@ import { styled } from "styled-system/jsx";
 import { useClient } from "@revolt/client";
 import { TextWithEmoji } from "@revolt/markdown";
 import { useModals } from "@revolt/modal";
-import { useVoice } from "@revolt/rtc";
 import { useState } from "@revolt/state";
 import { LAYOUT_SECTIONS } from "@revolt/state/stores/Layout";
 import {
@@ -23,7 +21,6 @@ import {
 } from "@revolt/ui";
 import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
-import MdCall from "@material-design-icons/svg/outlined/call.svg?component-solid";
 import MdGroup from "@material-design-icons/svg/outlined/group.svg?component-solid";
 import MdPersonAdd from "@material-design-icons/svg/outlined/person_add.svg?component-solid";
 import MdSettings from "@material-design-icons/svg/outlined/settings.svg?component-solid";
@@ -58,30 +55,6 @@ export function ChannelHeader(props: Props) {
   const client = useClient();
   const { t } = useLingui();
   const state = useState();
-  const rtc = useVoice();
-
-  /**
-   * Join voice call
-   */
-  async function joinCall() {
-    const [h, v] = client()!.authenticationHeader;
-
-    const { token, url } = await fetch(
-      client()!.api.config.baseURL + `/channels/${props.channel.id}/join_call`,
-      {
-        method: "POST",
-        headers: {
-          [h]: v,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ node: "worldwide" }),
-      },
-    ).then((r) => r.json());
-
-    if (token && url) {
-      rtc.connect(url, token, props.channel.id);
-    }
-  }
 
   const searchValue = () => {
     if (!props.sidebarState) return null;
@@ -160,23 +133,6 @@ export function ChannelHeader(props: Props) {
       </Switch>
 
       <Spacer />
-
-      <Show
-        when={props.channel.type !== "SavedMessages" && props.channel.isVoice}
-      >
-        <IconButton
-          variant="standard"
-          onPress={joinCall}
-          use:floating={{
-            tooltip: {
-              placement: "bottom",
-              content: t`Join call`,
-            },
-          }}
-        >
-          <MdCall />
-        </IconButton>
-      </Show>
 
       <Show
         when={

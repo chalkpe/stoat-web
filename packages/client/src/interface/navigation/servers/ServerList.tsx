@@ -1,6 +1,4 @@
-import { Accessor, For, Show, createMemo } from "solid-js";
-import { JSX } from "solid-js";
-import { createSignal } from "solid-js";
+import { Accessor, For, JSX, Show, createMemo, createSignal } from "solid-js";
 
 import { Trans } from "@lingui-solid/solid/macro";
 import { Channel, Server, User } from "stoat.js";
@@ -22,8 +20,8 @@ import MdHome from "@material-design-icons/svg/filled/home.svg?component-solid";
 import { Tooltip } from "../../../../components/ui/components/floating";
 import { Draggable } from "../../../../components/ui/components/utils/Draggable";
 
-import { UserMenu } from "./UserMenu";
 import { Symbol } from "@revolt/ui/components/utils/Symbol";
+import { UserMenu } from "./UserMenu";
 
 interface Props {
   /**
@@ -147,7 +145,7 @@ export const ServerList = (props: Props) => {
         </a>
         {/* <Tooltip placement="right" content="Switch back to legacy app">
           <a href="https://app.revolt.chat" class={entryContainer()}>
-          <Symbol>history</Symbol>
+            <Symbol>history</Symbol>
           </a>
         </Tooltip> */}
         <For each={props.unreadConversations.slice(0, 9)}>
@@ -240,11 +238,6 @@ export const ServerList = (props: Props) => {
                 })}
                 use:floating={props.menuGenerator(entry.item)}
               >
-                {/* <Show when={props.selectedServer() === item.id}>
-                    <PositionSwoosh>
-                      <Swoosh />
-                    </PositionSwoosh>
-                  </Show> */}
                 <a href={state.layout.getLastActiveServerPath(entry.item.id)}>
                   <Avatar
                     size={42}
@@ -398,20 +391,6 @@ const LineDivider = styled("div", {
     margin: "6px auto",
     width: "calc(100% - 24px)",
     background: "var(--md-sys-color-outline-variant)",
-  },
-});
-
-/**
- * Position the Swoosh correctly
- */
-const PositionSwoosh = styled("div", {
-  base: {
-    userSelect: "none",
-    position: "absolute",
-    pointerEvents: "none",
-    height: 0,
-    zIndex: -1,
-    marginTop: "-106px",
   },
 });
 

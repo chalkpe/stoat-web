@@ -275,7 +275,8 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: src/interface/Friends.tsx:135
+#: src/interface/Friends.tsx:124
+#: src/interface/Friends.tsx:153
 #: components/modal/modals/AddFriend.tsx:41
 msgid "Add a new friend"
 msgstr ""
@@ -294,8 +295,8 @@ msgid "Add new members to the group"
 msgstr ""
 
 #: src/interface/navigation/servers/UserMenu.tsx:214
-msgid "Add status text"
-msgstr ""
+#~ msgid "Add status text"
+#~ msgstr ""
 
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:130
 msgid "Admin"
@@ -317,7 +318,7 @@ msgstr "Avanceret"
 msgid "Affects all roles and users"
 msgstr ""
 
-#: src/interface/Friends.tsx:150
+#: src/interface/Friends.tsx:168
 msgid "All"
 msgstr ""
 
@@ -449,7 +450,7 @@ msgstr "Udelukkelser"
 msgid "Block user"
 msgstr "Bloker bruger"
 
-#: src/interface/Friends.tsx:164
+#: src/interface/Friends.tsx:182
 msgid "Blocked"
 msgstr "Blokeret"
 
@@ -610,7 +611,7 @@ msgstr "Tjek din mail!"
 msgid "Choose username"
 msgstr ""
 
-#: src/interface/navigation/servers/UserMenu.tsx:231
+#: src/interface/navigation/servers/UserMenu.tsx:223
 msgid "Clear status"
 msgstr "Ryd status"
 
@@ -767,7 +768,7 @@ msgstr "Kopiér server-ID"
 msgid "Copy text"
 msgstr "Kopiér tekst"
 
-#: src/interface/navigation/servers/UserMenu.tsx:237
+#: src/interface/navigation/servers/UserMenu.tsx:229
 #: components/app/menus/UserContextMenu.tsx:405
 msgid "Copy user ID"
 msgstr "Kopiér bruger-ID"
@@ -897,7 +898,7 @@ msgstr ""
 msgid "Custom status"
 msgstr "Brugerdefineret status"
 
-#: components/app/interface/settings/user/Native.tsx:99
+#: components/app/interface/settings/user/Native.tsx:100
 msgid "Custom window frame"
 msgstr ""
 
@@ -1020,7 +1021,7 @@ msgstr ""
 msgid "Disconnected"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:114
+#: components/app/interface/settings/user/Native.tsx:115
 msgid "Discord RPC"
 msgstr ""
 
@@ -1036,7 +1037,7 @@ msgstr ""
 msgid "Display Name"
 msgstr ""
 
-#: src/interface/navigation/servers/UserMenu.tsx:179
+#: src/interface/navigation/servers/UserMenu.tsx:180
 msgid "Do Not Disturb"
 msgstr "Forstyr ikke"
 
@@ -1229,7 +1230,7 @@ msgstr "Find et fællesskab baseret på dine hobbyer eller interesser."
 msgid "Find your com<0/>munity,<1/>connect with the world."
 msgstr ""
 
-#: src/interface/navigation/servers/UserMenu.tsx:157
+#: src/interface/navigation/servers/UserMenu.tsx:158
 #: src/interface/navigation/channels/HomeSidebar.tsx:284
 #: src/interface/channels/text/MemberSidebar.tsx:385
 #: components/ui/components/features/profiles/ProfileStatus.tsx:27
@@ -1261,7 +1262,7 @@ msgstr ""
 msgid "For 8 hours"
 msgstr ""
 
-#: src/interface/Friends.tsx:111
+#: src/interface/Friends.tsx:112
 #: src/interface/navigation/channels/HomeSidebar.tsx:99
 msgid "Friends"
 msgstr "Venner"
@@ -1337,7 +1338,7 @@ msgstr "Gruppenavn"
 msgid "Harassment or cyberbullying"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:142
+#: components/app/interface/settings/user/Native.tsx:143
 msgid "Hardware Acceleration"
 msgstr ""
 
@@ -1380,7 +1381,7 @@ msgstr "Jeg bekræfter, at jeg er mindst 18 år gammel."
 msgid "I understand the consequences"
 msgstr ""
 
-#: src/interface/navigation/servers/UserMenu.tsx:146
+#: src/interface/navigation/servers/UserMenu.tsx:147
 #: src/interface/navigation/channels/HomeSidebar.tsx:286
 #: src/interface/channels/text/MemberSidebar.tsx:387
 #: components/ui/components/features/profiles/ProfileStatus.tsx:29
@@ -1399,7 +1400,7 @@ msgstr ""
 msgid "Impersonation"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:84
+#: components/app/interface/settings/user/Native.tsx:85
 msgid "Instead of closing, Stoat will hide in your tray."
 msgstr ""
 
@@ -1407,7 +1408,7 @@ msgstr ""
 msgid "Interface Font"
 msgstr ""
 
-#: src/interface/navigation/servers/UserMenu.tsx:200
+#: src/interface/navigation/servers/UserMenu.tsx:201
 msgid "Invisible"
 msgstr "Usynlig"
 
@@ -1519,7 +1520,7 @@ msgstr ""
 msgid "Latest"
 msgstr "Seneste"
 
-#: components/app/interface/settings/user/Native.tsx:70
+#: components/app/interface/settings/user/Native.tsx:71
 msgid "Launch Stoat when you log into your computer."
 msgstr ""
 
@@ -1547,7 +1548,7 @@ msgstr "Forlad gruppe"
 msgid "Leave server"
 msgstr "Forlad server"
 
-#: components/app/interface/settings/user/Native.tsx:97
+#: components/app/interface/settings/user/Native.tsx:98
 msgid "Let Stoat use its own custom titlebar."
 msgstr ""
 
@@ -1697,8 +1698,8 @@ msgstr "Besked"
 
 #. placeholder {0}: props.channel.recipient?.username
 #. placeholder {0}: props.channel.name
-#: src/interface/channels/text/Composition.tsx:368
-#: src/interface/channels/text/Composition.tsx:369
+#: src/interface/channels/text/Composition.tsx:373
+#: src/interface/channels/text/Composition.tsx:374
 msgid "Message {0}"
 msgstr ""
 
@@ -1730,7 +1731,7 @@ msgstr "Beskeden blev sendt på en anden platform"
 msgid "Messaging"
 msgstr "Beskeder"
 
-#: components/app/interface/settings/user/Native.tsx:87
+#: components/app/interface/settings/user/Native.tsx:88
 msgid "Minimise to Tray"
 msgstr ""
 
@@ -1781,11 +1782,11 @@ msgstr "Mute medlemmer"
 msgid "Mute Server"
 msgstr ""
 
-#: src/interface/navigation/servers/ServerList.tsx:235
+#: src/interface/navigation/servers/ServerList.tsx:211
 msgid "Muted"
 msgstr "Muted"
 
-#: src/interface/navigation/servers/ServerList.tsx:237
+#: src/interface/navigation/servers/ServerList.tsx:213
 #: components/app/menus/ServerContextMenu.tsx:186
 #: components/app/menus/shared/NotificationContextMenu.tsx:43
 msgid "Muted until <0/>"
@@ -1846,7 +1847,7 @@ msgstr "Kaldenavn"
 msgid "No permissions set yet"
 msgstr ""
 
-#: src/interface/Friends.tsx:230
+#: src/interface/Friends.tsx:248
 msgid "Nobody here right now!"
 msgstr ""
 
@@ -1914,15 +1915,15 @@ msgstr "Når først den er slettet, er der ingen vej tilbage."
 msgid "One of the first 1000 users!"
 msgstr ""
 
-#: src/interface/Friends.tsx:147
-#: src/interface/navigation/servers/UserMenu.tsx:136
+#: src/interface/Friends.tsx:165
+#: src/interface/navigation/servers/UserMenu.tsx:137
 #: src/interface/navigation/channels/HomeSidebar.tsx:280
 #: src/interface/channels/text/MemberSidebar.tsx:381
 #: components/ui/components/features/profiles/ProfileStatus.tsx:23
 msgid "Online"
 msgstr "Online"
 
-#: src/interface/navigation/servers/UserMenu.tsx:162
+#: src/interface/navigation/servers/UserMenu.tsx:163
 msgid "Only mentions will notify you"
 msgstr ""
 
@@ -1976,8 +1977,8 @@ msgid "Password"
 msgstr "Adgangskode"
 
 #: src/interface/Friends.tsx:156
-msgid "Pending"
-msgstr ""
+#~ msgid "Pending"
+#~ msgstr ""
 
 #: components/app/interface/settings/ChannelSettings.tsx:121
 msgid "Permissions"
@@ -2027,7 +2028,7 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Privatlivspolitik"
 
-#: components/markdown/plugins/anchors.tsx:105
+#: components/markdown/plugins/anchors.tsx:104
 msgid "Private Channel"
 msgstr ""
 
@@ -2152,7 +2153,7 @@ msgstr ""
 msgid "Rename Session"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:112
+#: components/app/interface/settings/user/Native.tsx:113
 msgid "Rep Stoat using Discord rich presence."
 msgstr ""
 
@@ -2255,7 +2256,7 @@ msgstr "Gem"
 msgid "Save file"
 msgstr ""
 
-#: src/interface/channels/text/Composition.tsx:366
+#: src/interface/channels/text/Composition.tsx:371
 msgid "Save to your notes"
 msgstr "Gem i dine noter"
 
@@ -2328,8 +2329,8 @@ msgid "Send messages in channels"
 msgstr ""
 
 #: components/modal/modals/AddFriend.tsx:45
-msgid "Send Request"
-msgstr ""
+#~ msgid "Send Request"
+#~ msgstr ""
 
 #: components/app/interface/channels/text/DraftMessage.tsx:46
 msgid "Sending..."
@@ -2416,7 +2417,7 @@ msgstr "Adskillige personer skriver…"
 msgid "Share camera or screen in voice call"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:125
+#: components/app/interface/settings/user/Native.tsx:126
 msgid "Show corrections and suggestions as you type."
 msgstr ""
 
@@ -2469,7 +2470,7 @@ msgstr ""
 msgid "Speak"
 msgstr "Tale"
 
-#: components/app/interface/settings/user/Native.tsx:128
+#: components/app/interface/settings/user/Native.tsx:129
 msgid "Spellchecker"
 msgstr ""
 
@@ -2477,7 +2478,7 @@ msgstr ""
 msgid "Start the call"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:73
+#: components/app/interface/settings/user/Native.tsx:74
 msgid "Start with Computer"
 msgstr ""
 
@@ -2493,7 +2494,7 @@ msgstr ""
 msgid "Stoat Developer"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:155
+#: components/app/interface/settings/user/Native.tsx:156
 msgid "Stoat for Desktop"
 msgstr ""
 
@@ -2683,7 +2684,7 @@ msgstr ""
 msgid "Unblock user"
 msgstr "Fjern blokering af bruger"
 
-#: components/markdown/plugins/anchors.tsx:137
+#: components/markdown/plugins/anchors.tsx:136
 msgid "Unknown Server"
 msgstr ""
 
@@ -2732,7 +2733,7 @@ msgstr "Upload filer"
 msgid "Use a code or invite link"
 msgstr ""
 
-#: components/app/interface/settings/user/Native.tsx:139
+#: components/app/interface/settings/user/Native.tsx:140
 msgid "Use the graphics card to improve performance."
 msgstr ""
 
@@ -2807,7 +2808,7 @@ msgid "Verifying your account…"
 msgstr "Bekræfter din konto…"
 
 #: components/app/interface/settings/UserSettings.tsx:122
-#: components/app/interface/settings/user/Native.tsx:151
+#: components/app/interface/settings/user/Native.tsx:152
 msgid "Version:"
 msgstr ""
 
@@ -2998,7 +2999,7 @@ msgstr ""
 msgid "You were logged out!"
 msgstr ""
 
-#: src/interface/navigation/servers/UserMenu.tsx:184
+#: src/interface/navigation/servers/UserMenu.tsx:185
 msgid "You will not receive any notifications"
 msgstr ""
 
@@ -3058,4 +3059,12 @@ msgstr ""
 
 #: components/i18n/errors.ts:28
 msgid "Your user has already been created? Try logging in again or refreshing the app."
+msgstr ""
+
+#: src/interface/navigation/servers/UserMenu.tsx:215
+msgid "상태 메시지"
+msgstr ""
+
+#: src/interface/navigation/servers/UserMenu.tsx:241
+msgid "설정"
 msgstr ""

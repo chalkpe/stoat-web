@@ -256,6 +256,13 @@ export function Message(props: Props) {
           isServer={!!props.message.server}
         />
       </Show>
+      <Show when={props.message.attachments}>
+        <For each={props.message.attachments}>
+          {(attachment) => (
+            <Attachment message={props.message} file={attachment} />
+          )}
+        </For>
+      </Show>
       <Switch>
         <Match when={props.editing}>
           <EditMessage message={props.message} />
@@ -266,13 +273,6 @@ export function Message(props: Props) {
           </BreakText>
         </Match>
       </Switch>
-      <Show when={props.message.attachments}>
-        <For each={props.message.attachments}>
-          {(attachment) => (
-            <Attachment message={props.message} file={attachment} />
-          )}
-        </For>
-      </Show>
       <Show when={props.message.embeds}>
         <For each={props.message.embeds}>
           {(embed) => <Embed embed={embed} />}

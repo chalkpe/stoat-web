@@ -1537,7 +1537,7 @@ msgstr "언어"
 msgid "Last sync <0/>"
 msgstr ""
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:50
+#: src/interface/channels/text/TextSearchSidebar.tsx:80
 msgid "Latest"
 msgstr "최신순"
 
@@ -1914,7 +1914,7 @@ msgstr "오프라인"
 msgid "OK"
 msgstr "확인"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:57
+#: src/interface/channels/text/TextSearchSidebar.tsx:87
 msgid "Oldest"
 msgstr "오래된 순"
 
@@ -2133,7 +2133,7 @@ msgstr ""
 msgid "Reject friend request"
 msgstr "친구 요청 거절"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:43
+#: src/interface/channels/text/TextSearchSidebar.tsx:73
 msgid "Relevance"
 msgstr "관련성순"
 
@@ -2851,8 +2851,8 @@ msgstr ""
 #~ msgstr "이전 업데이트 보기"
 
 #: src/interface/channels/ChannelHeader.tsx:189
-msgid "View pinned messages"
-msgstr ""
+#~ msgid "View pinned messages"
+#~ msgstr ""
 
 #: components/app/interface/settings/user/Account.tsx:212
 msgid "View Recovery Codes"

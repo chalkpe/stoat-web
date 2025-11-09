@@ -1537,7 +1537,7 @@ msgstr "ꖎᔑリ⊣⚍ᔑ⊣ᒷ"
 msgid "Last sync <0/>"
 msgstr ""
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:50
+#: src/interface/channels/text/TextSearchSidebar.tsx:80
 msgid "Latest"
 msgstr "ꖎᔑℸᒷᓭℸ"
 
@@ -1914,7 +1914,7 @@ msgstr "𝙹⎓⎓ꖎ╎リᒷ"
 msgid "OK"
 msgstr "𝙹ꖌ"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:57
+#: src/interface/channels/text/TextSearchSidebar.tsx:87
 msgid "Oldest"
 msgstr "𝙹ꖎ↸ᒷᓭℸ"
 
@@ -2133,7 +2133,7 @@ msgstr ""
 msgid "Reject friend request"
 msgstr "∷ᒷ⋮ᒷᓵℸ ⎓∷╎ᒷリ↸ ∷ᒷᑑ⚍ᒷᓭℸ"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:43
+#: src/interface/channels/text/TextSearchSidebar.tsx:73
 msgid "Relevance"
 msgstr "∷ᒷꖎᒷ⍊ᔑリᓵᒷ"
 
@@ -2851,8 +2851,8 @@ msgstr ""
 #~ msgstr "⍊╎ᒷ∴ 𝙹ꖎ↸ᒷ∷ ⚍!¡↸ᔑℸᒷᓭ"
 
 #: src/interface/channels/ChannelHeader.tsx:189
-msgid "View pinned messages"
-msgstr ""
+#~ msgid "View pinned messages"
+#~ msgstr ""
 
 #: components/app/interface/settings/user/Account.tsx:212
 msgid "View Recovery Codes"

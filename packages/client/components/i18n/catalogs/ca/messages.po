@@ -1537,7 +1537,7 @@ msgstr "Llengua"
 msgid "Last sync <0/>"
 msgstr ""
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:50
+#: src/interface/channels/text/TextSearchSidebar.tsx:80
 msgid "Latest"
 msgstr "Més recents"
 
@@ -1914,7 +1914,7 @@ msgstr "Fora de línia"
 msgid "OK"
 msgstr "D'acord"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:57
+#: src/interface/channels/text/TextSearchSidebar.tsx:87
 msgid "Oldest"
 msgstr "Més antics"
 
@@ -2133,7 +2133,7 @@ msgstr ""
 msgid "Reject friend request"
 msgstr "Rebutjar la sol·licitud d'amistat"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:43
+#: src/interface/channels/text/TextSearchSidebar.tsx:73
 msgid "Relevance"
 msgstr "Rellevància"
 
@@ -2851,8 +2851,8 @@ msgstr ""
 #~ msgstr "Mostra les actualitzacions més antigues"
 
 #: src/interface/channels/ChannelHeader.tsx:189
-msgid "View pinned messages"
-msgstr ""
+#~ msgid "View pinned messages"
+#~ msgstr ""
 
 #: components/app/interface/settings/user/Account.tsx:212
 msgid "View Recovery Codes"

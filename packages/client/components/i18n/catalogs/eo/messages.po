@@ -1537,7 +1537,7 @@ msgstr "Lingvo"
 msgid "Last sync <0/>"
 msgstr ""
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:50
+#: src/interface/channels/text/TextSearchSidebar.tsx:80
 msgid "Latest"
 msgstr "Plej laste"
 
@@ -1914,7 +1914,7 @@ msgstr "Elreta"
 msgid "OK"
 msgstr "Okej"
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:57
+#: src/interface/channels/text/TextSearchSidebar.tsx:87
 msgid "Oldest"
 msgstr "Plej malnove"
 
@@ -2133,7 +2133,7 @@ msgstr ""
 msgid "Reject friend request"
 msgstr ""
 
-#: src/interface/channels/text/TextSearchSidebar.tsx:43
+#: src/interface/channels/text/TextSearchSidebar.tsx:73
 msgid "Relevance"
 msgstr "Laŭ rilateco"
 
@@ -2851,8 +2851,8 @@ msgstr ""
 #~ msgstr "Vidi malnovajn ĝisdatigojn"
 
 #: src/interface/channels/ChannelHeader.tsx:189
-msgid "View pinned messages"
-msgstr ""
+#~ msgid "View pinned messages"
+#~ msgstr ""
 
 #: components/app/interface/settings/user/Account.tsx:212
 msgid "View Recovery Codes"

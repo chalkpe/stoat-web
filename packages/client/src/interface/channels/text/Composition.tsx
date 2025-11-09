@@ -370,8 +370,8 @@ export function MessageComposition(props: Props) {
           props.channel.type === "SavedMessages"
             ? t`Save to your notes`
             : props.channel.type === "DirectMessage"
-              ? t`Message ${props.channel.recipient?.username}`
-              : t`Message ${props.channel.name}`
+              ? `${props.channel.recipient?.username} 님에게 메시지 보내기`
+              : `${props.channel.name} 채널에 메시지 보내기`
         }
         sendingAllowed={props.channel.havePermission("SendMessage")}
         autoCompleteSearchSpace={searchSpace}

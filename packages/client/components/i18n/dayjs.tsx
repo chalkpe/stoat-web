@@ -2,7 +2,7 @@ import { createSignal } from "solid-js";
 
 import { i18n } from "@lingui/core";
 import dayjs from "dayjs";
-import dayjs_en from "dayjs/esm/locale/en-gb.js";
+import dayjs_ko from "dayjs/esm/locale/ko.js";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import calendar from "dayjs/plugin/calendar";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -35,19 +35,19 @@ export async function loadTimeLocale(
   const target = language.dayjs ?? language.i18n;
   const locale =
     useLocale ??
-    (target === "en-gb"
-      ? dayjs_en
+    (target === "ko"
+      ? dayjs_ko
       : ((await import(`../../node_modules/dayjs/esm/locale/${target}.js`).then(
           (module) => module.default,
         )) as ILocale));
 
   // merge options for calendar
   (locale as unknown as { calendar: Record<string, string> }).calendar = {
-    lastDay: i18n._(`[Yesterday at] LT`),
-    sameDay: i18n._(`[Today at] LT`),
-    nextDay: i18n._(`[Tomorrow at] LT`),
-    lastWeek: i18n._(`[Last] dddd [at] LT`),
-    nextWeek: i18n._(`dddd [at] LT`),
+    lastDay: i18n._(`[어제] LT`),
+    sameDay: i18n._(`[오늘] LT`),
+    nextDay: i18n._(`[내일] LT`),
+    lastWeek: i18n._(`[저번주] dddd LT`),
+    nextWeek: i18n._(`[다음주] dddd LT`),
     sameElse: "L",
   };
 
@@ -91,7 +91,7 @@ export function updateTimeLocaleOptions(
  * Initialisation function
  */
 export function initTime() {
-  loadTimeLocale(Languages.en, {}, dayjs_en);
+  loadTimeLocale(Languages.ko, {}, dayjs_ko);
 }
 
 /**

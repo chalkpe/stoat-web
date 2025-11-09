@@ -214,7 +214,7 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   is: { display: "Íslenska", emoji: "🇮🇸", i18n: "is" },
   it: { display: "Italiano", emoji: "🇮🇹", i18n: "it" },
   ja: { display: "日本語", emoji: "🇯🇵", i18n: "ja" },
-  ko: { display: "한국어", emoji: "🇰🇷", i18n: "ko" },
+  ko: { display: "한국어", emoji: "🇰🇷", i18n: "ko", dayjs: "ko" },
   lb: { display: "Lëtzebuergesch", emoji: "🇱🇺", i18n: "lb" },
   lt: { display: "Lietuvių", emoji: "🇱🇹", i18n: "lt" },
   lv: { display: "Latviešu", emoji: "🇱🇻", i18n: "lv", verified: true },

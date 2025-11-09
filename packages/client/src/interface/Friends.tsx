@@ -111,6 +111,51 @@ export function Friends() {
         </HeaderIcon>
         <Trans>Friends</Trans>
         <Spacer />
+
+        <IconButton
+          variant={page() === "all" ? "filled" : undefined}
+          onPress={() => setPage("all")}
+          use:floating={{
+            tooltip: {
+              placement: "left",
+              content: '모든 친구',
+            },
+          }}
+        >
+          <Symbol>all_inbox</Symbol>
+        </IconButton>
+
+        <IconButton
+          variant={page() === "online" ? "filled" : undefined}
+          onPress={() => setPage("online")}
+          use:floating={{
+            tooltip: {
+              placement: "left",
+              content: '온라인 친구',
+            },
+          }}
+        >
+          <Symbol>waving_hand</Symbol>
+        </IconButton>
+
+        <IconButton
+          variant={page() === "pending" ? "filled" : undefined}
+          onPress={() => setPage("pending")}
+          use:floating={{
+            tooltip: {
+              placement: "left",
+              content: '요청',
+            },
+          }}
+        >
+          <Symbol>notifications</Symbol>
+          <Show when={pending()}>
+            <Badge slot="badge" variant="large">
+              {pending()}
+            </Badge>
+          </Show>
+        </IconButton>
+
         <IconButton
           onPress={() =>
             openModal({
@@ -136,59 +181,12 @@ export function Friends() {
             "min-height": 0,
           }}
         >
-          <NavigationRail contained value={page} onValue={setPage}>
-            <div style={{ "margin-top": "6px", "margin-bottom": "12px" }}>
-              <IconButton
-                variant="filled"
-                shape="square"
-                onPress={() =>
-                  openModal({
-                    type: "add_friend",
-                    client: client(),
-                  })
-                }
-                use:floating={{
-                  tooltip: {
-                    placement: "right",
-                    content: t`Add a new friend`,
-                  },
-                }}
-              >
-                <Symbol>add</Symbol>
-              </IconButton>
-            </div>
-
-            <NavigationRailItem
-              icon={<Symbol>waving_hand</Symbol>}
-              value="online"
-            >
-              <Trans>Online</Trans>
-            </NavigationRailItem>
-            <NavigationRailItem icon={<Symbol>all_inbox</Symbol>} value="all">
-              <Trans>All</Trans>
-            </NavigationRailItem>
-            <NavigationRailItem
-              icon={<Symbol>notifications</Symbol>}
-              value="pending"
-            >
-              요청
-              <Show when={pending()}>
-                <Badge slot="badge" variant="large">
-                  {pending()}
-                </Badge>
-              </Show>
-            </NavigationRailItem>
-            <NavigationRailItem icon={<Symbol>block</Symbol>} value="blocked">
-              <Trans>Blocked</Trans>
-            </NavigationRailItem>
-          </NavigationRail>
-
           <Deferred>
             <div class="FriendsList" ref={scrollTargetElement} use:scrollable>
               <Switch
                 fallback={
                   <People
-                    title="Online"
+                    title="온라인 친구"
                     users={lists().online}
                     scrollTargetElement={targetSignal}
                   />
@@ -196,19 +194,19 @@ export function Friends() {
               >
                 <Match when={page() === "all"}>
                   <People
-                    title="All"
+                    title="모든 친구"
                     users={lists().friends}
                     scrollTargetElement={targetSignal}
                   />
                 </Match>
                 <Match when={page() === "pending"}>
                   <People
-                    title="Incoming"
+                    title="받은 요청"
                     users={lists().incoming}
                     scrollTargetElement={targetSignal}
                   />
                   <People
-                    title="Outgoing"
+                    title="보낸 요청"
                     users={lists().outgoing}
                     scrollTargetElement={targetSignal}
                   />
@@ -245,7 +243,7 @@ function People(props: {
 
       <Show when={props.users.length === 0}>
         <ListItem disabled>
-          <Trans>Nobody here right now!</Trans>
+          여기는 아무도 없어요.
         </ListItem>
       </Show>
 

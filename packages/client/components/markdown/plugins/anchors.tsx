@@ -17,6 +17,8 @@ import MdPeople from "@material-design-icons/svg/outlined/people.svg?component-s
 // import { determineLink } from "../../../lib/links";
 // import { modalController } from "../../../controllers/modals/ModalController";
 
+const RE_BACKSLASH = /%5C|\\/g;
+
 const link = cva({
   base: {
     cursor: "pointer",
@@ -207,7 +209,7 @@ export function RenderAnchor(
           {...remoteProps}
           class={link()}
           disabled={localProps.disabled}
-          href={localProps.href}
+          href={localProps.href.replace(RE_BACKSLASH, '')}
           target={"_blank"}
           rel="noreferrer"
         />
@@ -224,9 +226,16 @@ export function RenderAnchor(
 function LinkComponent(
   props: { disabled?: boolean } & JSX.AnchorHTMLAttributes<HTMLAnchorElement>,
 ) {
-  const [localProps, remoteProps] = splitProps(props, ["disabled"]);
+  const [localProps, remoteProps] = splitProps(props, ["disabled", "children"]);
+
+  const children = Array.isArray(localProps.children)
+    ? localProps.children.map((child) => typeof child === "string" ? child.replace(RE_BACKSLASH, '') : child)
+    : typeof localProps.children === "string"
+    ? localProps.children.replace(RE_BACKSLASH, '')
+    : localProps.children;
+
   if (localProps.disabled) {
-    return <span class={remoteProps.class}>{remoteProps.children}</span>;
+    return <span class={remoteProps.class}>{children}</span>;
   }
-  return <a {...remoteProps} />;
+  return <a {...remoteProps}>{children}</a>;
 }

@@ -141,7 +141,7 @@ export const HomeSidebar = (props: Props) => {
           </Switch>
 
           <Category>
-            Direct Messages
+            다이렉트 메시지
             <a
               class={css({
                 cursor: "pointer",

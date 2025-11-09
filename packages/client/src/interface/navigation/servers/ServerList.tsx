@@ -122,12 +122,12 @@ export const ServerList = (props: Props) => {
             indicator: !props.selectedServer() ? "selected" : undefined,
           })}
           href="/app"
-          use:floating={{
+          use:floating={homeNotifications() > 0 ? {
             tooltip: {
               content: `You have ${homeNotifications()} pending friend requests.`,
               placement: "right",
             },
-          }}
+          } : undefined}
         >
           <Avatar
             size={42}

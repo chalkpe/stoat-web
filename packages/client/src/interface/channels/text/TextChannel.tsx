@@ -35,6 +35,13 @@ import { MessageComposition } from "./Composition";
 import { MemberSidebar } from "./MemberSidebar";
 import { TextSearchSidebar } from "./TextSearchSidebar";
 
+import type { API } from "stoat.js";
+
+function trackChannel(api: API.API, channelId: string, type: "open" | "close") {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (api as any).put(`/channels/${channelId}`, { type }).catch(() => {});
+}
+
 /**
  * State of the channel sidebar
  */
@@ -116,6 +123,9 @@ export function TextChannel(props: ChannelPageProps) {
     if (props.channel.unread && (atEndRef ? atEndRef() : true)) {
       props.channel.ack();
     }
+
+    // Notify server that channel is now open
+    trackChannel(client().api, props.channel.id, "open");
   }
 
   document.addEventListener("focus", onFocus);
@@ -152,6 +162,22 @@ export function TextChannel(props: ChannelPageProps) {
       () => setSidebarState({ state: "default" }),
     ),
   );
+
+  // Notify server when channel is opened or changed
+  createEffect(
+    on(
+      () => props.channel.id,
+      (id, prevId) => {
+        if (prevId) trackChannel(client().api, prevId, "close");
+        trackChannel(client().api, id, "open");
+      },
+    ),
+  );
+
+  // Notify server when channel is closed
+  onCleanup(() => {
+    trackChannel(client().api, props.channel.id, "close");
+  });
 
   return (
     <>

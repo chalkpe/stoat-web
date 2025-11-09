@@ -4,7 +4,7 @@ import { I18nProvider as LinguiProvider } from "@lingui-solid/solid";
 import { i18n } from "@lingui/core";
 
 import { Language, Languages, type LocaleOptions } from "./Languages";
-import { messages as en } from "./catalogs/en/messages";
+import { messages as ko } from "./catalogs/ko/messages";
 import { initTime, loadTimeLocale } from "./dayjs";
 
 export function I18nProvider(props: { children: JSX.Element }) {
@@ -21,8 +21,8 @@ export async function loadAndSwitchLocale(
 ) {
   if (key !== i18n.locale) {
     const data =
-      Languages[key].i18n === "en"
-        ? en
+      Languages[key].i18n === "ko"
+        ? ko
         : (await import(`./catalogs/${Languages[key].i18n}/messages.ts`))
             .messages;
 
@@ -47,16 +47,7 @@ export function browserPreferredLanguage() {
 
   // Get the user's system language. Check for exact
   // matches first, otherwise check for partial matches
-  return (
-    navigator.languages
-      .map((lang) => languages.find((l) => l[0].replace(/_/g, "-") == lang))
-      .filter((lang) => lang)[0]?.[0] ??
-    navigator.languages
-      .map((x) => x.split("-")[0])
-      .map((lang) => languages.find((l) => l[0] == lang))
-      .filter((lang) => lang)[0]?.[0] ??
-    Language.ENGLISH
-  );
+  return Language.KOREAN;
 }
 
 /**
@@ -64,10 +55,10 @@ export function browserPreferredLanguage() {
  */
 export function initI18n() {
   i18n.load({
-    en,
+    ko,
   });
 
-  i18n.activate("en");
+  i18n.activate("ko");
 
   initTime();
 }

@@ -283,7 +283,7 @@ export function TextChannel(props: ChannelPageProps) {
                 <WideSidebarContainer>
                   <SidebarTitle>
                     <Text class="label" size="large">
-                      Pinned Messages
+                      고정된 메시지
                     </Text>
                   </SidebarTitle>
                   <TextSearchSidebar

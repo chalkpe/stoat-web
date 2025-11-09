@@ -186,7 +186,7 @@ export function ChannelHeader(props: Props) {
           use:floating={{
             tooltip: {
               placement: "bottom",
-              content: t`View pinned messages`,
+              content: "고정된 메시지",
             },
           }}
           onPress={() =>

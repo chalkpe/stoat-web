@@ -26,11 +26,11 @@ const MAPPED_EMOJI_KEYS = EMOJI_KEYS.map(
     }) as Completion,
 );
 
-const RE_match = /(?<!\w)[:@%#]\w*/;
-const RE_emojiValidFor = /(?<!\w):\w*/;
-const RE_mentionValidFor = /(?<!\w)@\w*/;
-const RE_roleValidFor = /(?<!\w)@\w*/;
-const RE_channelValidFor = /(?<!\w)#\w*/;
+const RE_match = /(?<![\wㄱ-ㅎㅏ-ㅣ가-힣])[:@%#][\wㄱ-ㅎㅏ-ㅣ가-힣]*/;
+const RE_emojiValidFor = /(?<![\wㄱ-ㅎㅏ-ㅣ가-힣]):[\wㄱ-ㅎㅏ-ㅣ가-힣]*/;
+const RE_mentionValidFor = /(?<![\wㄱ-ㅎㅏ-ㅣ가-힣])@[\wㄱ-ㅎㅏ-ㅣ가-힣]*/;
+const RE_roleValidFor = /(?<![\wㄱ-ㅎㅏ-ㅣ가-힣])@[\wㄱ-ㅎㅏ-ㅣ가-힣]*/;
+const RE_channelValidFor = /(?<![\wㄱ-ㅎㅏ-ㅣ가-힣])#[\wㄱ-ㅎㅏ-ㅣ가-힣]*/;
 
 export function codeMirrorAutoCompleteSource(
   searchSpace: Accessor<AutoCompleteSearchSpace>,

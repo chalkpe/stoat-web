@@ -15,28 +15,53 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: components/i18n/dayjs.tsx:46
-msgid "[Yesterday at] LT"
+msgid "[어제] LT"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: components/i18n/dayjs.tsx:47
-msgid "[Today at] LT"
+msgid "[오늘] LT"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: components/i18n/dayjs.tsx:48
-msgid "[Tomorrow at] LT"
+msgid "[내일] LT"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: components/i18n/dayjs.tsx:49
-msgid "[Last] dddd [at] LT"
+msgid "[저번주] dddd LT"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: components/i18n/dayjs.tsx:50
-msgid "dddd [at] LT"
+msgid "[다음주] dddd LT"
 msgstr ""
+
+#. js-lingui-explicit-id
+#: components/i18n/dayjs.tsx:46
+#~ msgid "[Yesterday at] LT"
+#~ msgstr ""
+
+#. js-lingui-explicit-id
+#: components/i18n/dayjs.tsx:47
+#~ msgid "[Today at] LT"
+#~ msgstr ""
+
+#. js-lingui-explicit-id
+#: components/i18n/dayjs.tsx:48
+#~ msgid "[Tomorrow at] LT"
+#~ msgstr ""
+
+#. js-lingui-explicit-id
+#: components/i18n/dayjs.tsx:49
+#~ msgid "[Last] dddd [at] LT"
+#~ msgstr ""
+
+#. js-lingui-explicit-id
+#: components/i18n/dayjs.tsx:50
+#~ msgid "dddd [at] LT"
+#~ msgstr ""
 
 #: components/app/interface/settings/server/roles/ServerRoleOverview.tsx:66
 msgid "(changes are being saved…)"
@@ -56,11 +81,9 @@ msgstr ""
 msgid "{0, plural, one {Drop a file} other {Drop # files}}"
 msgstr ""
 
-#. placeholder {0}: users() .slice(0, -1) .map((user) => user!.username) .join(", ")
-#. placeholder {1}: users().slice(-1)[0]!.username
 #: components/ui/components/features/messaging/composition/TypingIndicator.tsx:68
-msgid "{0} and {1} are typing…"
-msgstr ""
+#~ msgid "{0} and {1} are typing…"
+#~ msgstr ""
 
 #. placeholder {0}: (message.systemMessage as ChannelEditSystemMessage).by?.username
 #: components/client/NotificationsWorker.tsx:131
@@ -82,10 +105,9 @@ msgstr ""
 msgid "{0} files exceed the maximum size limit of {maxSizeFormatted} and were not uploaded."
 msgstr ""
 
-#. placeholder {0}: users()[0]!.username
 #: components/ui/components/features/messaging/composition/TypingIndicator.tsx:65
-msgid "{0} is typing…"
-msgstr ""
+#~ msgid "{0} is typing…"
+#~ msgstr ""
 
 #. placeholder {0}: (message.systemMessage as UserSystemMessage).user?.username
 #: components/client/NotificationsWorker.tsx:110
@@ -275,8 +297,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: src/interface/Friends.tsx:124
-#: src/interface/Friends.tsx:153
+#: src/interface/Friends.tsx:169
 #: components/modal/modals/AddFriend.tsx:41
 msgid "Add a new friend"
 msgstr ""
@@ -319,8 +340,8 @@ msgid "Affects all roles and users"
 msgstr ""
 
 #: src/interface/Friends.tsx:168
-msgid "All"
-msgstr ""
+#~ msgid "All"
+#~ msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:249
 #: components/app/menus/shared/NotificationContextMenu.tsx:122
@@ -451,8 +472,8 @@ msgid "Block user"
 msgstr "Zablokuj użytkownika"
 
 #: src/interface/Friends.tsx:182
-msgid "Blocked"
-msgstr "Zablokowani"
+#~ msgid "Blocked"
+#~ msgstr "Zablokowani"
 
 #: components/ui/components/features/messaging/elements/MessageReply.tsx:121
 msgid "Blocked User"
@@ -1696,12 +1717,10 @@ msgstr "Tylko wzmianki"
 msgid "Message"
 msgstr "Wyślij wiadomość"
 
-#. placeholder {0}: props.channel.recipient?.username
-#. placeholder {0}: props.channel.name
 #: src/interface/channels/text/Composition.tsx:373
 #: src/interface/channels/text/Composition.tsx:374
-msgid "Message {0}"
-msgstr ""
+#~ msgid "Message {0}"
+#~ msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:307
 msgid "Message Group Spacing"
@@ -1848,8 +1867,8 @@ msgid "No permissions set yet"
 msgstr ""
 
 #: src/interface/Friends.tsx:248
-msgid "Nobody here right now!"
-msgstr ""
+#~ msgid "Nobody here right now!"
+#~ msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:271
 #: components/app/menus/shared/NotificationContextMenu.tsx:112
@@ -1915,7 +1934,6 @@ msgstr "Akcja usunięcia jest nieodwracalna."
 msgid "One of the first 1000 users!"
 msgstr ""
 
-#: src/interface/Friends.tsx:165
 #: src/interface/navigation/servers/UserMenu.tsx:137
 #: src/interface/navigation/channels/HomeSidebar.tsx:280
 #: src/interface/channels/text/MemberSidebar.tsx:381
@@ -2409,8 +2427,8 @@ msgid "Setup recovery codes"
 msgstr ""
 
 #: components/ui/components/features/messaging/composition/TypingIndicator.tsx:63
-msgid "Several people are typing…"
-msgstr "Wiele osób pisze…"
+#~ msgid "Several people are typing…"
+#~ msgstr "Wiele osób pisze…"
 
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:353
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:354

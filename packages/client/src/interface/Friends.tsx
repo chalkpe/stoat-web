@@ -30,8 +30,8 @@ import {
   ListItem,
   ListSubheader,
   NavigationRail,
-  NavigationRailItem,
   OverflowingText,
+  Spacer,
   UserStatus,
   main,
 } from "@revolt/ui";
@@ -102,7 +102,7 @@ export function Friends() {
     return incoming.length > 99 ? "99+" : incoming.length;
   };
 
-  const [page, setPage] = createSignal("online");
+  const [page, setPage] = createSignal("all");
 
   return (
     <Base>
@@ -111,6 +111,23 @@ export function Friends() {
           <Symbol>group</Symbol>
         </HeaderIcon>
         <Trans>Friends</Trans>
+        <Spacer />
+        <IconButton
+          onPress={() =>
+            openModal({
+              type: "add_friend",
+              client: client(),
+            })
+          }
+          use:floating={{
+            tooltip: {
+              placement: "left",
+              content: t`Add a new friend`,
+            },
+          }}
+        >
+          <Symbol>add</Symbol>
+        </IconButton>
       </Header>
 
       <main class={main()}>
@@ -121,56 +138,35 @@ export function Friends() {
           }}
         >
           <NavigationRail contained value={page} onValue={setPage}>
-            <div style={{ "margin-top": "6px", "margin-bottom": "12px" }}>
-              <IconButton
-                variant="filled"
-                shape="square"
-                onPress={() =>
-                  openModal({
-                    type: "add_friend",
-                    client: client(),
-                  })
-                }
-                use:floating={{
-                  tooltip: {
-                    placement: "right",
-                    content: t`Add a new friend`,
-                  },
-                }}
-              >
-                <Symbol>add</Symbol>
-              </IconButton>
-            </div>
-
-            <NavigationRailItem
+            <NavigationRail.Item
+              icon={<Symbol css={{ marginTop: "10px" }}>all_inbox</Symbol>}
+              value="all"
+            >
+              모두
+            </NavigationRail.Item>
+            <NavigationRail.Item
               icon={<Symbol css={{ marginTop: "10px" }}>waving_hand</Symbol>}
               value="online"
             >
               <Trans>Online</Trans>
-            </NavigationRailItem>
-            <NavigationRailItem
-              icon={<Symbol css={{ marginTop: "10px" }}>all_inbox</Symbol>}
-              value="all"
-            >
-              <Trans>All</Trans>
-            </NavigationRailItem>
-            <NavigationRailItem
+            </NavigationRail.Item>
+            <NavigationRail.Item
               icon={<Symbol css={{ marginTop: "10px" }}>notifications</Symbol>}
               value="pending"
             >
-              <Trans>Pending</Trans>
+              요청
               <Show when={pending()}>
                 <Badge slot="badge" variant="large">
                   {pending()}
                 </Badge>
               </Show>
-            </NavigationRailItem>
-            <NavigationRailItem
+            </NavigationRail.Item>
+            <NavigationRail.Item
               icon={<Symbol css={{ marginTop: "10px" }}>block</Symbol>}
               value="blocked"
             >
               <Trans>Blocked</Trans>
-            </NavigationRailItem>
+            </NavigationRail.Item>
           </NavigationRail>
 
           <Deferred>

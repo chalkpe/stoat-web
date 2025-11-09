@@ -40,7 +40,7 @@ export function AddFriendModal(
       actions={[
         { text: <Trans>Close</Trans> },
         {
-          text: <Trans>Send Request</Trans>,
+          text: "요청 보내기",
           onClick: () => {
             onSubmit();
             return false;

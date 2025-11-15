@@ -40,7 +40,7 @@ export function RenderSpoiler(props: {
   return (
     <Spoiler
       shown={shown()}
-      onClick={props.disabled ? undefined : () => setShown(true)}
+      onClick={props.disabled ? undefined : () => setShown((shown) => !shown)}
     >
       {props.children}
     </Spoiler>

@@ -14,10 +14,10 @@ ENV VITE_CFG_MAX_FILE_SIZE=$VITE_CFG_MAX_FILE_SIZE
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable && corepack use pnpm
 
 WORKDIR /app
 COPY . .
+RUN corepack enable && corepack install
 RUN pnpm install
 RUN pnpm build:deps
 RUN pnpm build:web

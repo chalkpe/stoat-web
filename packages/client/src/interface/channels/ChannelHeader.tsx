@@ -23,6 +23,7 @@ import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
 import MdGroup from "@material-design-icons/svg/outlined/group.svg?component-solid";
 import MdPersonAdd from "@material-design-icons/svg/outlined/person_add.svg?component-solid";
+import MdPhotoLibrary from "@material-design-icons/svg/outlined/photo_library.svg?component-solid";
 import MdSettings from "@material-design-icons/svg/outlined/settings.svg?component-solid";
 
 import MdKeep from "../../svg/keep.svg?component-solid";
@@ -179,6 +180,28 @@ export function ChannelHeader(props: Props) {
         >
           <MdPersonAdd />
         </Button>
+      </Show>
+
+      <Show when={props.sidebarState}>
+        <IconButton
+          use:floating={{
+            tooltip: {
+              placement: "bottom",
+              content: "미디어 모아보기",
+            },
+          }}
+          onPress={() =>
+            props.sidebarState!().state === "attachments"
+              ? props.setSidebarState!({
+                  state: "default",
+                })
+              : props.setSidebarState!({
+                  state: "attachments",
+                })
+          }
+        >
+          <MdPhotoLibrary />
+        </IconButton>
       </Show>
 
       <Show when={props.sidebarState}>

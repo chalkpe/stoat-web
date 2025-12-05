@@ -31,6 +31,7 @@ import { VoiceChannelCallCardMount } from "@revolt/ui/components/features/voice/
 import { ChannelHeader } from "../ChannelHeader";
 import { ChannelPageProps } from "../ChannelPage";
 
+import { AttachmentsSidebar } from "./AttachmentsSidebar";
 import { MessageComposition } from "./Composition";
 import { MemberSidebar } from "./MemberSidebar";
 import { TextSearchSidebar } from "./TextSearchSidebar";
@@ -52,6 +53,9 @@ export type SidebarState =
     }
   | {
       state: "pins";
+    }
+  | {
+      state: "attachments";
     }
   | {
       state: "default";
@@ -290,6 +294,16 @@ export function TextChannel(props: ChannelPageProps) {
                     channel={props.channel}
                     query={{ pinned: true, sort: "Latest" }}
                   />
+                </WideSidebarContainer>
+              </Match>
+              <Match when={sidebarState().state === "attachments"}>
+                <WideSidebarContainer>
+                  <SidebarTitle>
+                    <Text class="label" size="large">
+                      미디어 모아보기
+                    </Text>
+                  </SidebarTitle>
+                  <AttachmentsSidebar channel={props.channel} />
                 </WideSidebarContainer>
               </Match>
             </Switch>

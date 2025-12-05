@@ -7,8 +7,10 @@ import { visit } from "unist-util-visit";
 
 const Spoiler = styled("span", {
   base: {
-    padding: "0 2px",
+    padding: "0 4px",
     borderRadius: "var(--borderRadius-md)",
+    whiteSpace: "pre-wrap",
+    display: "inline-block",
   },
   variants: {
     shown: {
@@ -77,7 +79,8 @@ export const remarkSpoiler: Plugin = () => (tree) => {
           const contents: typeof node.children = [];
 
           for (const match of matches) {
-            const content = match[1];
+            // Restore newlines from special character used in sanitise
+            const content = match[1].replace(/\uF801/g, "\n");
             const before = child.value.slice(lastIndexOffset, match.index);
 
             if (before) {

@@ -35,6 +35,14 @@ interface AttachmentProps {
    * Custom context menu (only used in thumbnail mode)
    */
   contextMenu?: () => JSX.Element;
+  /**
+   * Channel ID for image viewer navigation
+   */
+  channelId?: string;
+  /**
+   * Message ID for image viewer navigation
+   */
+  messageId?: string;
 }
 
 /**
@@ -74,7 +82,13 @@ export function Attachment(props: AttachmentProps) {
                   alt={props.file.filename || "Attachment"}
                   loading="lazy"
                   onClick={() =>
-                    openModal({ type: "image_viewer", file: props.file })
+                    openModal({
+                      type: "image_viewer",
+                      file: props.file,
+                      channelId: props.channelId,
+                      messageId: props.messageId,
+                      messageAttachments: props.message?.attachments,
+                    })
                   }
                   use:floating={{ contextMenu: contextMenu() }}
                 />
@@ -86,7 +100,13 @@ export function Attachment(props: AttachmentProps) {
                 preload="metadata"
                 onClick={(e) => {
                   e.preventDefault();
-                  openModal({ type: "image_viewer", file: props.file });
+                  openModal({
+                    type: "image_viewer",
+                    file: props.file,
+                    channelId: props.channelId,
+                    messageId: props.messageId,
+                    messageAttachments: props.message?.attachments,
+                  });
                 }}
                 use:floating={{ contextMenu: contextMenu() }}
               />
@@ -112,6 +132,9 @@ export function Attachment(props: AttachmentProps) {
                 openModal({
                   type: "image_viewer",
                   file: props.file,
+                  channelId: props.message?.channelId,
+                  messageId: props.message?.id,
+                  messageAttachments: props.message?.attachments,
                 })
               }
               loading="lazy"

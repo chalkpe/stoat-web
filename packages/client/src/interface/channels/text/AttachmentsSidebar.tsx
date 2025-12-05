@@ -135,6 +135,8 @@ export function AttachmentsSidebar(props: Props) {
             <Attachment
               file={file}
               thumbnail
+              channelId={props.channel.id}
+              messageId={messageId}
               contextMenu={() => (
                 <ContextMenu>
                   <ContextMenuButton

@@ -306,7 +306,7 @@ msgstr ""
 msgid "Add friend"
 msgstr "Suimiú chara"
 
-#: src/interface/channels/ChannelHeader.tsx:176
+#: src/interface/channels/ChannelHeader.tsx:177
 #: components/modal/modals/AddMembersToGroup.tsx:68
 msgid "Add friends to group"
 msgstr ""
@@ -612,7 +612,7 @@ msgstr ""
 msgid "Channel Name"
 msgstr "Ainm Cainéal"
 
-#: src/interface/channels/ChannelHeader.tsx:154
+#: src/interface/channels/ChannelHeader.tsx:155
 msgid "Channel Settings"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr "Scrios stádais"
 msgid "Click on the items below to learn more about different changes!"
 msgstr ""
 
-#: src/interface/channels/ChannelHeader.tsx:106
+#: src/interface/channels/ChannelHeader.tsx:107
 msgid "Click to show full description"
 msgstr ""
 
@@ -2280,7 +2280,7 @@ msgstr "Sábháil go dtí do chuid nótaí"
 
 #: src/interface/navigation/channels/HomeSidebar.tsx:119
 #: src/interface/navigation/channels/HomeSidebar.tsx:136
-#: src/interface/channels/ChannelHeader.tsx:131
+#: src/interface/channels/ChannelHeader.tsx:132
 msgid "Saved Notes"
 msgstr "Nótaí Sábháilte"
 
@@ -2842,7 +2842,7 @@ msgstr "Féach ar Mhuir nIocht"
 msgid "View currently active bug reports here."
 msgstr "Féach tuairiscí gníomhacha fabht anseo faoi láthair."
 
-#: src/interface/channels/ChannelHeader.tsx:229
+#: src/interface/channels/ChannelHeader.tsx:252
 msgid "View members"
 msgstr ""
 

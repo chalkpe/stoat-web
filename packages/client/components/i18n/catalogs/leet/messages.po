@@ -306,7 +306,7 @@ msgstr ""
 msgid "Add friend"
 msgstr "4DD F213ND"
 
-#: src/interface/channels/ChannelHeader.tsx:176
+#: src/interface/channels/ChannelHeader.tsx:177
 #: components/modal/modals/AddMembersToGroup.tsx:68
 msgid "Add friends to group"
 msgstr ""
@@ -612,7 +612,7 @@ msgstr ""
 msgid "Channel Name"
 msgstr "CH4NN3L N4M3"
 
-#: src/interface/channels/ChannelHeader.tsx:154
+#: src/interface/channels/ChannelHeader.tsx:155
 msgid "Channel Settings"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr "CL342 5747U5"
 msgid "Click on the items below to learn more about different changes!"
 msgstr ""
 
-#: src/interface/channels/ChannelHeader.tsx:106
+#: src/interface/channels/ChannelHeader.tsx:107
 msgid "Click to show full description"
 msgstr ""
 
@@ -2280,7 +2280,7 @@ msgstr "54V3 70 Y0U2 N0735"
 
 #: src/interface/navigation/channels/HomeSidebar.tsx:119
 #: src/interface/navigation/channels/HomeSidebar.tsx:136
-#: src/interface/channels/ChannelHeader.tsx:131
+#: src/interface/channels/ChannelHeader.tsx:132
 msgid "Saved Notes"
 msgstr "54V3D N0735"
 
@@ -2842,7 +2842,7 @@ msgstr "V13W CH4NN3L"
 msgid "View currently active bug reports here."
 msgstr "V13W CU223N7LY 4C71V3 8U6 23P0275 H323."
 
-#: src/interface/channels/ChannelHeader.tsx:229
+#: src/interface/channels/ChannelHeader.tsx:252
 msgid "View members"
 msgstr ""
 

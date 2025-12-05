@@ -306,7 +306,7 @@ msgstr ""
 msgid "Add friend"
 msgstr "o pana e ona tawa lipu pi jan pona"
 
-#: src/interface/channels/ChannelHeader.tsx:176
+#: src/interface/channels/ChannelHeader.tsx:177
 #: components/modal/modals/AddMembersToGroup.tsx:68
 msgid "Add friends to group"
 msgstr ""
@@ -612,7 +612,7 @@ msgstr ""
 msgid "Channel Name"
 msgstr "nimi pi poki toki"
 
-#: src/interface/channels/ChannelHeader.tsx:154
+#: src/interface/channels/ChannelHeader.tsx:155
 msgid "Channel Settings"
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr "o weka e toki lili"
 msgid "Click on the items below to learn more about different changes!"
 msgstr ""
 
-#: src/interface/channels/ChannelHeader.tsx:106
+#: src/interface/channels/ChannelHeader.tsx:107
 msgid "Click to show full description"
 msgstr ""
 
@@ -2280,7 +2280,7 @@ msgstr "o awen lon lipu pi sina taso"
 
 #: src/interface/navigation/channels/HomeSidebar.tsx:119
 #: src/interface/navigation/channels/HomeSidebar.tsx:136
-#: src/interface/channels/ChannelHeader.tsx:131
+#: src/interface/channels/ChannelHeader.tsx:132
 msgid "Saved Notes"
 msgstr "lipu pi sina taso"
 
@@ -2842,7 +2842,7 @@ msgstr ""
 msgid "View currently active bug reports here."
 msgstr "lipu ni li toki e sona ni: ilo li pali ike lon kama seme?"
 
-#: src/interface/channels/ChannelHeader.tsx:229
+#: src/interface/channels/ChannelHeader.tsx:252
 msgid "View members"
 msgstr ""
 

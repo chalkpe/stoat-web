@@ -1140,8 +1140,8 @@ msgstr "Edit the server's information and settings"
 msgid "Edit your identity"
 msgstr "Edit your identity"
 
-#: components/ui/components/features/messaging/elements/Container.tsx:383
-#: components/ui/components/features/messaging/elements/Container.tsx:449
+#: components/ui/components/features/messaging/elements/Container.tsx:386
+#: components/ui/components/features/messaging/elements/Container.tsx:452
 msgid "Edited"
 msgstr "Edited"
 
@@ -2354,9 +2354,9 @@ msgstr "Send messages in channels"
 msgid "Sending..."
 msgstr "Sending..."
 
-#: components/ui/components/features/messaging/elements/Container.tsx:344
-#: components/ui/components/features/messaging/elements/Container.tsx:374
-#: components/ui/components/features/messaging/elements/Container.tsx:423
+#: components/ui/components/features/messaging/elements/Container.tsx:347
+#: components/ui/components/features/messaging/elements/Container.tsx:377
+#: components/ui/components/features/messaging/elements/Container.tsx:426
 msgid "Sent"
 msgstr "Sent"
 

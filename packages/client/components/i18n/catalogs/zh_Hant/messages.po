@@ -1140,8 +1140,8 @@ msgstr ""
 msgid "Edit your identity"
 msgstr "編輯身分"
 
-#: components/ui/components/features/messaging/elements/Container.tsx:383
-#: components/ui/components/features/messaging/elements/Container.tsx:449
+#: components/ui/components/features/messaging/elements/Container.tsx:386
+#: components/ui/components/features/messaging/elements/Container.tsx:452
 msgid "Edited"
 msgstr ""
 
@@ -2354,9 +2354,9 @@ msgstr ""
 msgid "Sending..."
 msgstr ""
 
-#: components/ui/components/features/messaging/elements/Container.tsx:344
-#: components/ui/components/features/messaging/elements/Container.tsx:374
-#: components/ui/components/features/messaging/elements/Container.tsx:423
+#: components/ui/components/features/messaging/elements/Container.tsx:347
+#: components/ui/components/features/messaging/elements/Container.tsx:377
+#: components/ui/components/features/messaging/elements/Container.tsx:426
 msgid "Sent"
 msgstr ""
 

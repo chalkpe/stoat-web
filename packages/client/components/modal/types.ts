@@ -106,6 +106,13 @@ export type Modals =
     client: Client;
   }
   | {
+    type: "saved_notes_pin";
+    onSuccess: () => void;
+  }
+  | {
+    type: "saved_notes_pin_setup";
+  }
+  | {
     type: "delete_bot";
     bot: Bot;
   }

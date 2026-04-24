@@ -1,105 +1,188 @@
-import { Match, Show, Switch } from "solid-js";
+import { For, Match, Show, Switch, createResource } from "solid-js";
 
-import { Trans } from "@lingui-solid/solid/macro";
-import { PublicChannelInvite } from "stoat.js";
-import { css, cva } from "styled-system/css";
+import { Channel } from "stoat.js";
+import { cva } from "styled-system/css";
 import { styled } from "styled-system/jsx";
 
-import { IS_DEV, useClient } from "@revolt/client";
-import { CONFIGURATION } from "@revolt/common";
-import { useModals } from "@revolt/modal";
+import { useClient } from "@revolt/client";
+import { renderSimpleMarkdown } from "@revolt/markdown";
+import { useState } from "@revolt/state";
 import { useNavigate } from "@revolt/routing";
-import {
-  Button,
-  CategoryButton,
-  Column,
-  Header,
-  iconSize,
-  main,
-  typography,
-} from "@revolt/ui";
+import { Avatar, Header, iconSize, main } from "@revolt/ui";
 
-import MdAddCircle from "@material-design-icons/svg/filled/add_circle.svg?component-solid";
-import MdExplore from "@material-design-icons/svg/filled/explore.svg?component-solid";
-import MdGroups3 from "@material-design-icons/svg/filled/groups_3.svg?component-solid";
 import MdHome from "@material-design-icons/svg/filled/home.svg?component-solid";
-import MdPayments from "@material-design-icons/svg/filled/payments.svg?component-solid";
-import MdRateReview from "@material-design-icons/svg/filled/rate_review.svg?component-solid";
-import MdSettings from "@material-design-icons/svg/filled/settings.svg?component-solid";
-
-import Wordmark from "../../public/assets/web/wordmark.svg?component-solid";
 
 import { HeaderIcon } from "./common/CommonHeader";
 
-/**
- * Base layout of the home page (i.e. the header/background)
- */
 const Base = styled("div", {
   base: {
     width: "100%",
     display: "flex",
     flexDirection: "column",
-
     color: "var(--md-sys-color-on-surface)",
+    overflow: "hidden",
   },
 });
 
-/**
- * Layout of the content as a whole
- */
 const content = cva({
   base: {
     ...main.raw(),
-
-    padding: "48px 0",
-
-    gap: "32px",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: "24px",
+    gap: "0",
+    alignItems: "stretch",
+    justifyContent: "flex-start",
+    overflowY: "auto",
   },
 });
 
-/**
- * Layout of the buttons
- */
-const Buttons = styled("div", {
+const Grid = styled("div", {
   base: {
-    gap: "8px",
-    padding: "8px",
-    display: "flex",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+    gap: "12px",
+    width: "100%",
+  },
+});
+
+const Tile = styled("div", {
+  base: {
+    aspectRatio: "16/9",
     borderRadius: "var(--borderRadius-lg)",
-
-    color: "var(--md-sys-color-on-surface-variant)",
     background: "var(--md-sys-color-surface-variant)",
-  },
-});
-
-/**
- * Make sure the columns are separated
- */
-const SeparatedColumn = styled(Column, {
-  base: {
-    justifyContent: "stretch",
-    marginInline: "0.25em",
-    width: "260px",
-    "& > *": {
-      flexGrow: 1,
+    color: "var(--md-sys-color-on-surface-variant)",
+    display: "flex",
+    flexDirection: "column",
+    overflow: "hidden",
+    cursor: "pointer",
+    transition: "background 0.15s",
+    _hover: {
+      background: "var(--md-sys-color-surface-container-high)",
     },
   },
 });
 
+const TileHeader = styled("div", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    padding: "12px 12px 8px",
+    borderBottom: "1px solid var(--md-sys-color-outline-variant)",
+    flexShrink: 0,
+  },
+});
+
+const TileName = styled("span", {
+  base: {
+    fontWeight: "600",
+    fontSize: "13px",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    flex: "1 1 0",
+    color: "var(--md-sys-color-on-surface)",
+  },
+});
+
+const MessageList = styled("div", {
+  base: {
+    padding: "8px 12px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "6px",
+  },
+});
+
+const SkeletonRow = styled("div", {
+  base: {
+    height: "calc(12px * 1.4)",
+    borderRadius: "var(--borderRadius-sm)",
+    background: "var(--md-sys-color-outline-variant)",
+    opacity: 0.5,
+    animation: "pulse 1.5s ease-in-out infinite",
+  },
+});
+
+const SKELETON_WIDTHS = ["72%", "88%", "60%", "80%"];
+
+const MessageRow = styled("div", {
+  base: {
+    fontSize: "12px",
+    lineHeight: "1.4",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+    color: "var(--md-sys-color-on-surface-variant)",
+  },
+});
+
+const AuthorName = styled("span", {
+  base: {
+    fontWeight: "600",
+    color: "var(--md-sys-color-on-surface)",
+    marginInline: "4px",
+  },
+});
+
+const Timestamp = styled("span", {
+  base: {
+    fontSize: "11px",
+    color: "var(--md-sys-color-outline)",
+    fontFamily: "monospace",
+    marginRight: "2px",
+  },
+});
+
+const Section = styled("div", {
+  base: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+    width: "100%",
+  },
+});
+
+const SectionTitle = styled("h2", {
+  base: {
+    fontSize: "15px",
+    fontWeight: "700",
+    letterSpacing: "0.04em",
+    color: "var(--md-sys-color-on-surface)",
+    margin: "0",
+    padding: "0 0 0 8px",
+  },
+});
+
 /**
- * Home page
+ * Home page — shows a grid of recent channels with message previews
  */
 export function HomePage() {
-  const { openModal } = useModals();
-  const navigate = useNavigate();
   const client = useClient();
+  const state = useState();
+  const navigate = useNavigate();
 
-  // check if we're stoat.chat; if so, check if the user is in the Lounge
-  const showLoungeButton = CONFIGURATION.IS_STOAT;
-  const isInLounge =
-    client()!.servers.get("01F7ZSBSFHQ8TA81725KQCSDDP") !== undefined;
+  const allConversations = () => {
+    const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    return client()!
+      .channels.toList()
+      .filter((ch) => {
+        if (
+          !ch.lastMessageId ||
+          (!((ch.type === "DirectMessage" && ch.active) ||
+            ch.type === "Group" ||
+            ch.type === "TextChannel"))
+        )
+          return false;
+        return +ch.updatedAt >= oneWeekAgo;
+      })
+      .sort((a, b) => +b.updatedAt - +a.updatedAt);
+  };
+
+  const dmConversations = () =>
+    allConversations().filter((ch) => ch.type === "DirectMessage");
+
+  const otherConversations = () =>
+    allConversations().filter((ch) => ch.type !== "DirectMessage");
 
   return (
     <Base>
@@ -107,141 +190,124 @@ export function HomePage() {
         <HeaderIcon>
           <MdHome {...iconSize(22)} />
         </HeaderIcon>
-        <Trans>Home</Trans>
+        홈
       </Header>
       <div use:scrollable={{ class: content() }}>
-        <Column>
-          <span class={typography({ class: "headline" })}>
-            <Trans>Welcome to</Trans>
-          </span>
-          <Wordmark
-            class={css({
-              width: "160px",
-              fill: "var(--md-sys-color-on-surface)",
-            })}
-          />
-        </Column>
-        <Buttons>
-          <SeparatedColumn>
-            <CategoryButton
-              onClick={() =>
-                openModal({
-                  type: "create_group_or_server",
-                  client: client()!,
-                })
-              }
-              description={
-                <Trans>
-                  Invite all of your friends, some cool bots, and throw a big
-                  party.
-                </Trans>
-              }
-              icon={<MdAddCircle />}
-            >
-              <Trans>Create a group or server</Trans>
-            </CategoryButton>
-            <Switch fallback={null}>
-              <Match when={showLoungeButton && isInLounge}>
-                <CategoryButton
-                  onClick={() => navigate("/server/01F7ZSBSFHQ8TA81725KQCSDDP")}
-                  description={
-                    <Trans>
-                      You can report issues and discuss improvements with us
-                      directly here.
-                    </Trans>
-                  }
-                  icon={<MdGroups3 />}
-                >
-                  <Trans>Go to the Stoat Lounge</Trans>
-                </CategoryButton>
-              </Match>
-              <Match when={showLoungeButton && !isInLounge}>
-                <CategoryButton
-                  onClick={() => {
-                    client()
-                      .api.get("/invites/Testers")
-                      .then((invite) =>
-                        PublicChannelInvite.from(client(), invite),
-                      )
-                      .then((invite) => openModal({ type: "invite", invite }));
-                  }}
-                  description={
-                    <Trans>
-                      You can report issues and discuss improvements with us
-                      directly here.
-                    </Trans>
-                  }
-                  icon={<MdGroups3 />}
-                >
-                  <Trans>Join the Stoat Lounge</Trans>
-                </CategoryButton>
-              </Match>
-            </Switch>
-            <CategoryButton
-              variant="tertiary"
-              onClick={() =>
-                window.open(
-                  "https://wiki.revolt.chat/notes/project/financial-support/", // TODO-STOAT-WEB
-                )
-              }
-              description={
-                <Trans>Support the project by donating - thank you!</Trans>
-              }
-              icon={<MdPayments />}
-            >
-              <Trans>Donate to Stoat</Trans>
-            </CategoryButton>
-          </SeparatedColumn>
-          <SeparatedColumn>
-            <Show when={CONFIGURATION.IS_STOAT}>
-              <CategoryButton
-                onClick={() => navigate("/discover")}
-                description={
-                  <Trans>
-                    Find a community based on your hobbies or interests.
-                  </Trans>
-                }
-                icon={<MdExplore />}
-              >
-                <Trans>Discover Stoat</Trans>
-              </CategoryButton>
-            </Show>
-            <CategoryButton
-              onClick={() =>
-                openModal({
-                  type: "settings",
-                  config: "user",
-                  context: { page: "feedback" },
-                })
-              }
-              description={
-                <Trans>
-                  Let us know how we can improve our app by giving us feedback.
-                </Trans>
-              }
-              icon={<MdRateReview {...iconSize(22)} />}
-            >
-              <Trans>Give feedback on Stoat</Trans>
-            </CategoryButton>
-            <CategoryButton
-              onClick={() => openModal({ type: "settings", config: "user" })}
-              description={
-                <Trans>
-                  You can also click the gear icon in the bottom left.
-                </Trans>
-              }
-              icon={<MdSettings />}
-            >
-              <Trans>Open settings</Trans>
-            </CategoryButton>
-          </SeparatedColumn>
-        </Buttons>
-        <Show when={IS_DEV}>
-          <Button onPress={() => navigate("/dev")}>
-            Open Development Page
-          </Button>
+        <Show when={dmConversations().length > 0}>
+          <Section>
+            <SectionTitle>다이렉트 메시지</SectionTitle>
+            <Grid>
+              <For each={dmConversations()}>
+                {(channel) => (
+                  <ChannelTile
+                    channel={channel}
+                    onClick={() => navigate(`/channel/${channel.id}`)}
+                  />
+                )}
+              </For>
+            </Grid>
+          </Section>
+        </Show>
+        <Show when={otherConversations().length > 0}>
+          <Section style={{ "margin-top": dmConversations().length > 0 ? "24px" : "0" }}>
+            <SectionTitle>채널 및 그룹</SectionTitle>
+            <Grid>
+              <For each={otherConversations()}>
+                {(channel) => (
+                  <ChannelTile
+                    channel={channel}
+                    onClick={() => navigate(`/channel/${channel.id}`)}
+                  />
+                )}
+              </For>
+            </Grid>
+          </Section>
         </Show>
       </div>
     </Base>
+  );
+}
+
+function ChannelTile(props: { channel: Channel; onClick: () => void }) {
+  const [messages] = createResource(
+    () => props.channel.id,
+    async () => {
+      const { messages } = await props.channel.fetchMessagesWithUsers({
+        limit: 4,
+      });
+      return messages.reverse();
+    },
+  );
+
+  const channelName = () => {
+    if (props.channel.type === "DirectMessage") {
+      return props.channel.recipient?.displayName ?? "Unknown";
+    }
+    if (props.channel.type === "TextChannel") {
+      const serverName = props.channel.server?.name;
+      return serverName
+        ? `${serverName} · ${props.channel.name}`
+        : props.channel.name;
+    }
+    return props.channel.name ?? "Unknown";
+  };
+
+  return (
+    <Tile onClick={props.onClick}>
+      <TileHeader>
+        <Switch>
+          <Match when={props.channel.type === "Group"}>
+            <Avatar
+              size={24}
+              shape="rounded-square"
+              fallback={channelName()}
+              src={props.channel.iconURL}
+              primaryContrast
+            />
+          </Match>
+          <Match when={props.channel.type === "TextChannel"}>
+            <Avatar
+              size={24}
+              shape="rounded-square"
+              fallback={props.channel.server?.name}
+              src={props.channel.server?.iconURL}
+              primaryContrast
+            />
+          </Match>
+          <Match when={props.channel.type === "DirectMessage"}>
+            <Avatar size={24} src={props.channel.iconURL} />
+          </Match>
+        </Switch>
+        <TileName>{channelName()}</TileName>
+      </TileHeader>
+      <MessageList>
+        <Show
+          when={!messages.loading}
+          fallback={
+            <For each={SKELETON_WIDTHS}>
+              {(width) => <SkeletonRow style={{ width }} />}
+            </For>
+          }
+        >
+        <For each={messages()}>
+          {(message) => (
+            <Show when={message.content}>
+              <MessageRow>
+                <Timestamp>
+                  {message.createdAt.toLocaleTimeString("ko-KR", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                  })}
+                </Timestamp>
+                <AuthorName>{message.username}</AuthorName>
+                {renderSimpleMarkdown(message.content.replace(/\n+/g, " "))}
+              </MessageRow>
+            </Show>
+          )}
+        </For>
+        </Show>
+      </MessageList>
+    </Tile>
   );
 }

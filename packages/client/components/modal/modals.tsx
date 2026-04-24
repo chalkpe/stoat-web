@@ -46,6 +46,7 @@ import { OnboardingModal } from "./modals/Onboarding";
 import { PolicyChangeModal } from "./modals/PolicyChange";
 import { RenameSessionModal } from "./modals/RenameSession";
 import { ReportContentModal } from "./modals/ReportContent";
+import { SavedNotesPINModal, SavedNotesPINSetupModal } from "./modals/SavedNotesPIN";
 import { ServerIdentityModal } from "./modals/ServerIdentity";
 import { ServerInfoModal } from "./modals/ServerInfo";
 import { SettingsModal } from "./modals/Settings";
@@ -159,6 +160,10 @@ export function RenderModal(props: ActiveModal & { onClose: () => void }) {
       return <RenameSessionModal {...modalProps} />;
     case "report_content":
       return <ReportContentModal {...modalProps} />;
+    case "saved_notes_pin":
+      return <SavedNotesPINModal {...modalProps} />;
+    case "saved_notes_pin_setup":
+      return <SavedNotesPINSetupModal {...modalProps} />;
     case "server_identity":
       return <ServerIdentityModal {...modalProps} />;
     case "server_info":

@@ -24,6 +24,14 @@ import {
 import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
 import MdClose from "@material-design-icons/svg/outlined/close.svg?component-solid";
+import MdLock from "@material-design-icons/svg/outlined/lock.svg?component-solid";
+import MdLockOpen from "@material-design-icons/svg/outlined/lock_open.svg?component-solid";
+
+import {
+  ContextMenu,
+  ContextMenuButton,
+} from "../../../../components/app/menus/ContextMenu";
+import { isPINEnabled } from "../../../lib/savedNotesPIN";
 
 import { SidebarBase } from "./common";
 
@@ -57,6 +65,17 @@ export const HomeSidebar = (props: Props) => {
   const { openModal } = useModals();
 
   const savedNotesChannelId = createMemo(() => props.openSavedNotes());
+
+  function openSavedNotes() {
+    if (isPINEnabled()) {
+      openModal({
+        type: "saved_notes_pin",
+        onSuccess: () => props.openSavedNotes(navigate),
+      });
+    } else {
+      props.openSavedNotes(navigate);
+    }
+  }
 
   let scrollTargetElement!: HTMLDivElement;
 
@@ -113,7 +132,12 @@ export const HomeSidebar = (props: Props) => {
                 size="normal"
                 attention={"normal"}
                 icon={<Symbol>note_stack</Symbol>}
-                onClick={() => props.openSavedNotes(navigate)}
+                onClick={() => openSavedNotes()}
+                use:floating={{
+                  contextMenu: () => (
+                    <SavedNotesPINContextMenu openModal={openModal} />
+                  ),
+                }}
               >
                 <ButtonTitle>
                   <Trans>Saved Notes</Trans>
@@ -122,21 +146,25 @@ export const HomeSidebar = (props: Props) => {
             }
           >
             <Match when={savedNotesChannelId()}>
-              <a href={`/channel/${savedNotesChannelId()}`}>
-                <MenuButton
-                  size="normal"
-                  icon={<Symbol>note_stack</Symbol>}
-                  attention={
-                    props.channelId && savedNotesChannelId() === props.channelId
-                      ? "selected"
-                      : "normal"
-                  }
-                >
-                  <ButtonTitle>
-                    <Trans>Saved Notes</Trans>
-                  </ButtonTitle>
-                </MenuButton>
-              </a>
+              <MenuButton
+                size="normal"
+                icon={<Symbol>note_stack</Symbol>}
+                attention={
+                  props.channelId && savedNotesChannelId() === props.channelId
+                    ? "selected"
+                    : "normal"
+                }
+                onClick={() => openSavedNotes()}
+                use:floating={{
+                  contextMenu: () => (
+                    <SavedNotesPINContextMenu openModal={openModal} />
+                  ),
+                }}
+              >
+                <ButtonTitle>
+                  <Trans>Saved Notes</Trans>
+                </ButtonTitle>
+              </MenuButton>
             </Match>
           </Switch>
 
@@ -391,6 +419,32 @@ function Entry(
         </NameStatusStack>
       </MenuButton>
     </a>
+  );
+}
+
+function SavedNotesPINContextMenu(props: {
+  openModal: ReturnType<typeof useModals>["openModal"];
+}) {
+  return (
+    <ContextMenu>
+      {isPINEnabled() ? (
+        <>
+          <ContextMenuButton
+            icon={MdLock}
+            onClick={() => props.openModal({ type: "saved_notes_pin_setup" })}
+          >
+            PIN 변경 / 해제
+          </ContextMenuButton>
+        </>
+      ) : (
+        <ContextMenuButton
+          icon={MdLockOpen}
+          onClick={() => props.openModal({ type: "saved_notes_pin_setup" })}
+        >
+          PIN 잠금 설정
+        </ContextMenuButton>
+      )}
+    </ContextMenu>
   );
 }
 

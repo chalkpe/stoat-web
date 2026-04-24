@@ -495,7 +495,7 @@ msgstr ""
 msgid "Bug Tracker"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:282
+#: src/interface/navigation/channels/HomeSidebar.tsx:310
 #: src/interface/channels/text/MemberSidebar.tsx:383
 #: components/ui/components/features/profiles/ProfileStatus.tsx:25
 msgid "Busy"
@@ -743,7 +743,7 @@ msgstr ""
 msgid "Contribute a language"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:73
+#: src/interface/navigation/channels/HomeSidebar.tsx:92
 msgid "Conversations"
 msgstr ""
 
@@ -818,8 +818,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/interface/Home.tsx:141
-msgid "Create a group or server"
-msgstr ""
+#~ msgid "Create a group or server"
+#~ msgstr ""
 
 #: components/modal/modals/CreateBot.tsx:42
 msgid "Create a new bot"
@@ -829,7 +829,7 @@ msgstr ""
 msgid "Create a new category"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:158
+#: src/interface/navigation/channels/HomeSidebar.tsx:186
 #: components/modal/modals/CreateGroup.tsx:70
 msgid "Create a new group"
 msgstr ""
@@ -1047,8 +1047,8 @@ msgid "Discord RPC"
 msgstr ""
 
 #: src/interface/Home.tsx:206
-msgid "Discover Stoat"
-msgstr ""
+#~ msgid "Discover Stoat"
+#~ msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:255
 msgid "Display & Text"
@@ -1075,8 +1075,8 @@ msgid "Don't notify others that you've left"
 msgstr ""
 
 #: src/interface/Home.tsx:192
-msgid "Donate to Stoat"
-msgstr ""
+#~ msgid "Donate to Stoat"
+#~ msgstr ""
 
 #: components/ui/components/features/profiles/ProfileBadges.tsx:60
 msgid "Donated to Stoat"
@@ -1244,15 +1244,15 @@ msgid "Feedback"
 msgstr ""
 
 #: src/interface/Home.tsx:200
-msgid "Find a community based on your hobbies or interests."
-msgstr ""
+#~ msgid "Find a community based on your hobbies or interests."
+#~ msgstr ""
 
 #: components/auth/src/flows/FlowHome.tsx:47
 msgid "Find your com<0/>munity,<1/>connect with the world."
 msgstr ""
 
 #: src/interface/navigation/servers/UserMenu.tsx:158
-#: src/interface/navigation/channels/HomeSidebar.tsx:284
+#: src/interface/navigation/channels/HomeSidebar.tsx:312
 #: src/interface/channels/text/MemberSidebar.tsx:385
 #: components/ui/components/features/profiles/ProfileStatus.tsx:27
 msgid "Focus"
@@ -1284,7 +1284,7 @@ msgid "For 8 hours"
 msgstr ""
 
 #: src/interface/Friends.tsx:112
-#: src/interface/navigation/channels/HomeSidebar.tsx:99
+#: src/interface/navigation/channels/HomeSidebar.tsx:118
 msgid "Friends"
 msgstr ""
 
@@ -1313,8 +1313,8 @@ msgid "Get active recovery codes"
 msgstr ""
 
 #: src/interface/Home.tsx:224
-msgid "Give feedback on Stoat"
-msgstr ""
+#~ msgid "Give feedback on Stoat"
+#~ msgstr ""
 
 #: components/modal/modals/ReportContent.tsx:196
 msgid "Give us some detail"
@@ -1333,8 +1333,8 @@ msgid "Go to account settings to edit your username"
 msgstr ""
 
 #: src/interface/Home.tsx:155
-msgid "Go to the Stoat Lounge"
-msgstr ""
+#~ msgid "Go to the Stoat Lounge"
+#~ msgstr ""
 
 #: src/interface/Home.tsx:156
 #: src/interface/Home.tsx:169
@@ -1389,8 +1389,7 @@ msgstr ""
 msgid "High Contrast"
 msgstr ""
 
-#: src/interface/Home.tsx:110
-#: src/interface/navigation/channels/HomeSidebar.tsx:83
+#: src/interface/navigation/channels/HomeSidebar.tsx:102
 msgid "Home"
 msgstr ""
 
@@ -1403,7 +1402,7 @@ msgid "I understand the consequences"
 msgstr ""
 
 #: src/interface/navigation/servers/UserMenu.tsx:147
-#: src/interface/navigation/channels/HomeSidebar.tsx:286
+#: src/interface/navigation/channels/HomeSidebar.tsx:314
 #: src/interface/channels/text/MemberSidebar.tsx:387
 #: components/ui/components/features/profiles/ProfileStatus.tsx:29
 msgid "Idle"
@@ -1434,8 +1433,8 @@ msgid "Invisible"
 msgstr ""
 
 #: src/interface/Home.tsx:134
-msgid "Invite all of your friends, some cool bots, and throw a big party."
-msgstr ""
+#~ msgid "Invite all of your friends, some cool bots, and throw a big party."
+#~ msgstr ""
 
 #: components/app/interface/settings/user/bots/ViewBot.tsx:73
 msgid "Invite Bot"
@@ -1482,7 +1481,6 @@ msgstr ""
 #~ msgid "Join call"
 #~ msgstr ""
 
-#: src/interface/Home.tsx:176
 #: components/app/interface/settings/user/Feedback.tsx:91
 msgid "Join the Stoat Lounge"
 msgstr ""
@@ -1574,8 +1572,8 @@ msgid "Let Stoat use its own custom titlebar."
 msgstr ""
 
 #: src/interface/Home.tsx:218
-msgid "Let us know how we can improve our app by giving us feedback."
-msgstr ""
+#~ msgid "Let us know how we can improve our app by giving us feedback."
+#~ msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:61
 msgid "Light"
@@ -1901,7 +1899,7 @@ msgstr ""
 msgid "Official Server"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:287
+#: src/interface/navigation/channels/HomeSidebar.tsx:315
 #: src/interface/channels/text/MemberSidebar.tsx:388
 #: components/ui/components/features/profiles/ProfileStatus.tsx:30
 msgid "Offline"
@@ -1935,7 +1933,7 @@ msgid "One of the first 1000 users!"
 msgstr ""
 
 #: src/interface/navigation/servers/UserMenu.tsx:137
-#: src/interface/navigation/channels/HomeSidebar.tsx:280
+#: src/interface/navigation/channels/HomeSidebar.tsx:308
 #: src/interface/channels/text/MemberSidebar.tsx:381
 #: components/ui/components/features/profiles/ProfileStatus.tsx:23
 msgid "Online"
@@ -1967,8 +1965,8 @@ msgid "Open server settings"
 msgstr ""
 
 #: src/interface/Home.tsx:235
-msgid "Open settings"
-msgstr ""
+#~ msgid "Open settings"
+#~ msgstr ""
 
 #: components/modal/modals/ReportContent.tsx:75
 msgid "Other"
@@ -2278,8 +2276,8 @@ msgstr ""
 msgid "Save to your notes"
 msgstr ""
 
-#: src/interface/navigation/channels/HomeSidebar.tsx:119
-#: src/interface/navigation/channels/HomeSidebar.tsx:136
+#: src/interface/navigation/channels/HomeSidebar.tsx:143
+#: src/interface/navigation/channels/HomeSidebar.tsx:165
 #: src/interface/channels/ChannelHeader.tsx:132
 msgid "Saved Notes"
 msgstr ""
@@ -2545,8 +2543,8 @@ msgid "Suggest new Stoat features on GitHub discussions."
 msgstr ""
 
 #: src/interface/Home.tsx:188
-msgid "Support the project by donating - thank you!"
-msgstr ""
+#~ msgid "Support the project by donating - thank you!"
+#~ msgstr ""
 
 #: components/ui/components/features/voice/callCard/VoiceCallCardPreview.tsx:44
 msgid "Switch to this voice channel"
@@ -2904,7 +2902,6 @@ msgstr ""
 msgid "Webhooks"
 msgstr ""
 
-#: src/interface/Home.tsx:115
 #: components/auth/src/flows/FlowLogin.tsx:104
 msgid "Welcome to"
 msgstr ""
@@ -2951,8 +2948,8 @@ msgid "You are banned from this server."
 msgstr ""
 
 #: src/interface/Home.tsx:229
-msgid "You can also click the gear icon in the bottom left."
-msgstr ""
+#~ msgid "You can also click the gear icon in the bottom left."
+#~ msgstr ""
 
 #: src/interface/Home.tsx:215
 #~ msgid "You can also right-click the user icon in the top left, or left click it if you're already home."
@@ -2962,8 +2959,6 @@ msgstr ""
 msgid "You can re-open it later, but it will disappear on both sides."
 msgstr ""
 
-#: src/interface/Home.tsx:148
-#: src/interface/Home.tsx:169
 #: components/app/interface/settings/user/Feedback.tsx:85
 msgid "You can report issues and discuss improvements with us directly here."
 msgstr ""
